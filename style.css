@@ -261,13 +261,14 @@ body {
 }
 
 .header {
+    margin-top: 1%;
     width: 80%;
     height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 .header h1 {
     font: 700 var(--section-title-font) "Bungee", serif;
@@ -584,6 +585,9 @@ body {
 .sec3-sides .refresh img {
     max-width: 50px;
 }
+.sec3-sides:nth-of-type(1) .bar h2 {
+    font-size: 0.5rem;
+}
 .sec3-center .refresh img {
     width: 60%;
     height: 90%;
@@ -802,6 +806,12 @@ body {
     #sec2 .header {
         align-items: center;
     }
+    #sec2 .logo {
+        height: 45%;
+    }
+    #sec2 .comp-texte {
+        height: 55%;
+    }
 
     /* SECTION 3 */
     
@@ -937,6 +947,9 @@ body {
     #sec3 .bar {
         width: 60%;
         height: 80%;
+    }
+    .sec3-sides:nth-of-type(1) .bar h2 {
+        font-size: var(--section3-urlfont);
     }
     #sec3 .refresh {
         width: 5%;
