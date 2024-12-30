@@ -7,7 +7,7 @@
     --smaller-url-font: clamp(0.3rem, 0.3vw + 0.3rem, 1rem);
     --section2-pfont:clamp(1.2rem, 0.7vw + 0.7rem, 6rem);
     --section3-pfont: clamp(1rem, 0.8vw + 0.5rem, 3rem);
-    --section3-urlfont: clamp(0.5rem, 0.3vw + 0.2rem, 1rem);
+    --section3-urlfont: clamp(0.7rem, 0.3vw + 0.2rem, 1rem);
     --section-title-font:clamp(0.8rem, 2.5vw + 1rem, 4rem);
     color-scheme: only light;
 }   
@@ -267,6 +267,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-bottom: 5%;
 }
 .header h1 {
     font: 700 var(--section-title-font) "Bungee", serif;
@@ -511,10 +512,10 @@ body {
 
 .sec3-sides, .sec3-center {
     background-color: white;
-    border-left: 4px solid rgb(33, 92, 230);
-    border-top: 4px solid rgb(33, 92, 230);
-    border-right: 5px solid rgb(17, 73, 204);
-    border-bottom: 5px solid rgb(17, 73, 204);
+    border-left: 0.17em solid rgb(33, 92, 230);
+    border-top: 0.17em solid rgb(33, 92, 230);
+    border-right: 0.2em solid rgb(17, 73, 204);
+    border-bottom: 0.2em solid rgb(17, 73, 204);
     border-radius: 25px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.444);
 }
@@ -530,10 +531,10 @@ body {
 #sec3 .circle {
     width: 1.1rem;
     height: 1.1rem;
-    border: 3px solid rgb(77, 100, 248);
+    border: 0.14rem solid rgb(77, 100, 248);
 }
 .sec3-sides .circles {
-    width: 20%;
+    width: 25%;
 }
 .circle:nth-of-type(1) {
     background-color: rgb(252, 97, 97);
@@ -549,7 +550,7 @@ body {
     background-image: url("imgs/blue_dot.svg");
     background-position: 0 0;
     background-size: auto;
-    border-bottom: 4px solid rgb(77, 100, 248);
+    border-bottom: 0.15rem solid rgb(77, 100, 248);
 }
 .sec3-center .titre-comp {
     border-top-left-radius: 20px;
@@ -561,8 +562,8 @@ body {
 }
 .sec3-center .bar, .sec3-sides .bar {
     width: 50%;
-    border: 4px solid rgb(77, 100, 248);
-    border-radius: 10px;
+    border: 0.15rem solid rgb(77, 100, 248);
+    border-radius: 0.1rem;
 }
 .sec3-center .bar h2, .sec3-sides .bar h2 {
     font-size: var(--section3-urlfont);
@@ -570,17 +571,23 @@ body {
 }
 .sec3-center .refresh {
     width: 10%;
-    border: 4px solid rgb(77, 100, 248);
-    border-radius: 10px;
+    border: 0.15rem solid rgb(77, 100, 248);
+    border-radius: 5px;
+    max-width: 80px;
 }
 .sec3-sides .refresh {
     width: 15%;
-    border: 4px solid rgb(77, 100, 248);
+    border: 0.15rem solid rgb(77, 100, 248);
     border-radius: 5px;
+    max-width: 70px;
+}
+.sec3-sides .refresh img {
+    max-width: 50px;
 }
 .sec3-center .refresh img {
     width: 60%;
     height: 90%;
+    max-width: 50px;
 }
 .project {
     width: 100%;
@@ -619,7 +626,7 @@ body {
     font: 400 var(--section3-pfont) "Fredoka", serif;
     color: rgb(102, 152, 246);
     /* text-shadow: rgb(99, 106, 247) 1px 1px;*/
-    padding-top: 11%;
+    padding-top: 10%;
 }
 #sec3 .in-slide span {
     font-weight: 500;
@@ -635,12 +642,15 @@ body {
     padding: 3px;
     border-radius: 10px;
     z-index: 1;
+    max-width: 400px;
+    max-height: 200px;
 }
 #trex_game {
     width: 100%;
 }
 #tetris {
     width: 60%;
+    max-height: 200px;
 }
 #little {
     color: cornflowerblue;
@@ -666,6 +676,9 @@ body {
     }
     .right-first  {
         width: 100%;
+    }
+    #sec2 .circles {
+        width: 25%;
     }
 }
 
@@ -773,11 +786,14 @@ body {
         width: 40%;
         height: 10%;
     }
-
-
 }
+
 @media screen and (min-width:1000px) and (max-width: 1200px) {
 
+    :root {
+        --section2-pfont:clamp(1rem, 0.6vw + 0.65rem, 6rem);
+        --section3-pfont: clamp(0.8rem, 0.7vw + 0.5rem, 3rem);
+    }
     /*   SECTION 2  */
 
     #sec2 .slide {
@@ -785,11 +801,13 @@ body {
     }
     #sec2 .header {
         align-items: center;
-        margin-bottom: 5%;
     }
 
     /* SECTION 3 */
-
+    
+    #sec3 .header {
+        margin-bottom: 0;
+    }
     .sec3-center, .sec3-sides {
         height: 70%;
     }
@@ -798,9 +816,14 @@ body {
     }
     .sec3-center .refresh {
         width: 8%;
+        border-radius: 5px;
     }
     .sec3-sides .refresh {
         width: 13%;
+    }
+    .sec3-sides .refresh img {
+        width: 90%;
+        height: 90%;
     }
     #sec3 .circles {
         width: 25%;
@@ -808,6 +831,9 @@ body {
     #sec3 .circle {
         width: 1rem;
         height: 1rem;
+    }
+    #sec3 .project p {
+        padding-top: 5%;
     }
 }
 
@@ -817,15 +843,24 @@ body {
         justify-content: space-evenly;
         align-items: center;
     }
+    .header {
+        margin-bottom: 0;
+    }
+    #sec2 .circles {
+        width: 15%;
+    }
 }
 @media screen and (min-width: 500px) and (max-width: 1000px) {
     :root {
-        --section2-pfont:clamp(0.8rem, 0.6vw + 0.6rem, 6rem);
-        --section3-pfont: clamp(0.6rem, 0.6vw + 0.3rem, 2rem);
+        --section2-pfont:clamp(0.4rem, 0.4vw + 0.46rem, 6rem);
+        --section3-pfont: clamp(0.5rem, 0.6vw + 0.3rem, 2rem);
     }
 
     /*    SECTION 2    */
-
+    #sec2 .circle {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
     #sec2 .slide {
         width: 70%;
         height: 25%;
@@ -837,33 +872,53 @@ body {
         flex-direction: row;
     }
     #sec2 .logo {
-        width: 70%;
-    }
-    #sec2 .comp-texte {
-        width: 100%;
+        width: 80%;
         height: 50%;
     }
+    #sec2 .comp-texte {
+        width: 90%;
+        height: 45%;
+    }
+    #sec2 .comp-texte p {
+        text-shadow: rgb(134, 61, 2) 0.06rem 0.06rem;
+    }
     #sec2 .top, #sec2 .mid, #sec2 .bottom {
-        width: 30%;
+        width: 50%;
         height: 100%;
     }
+    .top {
+        justify-content: space-evenly;
+    }
     #xampp {
-        width: 40%;
+        width: 65%;
+        height: 65%;
     }
     #sql {
-        width: 50%;
+        width: 55%;
+        height: auto;
     }
     #libre-office {
-        width: 70%;
+        width: 60%;
+        height: auto;
     }
     #html {
-        width: 40%;
+        width: 20%;
+        min-width: 50px;
+        min-height: 50px;
     }
     #css {
-        width: 28.5%;
+        width: 14%;
+        min-width: 36px;
+        min-height: 36px;
     }
     #python {
-        width: 45%;
+        padding-top: 2%;
+        width: 2.5rem;
+        min-width: 36px;
+        min-height: 36px;
+    }
+    #francais, #anglais, #espagnol {
+        width: 40%;
     }
 
     /*     SECTION 3    */
@@ -875,16 +930,23 @@ body {
     #sec3  .circles {
         width: 20%;
     }
+    #sec3 .circle  {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
     #sec3 .bar {
         width: 60%;
+        height: 80%;
     }
     #sec3 .refresh {
-        width: 10%;
+        width: 5%;
+        min-width: 30px;
         height: 80%;
         border-radius: 5px;
     }
     #sec3 .refresh img {
         width: 60%;
+        height: 60%;
     }
     #sec3 .project {
         width: 100%;
@@ -895,12 +957,12 @@ body {
     }
     #sec3 .left-center {
         width: 100%;
-        height: 55%;
+        height: 50%;
         padding-top: 2%;
     }
     #sec3 .right-center {
-        width: 85%;
-        height: 45%;
+        width: 95%;
+        height: 50%;
         justify-content: flex-start;
         align-items: center;
         padding-top: 2%;
@@ -919,12 +981,13 @@ body {
         width: 80%;
     }
     #tetris {
-        width: 7rem;
-        height: auto;
+        width: 29%;
+        min-width: 100px;
     }
     #haikyuu, #terraria {
-        width: 10rem;
+        width: 37%;
         height: auto;
+        min-width: 120px;
     }
     #sec3 .bot-side {
         width: 40%;
@@ -933,26 +996,39 @@ body {
     }
 }
 
-/*    SECTION 2 < 500px     */
+/*    SECTIONS < 500px     */
 
 
 @media screen and (max-width:500px) {
     :root {
         --section-title-font:clamp(0.8rem, 2vw + 1rem, 2rem);
-        --section2-pfont:clamp(0.5rem, 0.5vw + 0.4rem, 4rem);
+        --section2-pfont:clamp(0.5rem, 0.4vw + 0.4rem, 4rem);
+        --section3-pfont: clamp(0.3rem, 0.4vw + 0.3rem, 3rem);
+        --section3-urlfont: clamp(0.45rem, 0.3vw + 0.2rem, 1rem);
+        --section1-little-titlefont: clamp(0.5rem, 0.6vw + 0.5rem, 5rem);
     }
+
+    /* SECTION 2 */
+
+
     #sec2 .header h1 {
         text-shadow: rgb(134, 61, 2) 0.15rem 0.15rem;
     }
-
     #sec2 .circle {
         width: 0.6rem;
         height: 0.6rem;
     }
+    #sec2 .bar {
+        width: 55%;
+    }
+    #sec2 .refresh {
+        width: 8%;
+        min-width: 10px;
+    }
     #sec2 .slide {
         min-width: 200px;
         width: 60%;
-        height: 15%;
+        height: 25%;
     }
     #sec2 .titre-comp {
         height: 20%;
@@ -964,16 +1040,15 @@ body {
         width: 70%;
     }
     #sec2 .comp-texte {
-        width: 100%;
+        width: 85%;
         height: 50%;
     }
     #sec2 .comp-texte p {
         text-shadow: rgb(134, 61, 2) 0.04rem 0.04rem;
     }
     #sec2 .top, #sec2 .mid, #sec2 .bottom {
-        width: 35%;
+        width: 50%;
         height: 100%;
-
     }
     #xampp {
         width: 45%;
@@ -985,12 +1060,96 @@ body {
         width: 80%;
     }
     #html {
-        width: 50%;
+        width: 40%;
     }
     #css {
-        width: 35%;
+        width: 29%;
     }
     #python {
+        width: 40%;
+    }
+
+    /*    SECTION 3    */
+
+    #sec3 .header h1 {
+        text-shadow: rgb(66, 88, 252) 0.1rem 0.1rem;
+    }
+    .sec3-sides, .sec3-center {
+        width: 70%;
+        height: 25%;
+    }
+    #sec3 .titre-comp {
+        height: 20%;
+    }
+    #sec3  .circles {
+        width: 20%;
+    }
+    #sec3 .circle {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+    #sec3 .bar {
+        width: 50%;
+        height: 80%;
+    }
+    #sec3 .refresh {
+        width: 5%;
+        min-width: 25px;
+        height: 80%;
+        border-radius: 5px;
+    }
+    #sec3 .refresh img {
+        width: 60%;
+        height: auto;
+    }
+    #sec3 .in-slide {
+        height: 80%;
+        flex-direction: row;
+    }
+    #sec3 .project {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #sec3 .left-center {
+        width: 100%;
+        height: 50%;
+    }
+    #sec3 .right-center {
+        width: 95%;
+        height: 50%;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2%;
+    }
+    #sec3 .right-center p {
+        padding: 5px;
+    }
+    #sec3 .top-side {
+        width: 50%;
+        height: 100%;
+    }
+    #trex_game {
+        width: 80%;
+        min-width: 110px;
+    }
+    #tetris {
+        width: 50%;
+        min-width: 75px;
+    }
+    #haikyuu, #terraria {
         width: 55%;
+        height: auto;
+        min-width: 90px;
+    }
+    #sec3 .bot-side {
+        width: 40%;
+        height: 100%;
+        justify-content: center;
+    }
+    #sec3 .in-slide h2 {
+        text-underline-offset: 2px;
     }
 }
