@@ -9,6 +9,7 @@
     --section3-pfont: clamp(1rem, 0.8vw + 0.5rem, 3rem);
     --section3-urlfont: clamp(0.5rem, 0.3vw + 0.2rem, 1rem);
     --section-title-font:clamp(0.8rem, 2.5vw + 1rem, 4rem);
+    color-scheme: only light;
 }   
 
 
