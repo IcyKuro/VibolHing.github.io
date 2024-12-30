@@ -1041,9 +1041,6 @@ body {
     #sec2 .header h1 {
         text-shadow: rgb(134, 61, 2) 0.15rem 0.15rem;
     }
-    .sec3-sides:nth-of-type(1) .bar h2 {
-        font-size: var(--section3-urlfont);
-    }
     #sec2 .circle {
         width: 0.6rem;
         height: 0.6rem;
@@ -1103,6 +1100,9 @@ body {
 
     #sec3 .header h1 {
         text-shadow: rgb(66, 88, 252) 0.1rem 0.1rem;
+    }
+    .sec3-sides:nth-of-type(1) .bar h2 {
+        font-size: var(--section3-urlfont);
     }
     .sec3-sides, .sec3-center {
         width: 70%;
