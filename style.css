@@ -559,19 +559,19 @@ body {
 }
 
 #sec4 .center-page .cards .card:nth-of-type(1) .card-image {
-    background-image: url("/imgs/tetris.jpg");
+    background-image: url("imgs/tetris.jpg");
 }
 #sec4 .center-page .cards .card:nth-of-type(2) .card-image {
-    background-image: url("/imgs/yams.jpeg");
+    background-image: url("imgs/yams.jpeg");
 }
 #sec4 .center-page .cards .card:nth-of-type(3) .card-image {
-    background-image: url("/imgs/unesco.png");
+    background-image: url("imgs/unesco.png");
 }
 #sec4 .center-page .cards .card:nth-of-type(4) .card-image {
-    background-image: url("/imgs/senior-chat.jpeg");
+    background-image: url("imgs/senior-chat.jpeg");
 }
 #sec4 .center-page .cards .card:nth-of-type(5) .card-image {
-    background-image: url("/imgs/pizza.png");
+    background-image: url("imgs/pizza.png");
 }
 .card-button {
     width: 100%;
