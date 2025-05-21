@@ -87,22 +87,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1%;
+    gap: 2vw;
+    text-align: center;
 }
 
 .name h1 {
-    font-size: var(--name-font);
+    font-size: clamp(80px, 10vw, 180px);
     font-family: "Cherry Bomb One", system-ui;
     color: orange;
-    text-shadow: #985202 0.6rem 0.6rem;
+    text-shadow: #985202 0.5vw 0.5vw;
     letter-spacing: 2%;
     line-height: var(--name-font);
 }
 .name h2 {
-    font-size: var(--student-font);
+    font-size: clamp(25px, 2vw, 100px);
     font-family: "Bungee", 'sans-serif';
     color: #FFC98B;
-    text-shadow: #DF8115 0.2rem 0.2rem;
+    text-shadow: #DF8115 0.2vw 0.2vw;
 }
 
 .contacts {
@@ -145,14 +146,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 5%;
+    justify-content: center;
 }
 #sec2 .center-page {
     height: 80%;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: start;
+    align-items: center;
 }
 
 .header {
@@ -163,7 +163,7 @@ body {
     align-items: center;
 }
 .header h1 {
-    font: 700 var(--section-title-font) "Cherry Bomb One", system-ui;
+    font: 700 clamp(50px, 4vw, 160px) "Cherry Bomb One", system-ui;
     color: orange;
     text-shadow: rgb(134, 61, 2) 0.2rem 0.2rem;
 }
@@ -182,6 +182,9 @@ body {
     border-bottom: 0.2em solid rgb(93, 40, 0);
     border-radius: 20px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.261);
+}
+#sec2 .center-page .slide {
+    max-height: 500px;
 }
 .slide:nth-of-type(1) {
     width: 50%;
@@ -237,7 +240,7 @@ body {
     padding-left: 1.5%;
 }
 .bar h2 {
-    font: 600 var(--url-font) "Quicksand", serif; 
+    font: 600 clamp(10px, 0.7vw, 50px) "Quicksand", serif; 
     color: rgb(129, 56, 0);
 }
 .refresh {
@@ -262,12 +265,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 3%;
+    gap: 4%;
     align-items: center;
 }
 
 .in-slide p {
-    font: 700 var(--section1-pfont) "Quicksand", serif;
+    font: 500 clamp(13px, 0.9vw, 40px) "Quicksand", serif;
     color: rgb(255, 132, 0);
     line-height: 1.2em;
     width: 80%;
@@ -281,18 +284,18 @@ body {
 .slide:nth-of-type(2) .in-slide p:hover {
     background-color: #df81158a;
 }
-.slide .in-slide h1 {
-    font: 2vw  "Bungee", "sans-serif";
-    color: rgb(245, 167, 10);
-    text-shadow: rgb(134, 61, 2) 0.2vw 0.2vw;
+#sec2 .center-page .slide .in-slide h1 {
+    font: clamp(25px, 2.3vw, 100px)  "Bungee", "sans-serif";
+    color: orange;
+    text-shadow: rgb(134, 61, 2) 0.1vw 0.1vw;
 }
 .slide .in-slide h2 {
-    font: 1vw "Quicksand", "sans-serif";
+    font: clamp(15px, 1.2vw, 60px) "Quicksand", "sans-serif";
     color: rgb(245, 131, 10);
     line-height: 10px;
 }
 #computer {
-    width: 20%;
+    width: clamp(100px, 12vw, 200px);
 }
 
 
@@ -315,6 +318,9 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+#sec3 header h1{
+    font-size: clamp(35px, 4vw, 160px);
 }
 #sec3 .center-page {
     width: 100%;
@@ -342,6 +348,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2%;
 }
 .bot-comp {
     width: 100%;
@@ -356,16 +363,21 @@ body {
     min-height: 45%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 }
 
-.slide:nth-of-type(1) .in-slide h1, .slide:nth-of-type(2) .in-slide h1, .slide:nth-of-type(3) .in-slide h1 {
-    font: 1.4vw "Bungee";
+#sec3 .center-page .top-competences .slide:nth-of-type(1) .in-slide h1, #sec3 .center-page .top-competences .slide:nth-of-type(2) .in-slide h1, #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide h1 {
+    font: clamp(20px, 1.4vw, 80px) "Bungee";
     color: rgb(250, 152, 24);
-    text-shadow: rgb(134, 61, 2) 0.2vw 0.2vw;
+    text-shadow: rgb(134, 61, 2) 0.1vw 0.1vw;
 }
-.slide:nth-of-type(1) .in-slide h2, .slide:nth-of-type(2) .in-slide h2, .slide:nth-of-type(3) .in-slide .savoir-etre-row .savoir-etre-column h3{
-    font: 500 1vw "Quicksand";
+#sec3 .center-page .top-competences .slide:nth-of-type(1) .in-slide h2, #sec3 .center-page .top-competences .slide:nth-of-type(2) .in-slide h2{
+    font: 500 clamp(13px, 1vw, 70px) "Quicksand";
+    color: rgb(122, 56, 2);
+}
+#sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .savoir-etre-row .savoir-etre-column h3 {
+    font: 500 clamp(10px, 1vw, 70px) "Quicksand";
     color: rgb(122, 56, 2);
 }
 .icons {
@@ -395,17 +407,17 @@ body {
 #eclipse {
     width: 20%;
 }
-.slide:nth-of-type(3) .in-slide .bot-comp {
+#sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .bot-comp {
     gap: 10%;
 }
 .savoir-etre-row {
     width: 100%;
     height: 35%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .savoir-etre-column {
-    width: 30%;
+    width: 25%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -415,21 +427,26 @@ body {
 .savoir-etre-column img {
     width: 60%;
 }
-.savoir-etre-column h3 {
-    font: 600 1vw "Quicksand";
-    color: rgb(255, 132, 0);
+#sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .bot-comp .savoir-etre-row .savoir-etre-column h3 {
+    font: 600 clamp(10px, 1vw, 70px) "Quicksand";
 }
 
 
 
 
 /* (PART A) WRAPPER */
-.hOut { overflow-x: auto; }
+.hOut { 
+    width: 80%;
+}
 .hIn {
   display: flex;
-  padding-bottom: 10px; margin-bottom: 20px;
-  border-bottom: 3px dotted #f1800f;
-  min-width: fit-content; width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 10px; 
+  margin-bottom: 20px;
+  border-bottom: 0.3vw dotted rgba(224, 56, 37, 0.661);
+  width: 100%;
+  
 }
 .hOut h1 {
     font: 1.4vw "Bungee";
@@ -439,16 +456,25 @@ body {
 
 /* (PART B) EVENTS */
 .hIn .event {
-  color: #fff; background: #f9a83fe2;
-  min-width: 300px; max-width: 400px;
-  padding: 10px; margin: 10px; border-radius: 10px;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff; 
+    background: #f9a83fe2;
+    width: clamp(200px, 28vw, 650px);
+    height: 8vw;
+    max-height: clamp(400px, 10vw, 500px);
+    min-height: clamp(100px, 4vw, 400px);
+    border-radius: 10px;
+    position: relative;
+    border: 0.5vw double rgba(224, 56, 37, 0.661);
 }
 .hIn .eDate { 
-    font: 1.3vw "Fredoka";
+    font: clamp(15px, 1.4vw, 40px) "Fredoka";
 }
 .hIn .eTxt {
-    font: 1vw "Quicksand";
+    font: clamp(10px, 1vw, 40px) "Quicksand";
 }
 
 /* (PART C) TIMELINE SHARED */
@@ -458,8 +484,12 @@ body {
 
 /* (PART D) TIMELINE CIRCLE */
 .hIn .event::before {
-  bottom: -30px; left: 50%;
-  content: ""; width: 16px; height: 16px; border-radius: 50%;
+  bottom: -30px; 
+  left: 50%;
+  content: ""; 
+  width: clamp(5px, 1vw, 16px); 
+  height: clamp(5px, 1vw, 16px); 
+  border-radius: 50%;
   background: #f37b4f;
 }
 
@@ -467,7 +497,6 @@ body {
 .hIn .event::after {
   bottom: -20px; left: calc(50% + 6px);
   width: 1px; height: 20px;
-  border-left: 3px dotted #ffa5a5;
 }
 
 
@@ -516,7 +545,7 @@ body {
     text-align: center;
 }
 #sec4 .center-page{
-    height: 70%;
+    height: 80%;
 }
 .cards {
     width: 100%;
@@ -525,15 +554,15 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    gap: clamp(50px, 1vw, 100px);
 }
 .card {
-    width: 15%;
+    width: clamp(250px, 15vw, 400px);
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 3%;
 }
 .card-title {
     width: 100%;
@@ -542,35 +571,52 @@ body {
     justify-content: center;
     align-items: center;
 }
+.top-cards, .bot-cards {
+    width: 45%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+.top-cards {
+    justify-content: end;
+    gap: clamp(100px, 1vw, 150px);
+}
+.bot-cards {
+    justify-content: start;
+    gap: clamp(100px, 1vw, 150px);
+}
 .card h2  {
-    font: 1.4vw "Bungee";
+    font: clamp(20px, 2vw, 30px) "Bungee";
     color: rgb(250, 152, 24);
-    text-shadow: rgb(134, 61, 2) 0.2rem 0.2rem;
+    text-shadow: rgb(134, 61, 2) 0.1vw 0.1vw;
 }
 .card-image {
     width: 100%;
     height: 70%;
     border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    border: 6px solid orange;
 }
-#sec4 .center-page .cards .card .card-image {
+
+
+
+#sec4 .center-page .cards .top-cards .card .card-image, #sec4 .center-page .cards .bot-cards .card .card-image {
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
 }
 
-#sec4 .center-page .cards .card:nth-of-type(1) .card-image {
+#sec4 .center-page .cards .top-cards .card:nth-of-type(1) .card-image {
     background-image: url("imgs/tetris.jpg");
 }
-#sec4 .center-page .cards .card:nth-of-type(2) .card-image {
-    background-image: url("imgs/yams.jpeg");
-}
-#sec4 .center-page .cards .card:nth-of-type(3) .card-image {
+#sec4 .center-page .cards .top-cards .card:nth-of-type(2) .card-image {
     background-image: url("imgs/unesco.png");
+    
 }
-#sec4 .center-page .cards .card:nth-of-type(4) .card-image {
+#sec4 .center-page .cards .bot-cards .card:nth-of-type(1) .card-image {
     background-image: url("imgs/senior-chat.jpeg");
 }
-#sec4 .center-page .cards .card:nth-of-type(5) .card-image {
+#sec4 .center-page .cards .bot-cards .card:nth-of-type(2) .card-image {
     background-image: url("imgs/pizza.png");
 }
 .card-button {
@@ -580,17 +626,30 @@ body {
     justify-content: end;
     align-items: center;
 }
-.card a {
-    width: 20%;
-    min-width: 100px;
-    min-height: 20px;
-    border: 5px solid rgb(250, 152, 24);
-    background-color: rgba(250, 152, 24, 0.302);
-    border-radius: 5px;
-    font: 600 0.8vw "Quicksand";
-    color:#f1800f;
+.card-button button {
+    width: fit-content;
+    height: clamp(20px, 2vw, 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 136, 0);
+    border-radius: 10px;
+    font: 500 clamp(13px, 1vw, 15px) "Fredoka";
+    padding: clamp(15px, 1vw, 40px);
     cursor: pointer;
-    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: 0.2vw solid rgb(248, 144, 70);
+}
+
+.card-button button:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgba(238, 114, 32, 0.659);
+}
+
+.card-button button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 rgba(238, 114, 32, 0.659);
 }
 
 
@@ -603,9 +662,12 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
+}
+#sec5 .center-page {
+    height: 80%;
 }
 
 input[type=text], textarea, input[type=email] {
@@ -616,7 +678,6 @@ input[type=text], textarea, input[type=email] {
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 16px;
-
   resize: vertical;
   font-family: "Fredoka";
 }
@@ -624,7 +685,7 @@ label{
     margin-right: 0px;
     margin-left: 0px;
     width: 100%;
-    font: 1vw "Fredoka";
+    font: clamp(15px, 1vw, 35px) "Fredoka";
 }
 
 input[type=submit] {
@@ -646,7 +707,7 @@ input[type=submit]:hover {
   border-radius: 15px;
   background-color:#f9a45a;
   padding: 20px;
-  width: 100%;
+  width: clamp(200px, 60%, 500px);
   /* redéfinition 400 + 2*20 */
   max-width: 440px;
   margin: 0 auto;
@@ -665,19 +726,34 @@ input[type=submit]:hover {
 
 /* MEDIA QUERIES */
 
-
+@media screen and (max-width:1360px) {
+    #sec4 .center-page .cards {
+        height: 90%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .top-cards, .bot-cards {
+        width: 100%;
+        height: 45%;
+        justify-content: center;
+        align-items: center;
+    }
+    .top-cards {
+        align-items: end;
+    }
+    .bot-cards {
+        align-items: start;
+    }
+    .card {
+       width: 35%;
+       gap: 5%;
+    }
+}
 @media screen and (max-width:1150px){
     .name {
         gap: 0;
-    }    
-    .name h1 {
-        font-size: 13vw;
-        text-shadow: #985202 0.5vw 0.5vw;
-    }
-    .name h2 {
-        font-size: 3vw;
-        text-shadow: #DF8115 0.3vw 0.3vw;
-    }
+    }   
+
 }
 
 @media screen and (max-width: 950px) {
@@ -715,7 +791,7 @@ input[type=submit]:hover {
     }
     #sec3 .slide {
         width: 70%;
-        height: 30%;
+        height: 27%;
     }
     #sec3 .titre-comp {
         height: 20%;
@@ -753,25 +829,51 @@ input[type=submit]:hover {
         width: 20%;
     }
 
-    .slide:nth-of-type(1) .in-slide h1, .slide:nth-of-type(2) .in-slide h1, .slide:nth-of-type(3) .in-slide h1 {
-        font: 2vw "Bungee";
-        color: rgb(250, 152, 24);
-    }
-    .slide:nth-of-type(1) .in-slide h2, .slide:nth-of-type(2) .in-slide h2, .slide:nth-of-type(3) .in-slide .savoir-etre-row .savoir-etre-column h3{
-        font: 500 1.6vw "Quicksand";
-        color: rgb(122, 56, 2);
-    }
 
-    #sec3 .slide:nth-of-type(3) .in-slide .savoir-etre-row {
-        width: 100%;
+    #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .savoir-etre-row {
+        width: 50%;
     }
-    #sec3 .slide:nth-of-type(3) .in-slide .savoir-etre-row .savoir-etre-column {
+    #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .savoir-etre-row .savoir-etre-column {
         width: 100%;
         height: 100%;
     }
     .savoir-etre-column img {
         width: 40%;
     }
+    .hOut {
+        width: clamp();
+    }
 
 }
 
+@media screen and (max-width:750px) {
+    #sec2 .center-page {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #sec2 .center-page .slide {
+        width: 80%;
+        height: 40%;
+    }
+    .slide:nth-of-type(2) .in-slide{
+        text-align: center;
+    }
+    .slide:nth-of-type(2) .in-slide p {
+        padding: clamp(5px, 0.8vw, 15px);
+    }
+    #sec2 .center-page .in-slide p {
+        font-size: clamp(10px, 0.9vw, 40px)
+    }
+    #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .bot-comp {
+        gap: 0;
+    }
+    #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .bot-comp .savoir-etre-row {
+        height: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .hIn {
+        gap: 5%;
+    }
+}

@@ -7,7 +7,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
     const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=hingvibol@gmail.com&su=${encodeURIComponent(
       sujet
-    )}&body=${encodeURIComponent(`Email de l'utilisateur : ${email}\n\n${message}`)}`;
+    )}&body=${encodeURIComponent(`${message}`)}`;
 
     window.open(gmailLink, '_blank'); // ouvre dans un nouvel onglet
   });

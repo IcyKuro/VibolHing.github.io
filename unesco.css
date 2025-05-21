@@ -18,15 +18,14 @@ body {
     background-color: orange;
 }
 .cover-image h1 {
-    font: clamp(80px, 8vw, 150px) "Cherry Bomb One", system-ui;
+    font: 7vw "Cherry Bomb One", system-ui;
     line-height: 4vw;
-    
 }
 .cover-image h2 {
-    font: clamp(30px, 3vw, 50px) "Bungee"
+    font: 2vw "Bungee"
 }
 .cover-image h2:nth-of-type(2) {
-    font: clamp(20px, 1.5vw, 60px) "Fredoka";
+    font: 1.5vw "Fredoka";
 }
 .main-page {
     width: 100%;
@@ -41,10 +40,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-bottom: 3%;
 }
 .context h1 {
-    font: clamp(30px, 1.8vw, 100px) "Bungee";
+    font: 3vw "Fredoka";
 }
 .right-context {
     width: 70%;
@@ -59,37 +57,36 @@ body {
 }
 .description h2 {
     width: 100%;
-    border-bottom: 0.2vw solid black;
+    border-bottom: 2px solid black;
     padding-bottom: 0.5%;
-    margin-bottom: 1%;
-    font: clamp(20px, 1.4vw, 80px) "Quicksand";
+    font: 1.5vw "Quicksand";
 }
 .outils h2, .comp h2, .lien h2 {
     width: 80%;
-    border-bottom: 0.2vw solid black;
+    border-bottom: 2px solid black;
     padding-bottom: 0.5%;
-    font: clamp(20px, 1.4vw, 80px) "Quicksand";
+    font: 1.5vw "Quicksand";
 }
 .description p, .outils p, .comp p, .lien p {
-    font: 300 clamp(15px, 1.2vw, 60px) "Fredoka";
+    font: 300 1vw "Fredoka";
 }
 .description {
     width: 80%;
     min-height: 25%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     flex-direction: column;
+    gap: 10%;
+
 }
 .outils, .comp {
     width: 100%;
     min-height: 15%;
-    max-height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: start;
-
 }
 .p-outils, .p-comp {
     width: 100%;
@@ -107,17 +104,14 @@ body {
     align-items: start;
     gap: 2%;
 }
-.lien button, #back-to-project {
-    width: clamp(100px, 5vw, 150px);
-    height: clamp(30px, 2vw, 80px) ;
+.lien button {
+    width: 5vw;
+    min-height: 30px;
     border-radius: 5px;
     border: none;
     background-color: orange;
 }
-#back-to-project {
-    margin-top: 5%;
-    cursor: pointer;
-}
+
 .part {
     width: 100%;
     min-height: 50vh;
@@ -127,15 +121,11 @@ body {
     align-items: center;
 }
 .part-img {
-    width: clamp(80px, 40vw, 450px);
-    height: clamp(80px, 40vw, 450px);
+    width: 50vh;
+    min-height: 50vh;
     border-radius: 10px;
     background-color: orange;
 }
 .part p {
     width: 40%;
 }
-
-
-
-/*   MEDIA QUERIES  */
