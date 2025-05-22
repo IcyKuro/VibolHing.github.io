@@ -576,14 +576,15 @@ body {
     height: 90%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .top-cards {
     justify-content: end;
-    gap: clamp(100px, 1vw, 150px);
+    gap: clamp(40px, 1vw, 100px);
 }
 .bot-cards {
     justify-content: start;
-    gap: clamp(100px, 1vw, 150px);
+    gap: clamp(40px, 1vw, 100px);
 }
 .card h2  {
     font: clamp(20px, 2vw, 30px) "Bungee";
@@ -738,12 +739,6 @@ input[type=submit]:hover {
         justify-content: center;
         align-items: center;
     }
-    .top-cards {
-        align-items: end;
-    }
-    .bot-cards {
-        align-items: start;
-    }
     .card {
        width: 35%;
        gap: 5%;
@@ -875,5 +870,22 @@ input[type=submit]:hover {
 @media screen and (max-width:600px) {
     .hIn {
         gap: 5%;
+    }
+    .savoir-etre-column img {
+        visibility: hidden;
+        display: none;
+    }
+    #sec3 .center-page .slide:nth-of-type(3) .in-slide .bot-comp {
+        flex-direction: column;
+    }
+    #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .savoir-etre-row {
+        width: 100%;
+        min-height: 0;
+        height: 50%;
+        
+    }
+    #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .savoir-etre-row .savoir-etre-column {
+        justify-content: center;
+        align-items: center;
     }
 }
