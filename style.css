@@ -63,12 +63,12 @@ body {
 }
 .in-sommaire a {
     font: 900 var(--sommaire-font) "Quicksand", serif;
-    color: orange;
+    color: var(--main-color);
     text-shadow: rgb(134, 61, 2) 1px 1px;
     text-underline-offset: 0.2em;
 }
 .in-sommaire a:visited {
-    color: orange;
+    color: var(--main-color);
     text-shadow: rgb(134, 61, 2) 1px 1px;
 }
 .center-page {
@@ -94,7 +94,7 @@ body {
 .name h1 {
     font-size: clamp(80px, 10vw, 180px);
     font-family: "Cherry Bomb One", system-ui;
-    color: orange;
+    color: var(--main-color);
     text-shadow: #985202 0.5vw 0.5vw;
     letter-spacing: 2%;
     line-height: var(--name-font);
@@ -163,8 +163,8 @@ body {
     align-items: center;
 }
 .header h1 {
-    font: 700 clamp(50px, 4vw, 160px) "Cherry Bomb One", system-ui;
-    color: orange;
+    font: 700 clamp(45px, 4vw, 160px) "Cherry Bomb One", system-ui;
+    color: var(--main-color);
     text-shadow: rgb(134, 61, 2) 0.2rem 0.2rem;
 }
 
@@ -184,7 +184,7 @@ body {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.261);
 }
 #sec2 .center-page .slide {
-    max-height: 500px;
+    max-height: 600px;
 }
 .slide:nth-of-type(1) {
     width: 50%;
@@ -197,6 +197,7 @@ body {
 .titre-comp {
     width: 100%;
     height: 10%;
+    min-height: 25px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -213,8 +214,8 @@ body {
     align-items: center;
 }
 .circle {
-    width: 1rem;
-    height: 1rem;
+    width: clamp(10px, 1.2vw, 80px);
+    height: clamp(10px, 1.2vw, 80px);
     border-radius: 100%;
     border: 2px solid rgb(129, 56, 0);
     background-color: white;
@@ -286,7 +287,7 @@ body {
 }
 #sec2 .center-page .slide .in-slide h1 {
     font: clamp(25px, 2.3vw, 100px)  "Bungee", "sans-serif";
-    color: orange;
+    color: var(--main-color);
     text-shadow: rgb(134, 61, 2) 0.1vw 0.1vw;
 }
 .slide .in-slide h2 {
@@ -444,7 +445,7 @@ body {
   align-items: center;
   padding-bottom: 10px; 
   margin-bottom: 20px;
-  border-bottom: 0.3vw dotted rgba(224, 56, 37, 0.661);
+  border-bottom: 0.2vw dashed rgba(224, 56, 37, 0.661);
   width: 100%;
   
 }
@@ -461,14 +462,13 @@ body {
     justify-content: space-evenly;
     align-items: center;
     color: #fff; 
-    background: #f9a83fe2;
+    background: #f9a83fc1;
     width: clamp(200px, 28vw, 650px);
     height: 8vw;
     max-height: clamp(400px, 10vw, 500px);
     min-height: clamp(100px, 4vw, 400px);
     border-radius: 10px;
     position: relative;
-    border: 0.5vw double rgba(224, 56, 37, 0.661);
 }
 .hIn .eDate { 
     font: clamp(15px, 1.4vw, 40px) "Fredoka";
@@ -520,7 +520,7 @@ body {
   }
   
   .dot.active {
-    background-color: orange;
+    background-color: var(--main-color);
   }
 
   .dot:hover {
@@ -596,7 +596,7 @@ body {
     height: 70%;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
-    border: 6px solid orange;
+    border: 6px solid var(--main-color);
 }
 
 
@@ -665,22 +665,88 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    text-align: center;
 }
 #sec5 .center-page {
+    height: 85%;
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(40px, 6%, 100px);
+}
+#sec5  .bot-comp  {
+    height: 100%;
+}
+#sec5 .slide:nth-of-type(1) {
+    width: 30%;
+}
+#sec5 .slide:nth-of-type(2) {
+    width: 50%;
+}
+.left-contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.left-contact h1, .container h1 {
+    font: clamp(15px, 1.7vw, 40px) "Bungee";
+    text-align: center;
+    color: var(--main-color);
+}
+.bot-left-contact {
+    width: 100%;
     height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contact {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    padding-left: 10%;
 }
 
+.contact p, .contact a {
+    font: clamp(15px, 1.5vw, 60px) "Fredoka";
+    width: 70%;
+}
+.contact a:visited {
+    color: var(--main-color);
+}
+.contact img {
+    width: 22%;
+    height: auto;
+}
+.contact:nth-of-type(2)  img {
+    width: 18%;
+    padding-left: 5%;
+}
+
+
+.right-contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 input[type=text], textarea, input[type=email] {
   width: 100%;
   padding: 12px;
   border: 1px solid #f0a234;
   border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+  resize: none;
   font-family: "Fredoka";
+}
+#message {
+    height: 60%;
 }
 label{
     margin-right: 0px;
@@ -691,31 +757,63 @@ label{
 
 input[type=submit] {
   background-color: #ffffff;
-  color: orange;
+  color: var(--main-color);
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  border: 2px solid var(--main-color);
 }
 
-input[type=submit]:hover {
-  background-color: #e5560f;
-}
 
 .container {
-  /* Ajouter box-sizing */
-  box-sizing : border-box;
-  border-radius: 15px;
-  background-color:#f9a45a;
-  padding: 20px;
-  width: clamp(200px, 60%, 500px);
-  /* redéfinition 400 + 2*20 */
-  max-width: 440px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
 }
-
-
-
+#contactForm {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contact-button {
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-infos {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+}
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.top-infos .info:nth-of-type(1), .top-infos .info:nth-of-type(2) {
+    height: 50%;
+}
+.top-infos .info input {
+    height: 40%;
+}
+#message-info {
+    min-height: 30%;
+}
 
 
 
@@ -865,6 +963,27 @@ input[type=submit]:hover {
     }
     #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .bot-comp .savoir-etre-row {
         height: 100%;
+        padding: 0;
+    }
+
+    #sec5 .center-page {
+        flex-direction: column;
+    }
+    #sec5 .slide:nth-of-type(1)  {
+        width: 80%;
+        height: 30%;
+    }
+    #sec5 .slide:nth-of-type(2)  {
+        width: 80%;
+        height: 60%;
+    }
+    .contact img {
+        width: 10%;
+        height: auto;
+    }
+    .contact:nth-of-type(2) img {
+        padding-left: 2%;
+        width: 8%;
     }
 }
 @media screen and (max-width:600px) {
@@ -888,4 +1007,37 @@ input[type=submit]:hover {
         justify-content: center;
         align-items: center;
     }
+}
+@media screen and (max-height:800px) {
+    #sec2 .center-page .slide .in-slide img {
+        display: none;
+    }
+    #sec2 .center-page .slide:nth-of-type(2) {
+        width: 50%;
+    }
+    #sec2 .center-page .slide:nth-of-type(2) p {
+        border: none;
+        border-top: 2px solid var(--main-color);
+    } 
+    #contactForm {
+        width: 100%;
+    }
+    .top-infos {
+        flex-direction: row;
+        height: fit-content;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .top-infos .info:nth-of-type(1), .top-infos .info:nth-of-type(2) {
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+    .top-infos input {
+        width: 90%;
+        text-align: center;
+    }
+    
 }

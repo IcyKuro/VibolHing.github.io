@@ -24,6 +24,7 @@
       rel="stylesheet"
       href="fonts/Stardom_Complete/Fonts/WEB/css/stardom.css"
     />
+    <link rel="stylesheet" href="color.css" />
     <title>Vibol Hing</title>
   </head>
   <body>
@@ -322,7 +323,12 @@
               </div>
               <div class="card-image"></div>
               <div class="card-button">
-                <button href="tetris.html" onclick="document.location='tetris.html'">Voir plus</button>
+                <button
+                  href="tetris.html"
+                  onclick="document.location='tetris.html'"
+                >
+                  Voir plus
+                </button>
               </div>
             </div>
             <div class="card">
@@ -332,7 +338,9 @@
               <div class="card-image"></div>
 
               <div class="card-button">
-                <button onclick="document.location='unesco.html'">Voir plus</button>
+                <button onclick="document.location='unesco.html'">
+                  Voir plus
+                </button>
               </div>
             </div>
           </div>
@@ -365,41 +373,116 @@
         <h1>Me contacter</h1>
       </header>
       <div class="center-page">
-        <div class="left-contact">
-          <h1>Restons en contact</h1>
-          <p>S</p>
+        <div class="slide">
+          <div class="titre-comp">
+            <div class="circles">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <div class="bar">
+              <h2>https://Contacts</h2>
+            </div>
+            <div class="refresh">
+              <img
+                src="imgs/refresh.svg"
+                alt="icone du bouton de rafraichissement de page"
+              />
+            </div>
+          </div>
+          <div class="in-slide">
+            <div class="bot-comp">
+              <div class="left-contact">
+                <h1>Restons en contact</h1>
+                <div class="bot-left-contact">
+                  <div class="contact">
+                    <img src="/imgs/email.png" />
+                    <p>hingvibol@gmail.com</p>
+                  </div>
+                  <div class="contact">
+                    <img src="/imgs/linkedin.png" />
+
+                    <p>LinkedIn</p>
+                  </div>
+                  <div class="contact">
+                    <img src="/imgs/tel.png" />
+
+                    <p>06 51 62 00 50</p>
+                  </div>
+                  <div class="contact">
+                    <img src="imgs/cv.png" />
+                    <a href="/VibolHing_CV.pdf" download="" target="_blank"
+                      >Mon CV</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="container">
-          <form id="contactForm">
-            <label for="emailAddress">Email</label>
-            <input
-              id="emailAddress"
-              type="email"
-              name="email"
-              placeholder="Votre email"
-              required
-            />
 
-            <label for="sujet">Objet</label>
-            <input
-              type="text"
-              id="sujet"
-              name="sujet"
-              placeholder="L'objet de votre message"
-              required
-            />
-
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Votre message"
-              style="height: 200px"
-              required
-            ></textarea>
-
-            <input type="submit" value="Envoyer" />
-          </form>
+        <div class="slide">
+          <div class="titre-comp">
+            <div class="circles">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <div class="bar">
+              <h2>https://Contacts</h2>
+            </div>
+            <div class="refresh">
+              <img
+                src="imgs/refresh.svg"
+                alt="icone du bouton de rafraichissement de page"
+              />
+            </div>
+          </div>
+          <div class="in-slide">
+            <div class="bot-comp">
+              <div class="right-contact">
+                <div class="container">
+                  <h1>Formulaire de Contact</h1>
+                  <form id="contactForm">
+                    <div class="top-infos">
+                      <div class="info">
+                        <label for="emailAddress">Email</label>
+                        <input
+                          id="emailAddress"
+                          type="email"
+                          name="email"
+                          placeholder="Votre email"
+                          required
+                        />
+                      </div>
+                      <div class="info">
+                        <label for="sujet">Objet</label>
+                        <input
+                          type="text"
+                          id="sujet"
+                          name="sujet"
+                          placeholder="L'objet du mail"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="info" id="message-info">
+                      <label for="message">Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Votre message"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="contact-button">
+                      <input type="submit" value="Envoyer" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
