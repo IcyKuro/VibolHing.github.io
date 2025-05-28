@@ -957,7 +957,7 @@ input[type=submit] {
         padding: clamp(5px, 0.8vw, 15px);
     }
     #sec2 .center-page .in-slide p {
-        font-size: clamp(10px, 0.9vw, 40px)
+        font-size: clamp(7px, 0.9vw, 40px)
     }
     #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .bot-comp {
         gap: 0;
