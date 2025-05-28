@@ -271,7 +271,7 @@ body {
 }
 
 .in-slide p {
-    font: 500 clamp(13px, 0.9vw, 40px) "Quicksand", serif;
+    font: 500 clamp(10px, 0.9vw, 40px) "Quicksand", serif;
     color: rgb(255, 132, 0);
     line-height: 1.2em;
     width: 80%;
@@ -286,7 +286,7 @@ body {
     background-color: #df81158a;
 }
 #sec2 .center-page .slide .in-slide h1 {
-    font: clamp(25px, 2.3vw, 100px)  "Bungee", "sans-serif";
+    font: clamp(20px, 2.3vw, 100px)  "Bungee", "sans-serif";
     color: var(--main-color);
     text-shadow: rgb(134, 61, 2) 0.1vw 0.1vw;
 }
@@ -374,7 +374,7 @@ body {
     text-shadow: rgb(134, 61, 2) 0.1vw 0.1vw;
 }
 #sec3 .center-page .top-competences .slide:nth-of-type(1) .in-slide h2, #sec3 .center-page .top-competences .slide:nth-of-type(2) .in-slide h2{
-    font: 500 clamp(13px, 1vw, 70px) "Quicksand";
+    font: 500 clamp(10px, 1vw, 70px) "Quicksand";
     color: rgb(122, 56, 2);
 }
 #sec3 .center-page .top-competences .slide:nth-of-type(3) .in-slide .savoir-etre-row .savoir-etre-column h3 {
@@ -462,7 +462,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     color: #fff; 
-    background: #f9a83fc1;
+    background: #f9a83fe4;
     width: clamp(200px, 28vw, 650px);
     height: 8vw;
     max-height: clamp(400px, 10vw, 500px);
@@ -484,7 +484,7 @@ body {
 
 /* (PART D) TIMELINE CIRCLE */
 .hIn .event::before {
-  bottom: -30px; 
+  bottom: -1.6vw; 
   left: 50%;
   content: ""; 
   width: clamp(5px, 1vw, 16px); 
@@ -498,7 +498,6 @@ body {
   bottom: -20px; left: calc(50% + 6px);
   width: 1px; height: 20px;
 }
-
 
 .dot-navigation {
     position: fixed;
@@ -715,6 +714,7 @@ body {
 .contact p, .contact a {
     font: clamp(15px, 1.5vw, 60px) "Fredoka";
     width: 70%;
+    color: var(--main-color);
 }
 .contact a:visited {
     color: var(--main-color);
@@ -723,7 +723,7 @@ body {
     width: 22%;
     height: auto;
 }
-.contact:nth-of-type(2)  img {
+.contact:nth-of-type(2) img {
     width: 18%;
     padding-left: 5%;
 }
@@ -753,6 +753,7 @@ label{
     margin-left: 0px;
     width: 100%;
     font: clamp(15px, 1vw, 35px) "Fredoka";
+    color: var(--main-color);
 }
 
 input[type=submit] {
@@ -986,6 +987,11 @@ input[type=submit] {
         width: 8%;
     }
 }
+@media screen and (max-width:700px){
+    #sec2 .center-page .in-slide img  {
+        display: none;
+    }
+}
 @media screen and (max-width:600px) {
     .hIn {
         gap: 5%;
@@ -1008,12 +1014,14 @@ input[type=submit] {
         align-items: center;
     }
 }
+@media screen and (max-width:450px) {
+    .dot-navigation {
+        display: none;
+    }
+}
 @media screen and (max-height:800px) {
     #sec2 .center-page .slide .in-slide img {
         display: none;
-    }
-    #sec2 .center-page .slide:nth-of-type(2) {
-        width: 50%;
     }
     #sec2 .center-page .slide:nth-of-type(2) p {
         border: none;
