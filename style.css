@@ -271,7 +271,7 @@ body {
 }
 
 .in-slide p {
-    font: 500 clamp(10px, 0.9vw, 40px) "Quicksand", serif;
+    font: 500 clamp(5px, 0.9vw, 40px) "Quicksand", serif;
     color: rgb(255, 132, 0);
     line-height: 1.2em;
     width: 80%;
