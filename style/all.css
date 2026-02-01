@@ -1,0 +1,56 @@
+:root {
+    /*--------------------COLORS--------------------*/
+
+    --dark-blue: #09248E;
+    --mid-blue: #476CFF;
+    --secondary-blue: #5577FF; 
+    --light-blue:#6F8AF6;
+    --yellow: #FDBF81;
+    --green: #A9DE8C;
+    --bg-beige: #FFF6E6;
+    --orange: #FF7847;
+    --white: #fff;
+
+    /*--------------------FONTS SIZE--------------------*/
+
+    --vibol-hing-fs: clamp(40px, 8.5vw, 200px);
+    --small-title-fs: clamp(15px, 5vw, 100px);
+    --about-me-fs: clamp(20px, 6.5vw, 100px);
+    --about-me-text-fs: clamp(5px, 2vw, 30px);
+    --school-title-fs: clamp(20px, 5vw, 70px);
+    --school-place-fs: clamp(10px, 2vw, 50px);
+}
+
+/*--------------------FONTS IMPORTS--------------------*/
+
+
+@font-face {
+    font-family: climate-crisis;
+    src: url(../fonts/climate_crisis/ClimateCrisis-Regular-Variable.ttf);
+}
+@font-face {
+    font-family: darker-grotesque-regular;
+    src: url(../fonts/darker_grotesque/DarkerGrotesque-Regular.ttf);
+}
+@font-face {
+    font-family: mochi-pop-one;
+    src: url(../fonts/mochi_pop_one/MochiyPopOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: dongle;
+    src: url(../fonts/dongle/Dongle-Regular.ttf);
+}
+
+/*--------------------GENERAL CLASS STYLES--------------------*/
+
+
+body {
+    width: 100%;
+    background-color: var(--bg-beige);
+    position: relative;
+}
+
+.small-title {
+    font-family: darker-grotesque-regular;
+}
