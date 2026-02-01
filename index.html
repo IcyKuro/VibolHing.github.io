@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style/all.css" />
-    <link rel="stylesheet" href="/style/index.css" />
+    <link rel="stylesheet" href="style/all.css" />
+    <link rel="stylesheet" href="style/index.css" />
     <title>Mon portfolio</title>
   </head>
   <body>
-
-
     <!--SECTION 1-->
-
 
     <section id="sec1">
       <svg
@@ -30,9 +27,7 @@
       <h2 class="small-title" id="but-student">Etudiant en BUT informatique</h2>
     </section>
 
-
     <!--SECTION 2-->
-
 
     <section id="sec2">
       <img class="waves" src="/imgs/waves.svg" />
@@ -54,9 +49,7 @@
       <img class="waves" id="bot-wave" src="/imgs/bottom-waves.svg" />
     </section>
 
-
     <!--SECTION 3-->
-
 
     <section id="sec3">
       <article class="container">
@@ -87,12 +80,57 @@
       </article>
     </section>
 
-    
     <!--SECTION 4-->
 
-
     <section id="sec4">
-        
+      <button class="slider-arrow slider-arrow--left"><</button>
+
+      <div class="slider-viewport">
+        <div class="slider-track">
+          <section class="slider-section hard-skills">
+            <h2>Hard Skills</h2>
+            <p>HTML, CSS, JavaScript, PHP, SQL…</p>
+          </section>
+
+          <section class="slider-section soft-skills">
+            <h1>Soft Skills</h1>
+            <div class="card">
+                <h2>Autonomie</h2>
+                <img src="/imgs/autonomie.svg" alt="une icone">
+            </div>
+            <div class="card">
+                <h2>Autonomie</h2>
+                <img src="/imgs/autonomie.svg" alt="une icone">
+            </div>
+            <div class="card">
+                <h2>Autonomie</h2>
+                <img src="/imgs/autonomie.svg" alt="une icone">
+            </div>
+            <div class="card">
+                <h2>Autonomie</h2>
+                <img src="/imgs/autonomie.svg" alt="une icone">
+            </div>
+            <div class="card">
+                <h2>Autonomie</h2>
+                <img src="/imgs/autonomie.svg" alt="une icone">
+            </div>
+          </section>
+
+          <section class="slider-section softwares">
+            <h2>Outils & Tech</h2>
+            <p>Git, Linux, VS Code, Docker…</p>
+          </section>
+        </div>
+      </div>
+
+      <button class="slider-arrow slider-arrow--right">></button>
+
+      <div class="slider-dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
     </section>
   </body>
+  <script src="/js/slider.js"></script>
 </html>

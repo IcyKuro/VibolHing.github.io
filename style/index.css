@@ -1,219 +1,321 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 section {
-    width: 100%;
-    min-height: 85vh;
+  width: 100%;
+  min-height: 85vh;
 }
 
 /*--------------------SECTION 1--------------------*/
 
-
 #sec1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
 }
 #vibol-hing {
-    font: var(--vibol-hing-fs) climate-crisis;
-    color: var(--dark-blue);
+  font: var(--vibol-hing-fs) climate-crisis;
+  color: var(--dark-blue);
 }
 #but-student {
-    font-size: var(--small-title-fs);
-    color: var(--secondary-blue);
+  font-size: var(--small-title-fs);
+  color: var(--secondary-blue);
 }
 #menu {
-    position: absolute;
-    right: 8%;
-    top: 5%;
-    width: 5%;
-    height: auto;
-    max-width: 50px;
+  position: absolute;
+  right: 8%;
+  top: 5%;
+  width: 5%;
+  height: auto;
+  max-width: 50px;
 }
-
 
 /*--------------------SECTION 2--------------------*/
 
 #sec2 {
-    min-height: 0;
-    display: flex;
-    flex-direction: column; 
-    position: relative;
-    gap: 0;
-    overflow-y: visible;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0;
+  overflow-y: visible;
 }
 .center {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondary-blue);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-blue);
 }
 .waves {
-    width: 100%;
-    display: block; 
-    line-height: 0; 
-    margin-bottom: -1px;
+  width: 100%;
+  display: block;
+  line-height: 0;
+  margin-bottom: -1px;
 }
 .about-me-text {
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: start;
-    gap: 15px;
-    background-color: var(--secondary-blue);
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  gap: 15px;
+  background-color: var(--secondary-blue);
 }
 #about-me {
-    font: var(--about-me-fs) climate-crisis;
-    color: var(--white);
-    text-shadow: -0.1em 0.1em 0px var(--dark-blue);
+  font: var(--about-me-fs) climate-crisis;
+  color: var(--white);
+  text-shadow: -0.1em 0.1em 0px var(--dark-blue);
 }
-.about-me-text p, .about-me-text strong {
-    font: var(--about-me-text-fs) mochi-pop-one;
-    color: var(--white);
+.about-me-text p,
+.about-me-text strong {
+  font: var(--about-me-text-fs) mochi-pop-one;
+  color: var(--white);
 }
 .about-me-text strong {
-    color: var(--yellow);
+  color: var(--yellow);
 }
 
 #bot-wave {
-    margin-top: -1px;
+  margin-top: -1px;
 }
 
 /*--------------------SECTION 3--------------------*/
 
 #sec3 {
-    min-height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-    margin-top: -6em;
-    padding-top: 6em;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  margin-top: -6em;
+  padding-top: 6em;
 }
 
 .container {
-    width: 85%;
-    max-width: 1200px;
-    margin: 4em auto;
+  width: 85%;
+  max-width: 1200px;
+  margin: 4em auto;
 }
 
 .timeline {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .timeline::before {
-    content: "";
-    position: absolute;
+  content: "";
+  position: absolute;
 
-    top: -6rem;
-    left: 2em;
+  top: -6rem;
+  left: 2em;
 
-    width: clamp(6px, 1vw, 30px);
-    height: calc(100% + 12rem);
+  width: clamp(6px, 1vw, 30px);
+  height: calc(100% + 12rem);
 
-    background: linear-gradient(
+  background: linear-gradient(
     to bottom,
     var(--secondary-blue) 0%,
     var(--mid-blue) 5%,
     var(--mid-blue) 100%
-    );
+  );
 
-    @media (min-width: 45em) {
+  @media (min-width: 45em) {
     left: 50%;
     transform: translateX(-50%);
-    }
+  }
 }
 
-
 .timeline-element {
-    position: relative;
-    margin-bottom: 2em;
-    color: #fff;
-    
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  position: relative;
+  margin-bottom: 2em;
+  color: #fff;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 .star {
-    position: absolute;
-    top: 0.6em;
-    left: 2.1em;
-    width: clamp(25px, 6%, 80px);
+  position: absolute;
+  top: 0.6em;
+  left: 2.1em;
+  width: clamp(25px, 6%, 80px);
+  transform: translateX(-50%);
+
+  @media screen and (min-width: 45em) {
+    left: 50%;
     transform: translateX(-50%);
-    
-    @media screen and (min-width: 45em) {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  }
 }
 
 .star img {
-    width: 100%;
+  width: 100%;
 }
 .timeline-content {
-    position: relative;
-    display: block;
-    margin-left: 2.7em;
-    padding: 1em;
-    
-    
-    @media screen and (min-width: 45em) {
-        margin-left: 0;
-        width: calc(50% - 4em);
-    }
+  position: relative;
+  display: block;
+  margin-left: 2.7em;
+  padding: 1em;
+
+  @media screen and (min-width: 45em) {
+    margin-left: 0;
+    width: calc(50% - 4em);
+  }
 }
 
 .timeline-content--flipped {
-    @media screen and (min-width: 45em) {
-        float: right;
-        
-        &:before {
-            left: -1em;
-            right: auto;
-            border-left: none;
-            border-right: 1em solid #282727;
-        }
+  @media screen and (min-width: 45em) {
+    float: right;
+
+    &:before {
+      left: -1em;
+      right: auto;
+      border-left: none;
+      border-right: 1em solid #282727;
     }
+  }
 }
 
 .school-title {
-    margin-bottom: .25em;
-    font: var(--school-title-fs) dongle;
-    color: var(--mid-blue);
-    line-height: 0.7em;
+  margin-bottom: 0.25em;
+  font: var(--school-title-fs) dongle;
+  color: var(--mid-blue);
+  line-height: 0.7em;
 }
 
 .school-place {
-    font: var(--school-place-fs) darker-grotesque-regular;
-    color: var(--mid-blue);
+  font: var(--school-place-fs) darker-grotesque-regular;
+  color: var(--mid-blue);
 
-    &:last-child {
-        margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
-
 
 /*--------------------SECTION 4--------------------*/
 
-
 #sec4 {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column; 
-    position: relative;
-    gap: 0;
-    background-color: var(--light-blue);
+  min-height: 80vh;
+  width: 100%;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0;
+  background: none;
+  transition: background-color 0.6s ease;
 }
+/* Le slider global */
+.section-slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* Fenêtre */
+.slider-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Track horizontal */
+.slider-track {
+  display: flex;
+  width: 300%; /* 3 sections */
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+/* SECTION = SLIDE */
+.slider-section {
+  min-width: 100%;
+  height: 100%;
+  padding: 6rem 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+/* Identité visuelle par section */
+.hard-skills {
+  background-color: var(--light-blue);
+}
+
+.soft-skills {
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1 1 auto;
+}
+.card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.softwares {
+  background-color: var(--green);
+}
+
+/* Flèches */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-arrow--left {
+  left: 1rem;
+}
+
+.slider-arrow--right {
+  right: 1rem;
+}
+
+/* Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--white);
+}
+
