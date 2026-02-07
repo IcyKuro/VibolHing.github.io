@@ -88,8 +88,13 @@
     <!--SECTION 4-->
 
     <section id="sec4">
-      <button class="slider-arrow slider-arrow--left"><</button>
-
+      <div class="slider-nav-wrapper">
+        <nav class="slider-nav">
+          <button class="nav-link" data-index="0">Hard skills</button>
+          <button class="nav-link" data-index="1">Soft skills</button>
+          <button class="nav-link" data-index="2">Softwares</button>
+        </nav>
+      </div>
       <div class="slider-viewport">
         <div class="slider-track">
           <section class="slider-section hard-skills">
@@ -97,8 +102,10 @@
             <p>HTML, CSS, JavaScript, PHP, SQL…</p>
           </section>
 
+          <!-- SOFT SKILLS -->
+
           <section class="slider-section soft-skills">
-            <h1 class="slider-title">Soft Skills</h1>
+            <h1 class="slider-title" id="soft-title">Soft Skills</h1>
 
             <div class="cards-container">
               <div class="card">
@@ -109,7 +116,9 @@
               </div>
               <div class="card">
                 <h2 class="card-title">Travail d'équipe</h2>
-                <div class="card-img"><img src="imgs/travail-equipe.svg" alt="" /></div>
+                <div class="card-img">
+                  <img src="imgs/travail-equipe.svg" alt="" />
+                </div>
               </div>
               <div class="card">
                 <h2 class="card-title">Adaptabilité</h2>
@@ -119,23 +128,159 @@
               </div>
               <div class="card">
                 <h2 class="card-title">Gestion de Projet</h2>
-                <div class="card-img"><img src="imgs/gestion-projet.svg" alt="" /></div>
+                <div class="card-img">
+                  <img src="imgs/gestion-projet.svg" alt="" />
+                </div>
               </div>
               <div class="card">
                 <h2 class="card-title">Gestion de projet</h2>
-                <div class="card-img"><img src="imgs/gestion-projet.svg" alt="" /></div>
+                <div class="card-img">
+                  <img src="imgs/gestion-projet.svg" alt="" />
+                </div>
               </div>
             </div>
           </section>
 
+          <!-- SOFTWARES -->
+
           <section class="slider-section softwares">
-            <h2>Outils & Tech</h2>
-            <p>Git, Linux, VS Code, Docker…</p>
+            <h1 class="slider-title" id="softwares-title">What I use</h1>
+            <div class="title">
+              <h2>Outils</h2>
+            </div>
+            <div class="carousel">
+              <div class="group">
+                <div class="car-card">
+                  <img src="imgs/vscode.png" alt="une icone de VsCode" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/intelliJ.png" alt="une icone de IntelliJ" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/github.png" alt="une icone de github" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/jira.png" alt="une icone de jira" />
+                </div>
+                <div class="car-card">
+                  <img
+                    src="imgs/gantt-project.png"
+                    alt="une icone de gantt-project"
+                  />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/figma.svg" alt="une icone de figma" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/xampp.svg" alt="une icone de xampp" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/docker.png" alt="une icone de docker" />
+                </div>
+              </div>
+              <div aria-hidden class="group">
+                <div class="car-card">
+                  <img src="imgs/vscode.png" alt="une icone de VsCode" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/intelliJ.png" alt="une icone de IntelliJ" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/github.png" alt="une icone de github" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/jira.png" alt="une icone de jira" />
+                </div>
+                <div class="car-card">
+                  <img
+                    src="imgs/gantt-project.png"
+                    alt="une icone de gantt-project"
+                  />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/figma.svg" alt="une icone de figma" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/xampp.svg" alt="une icone de xampp" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/docker.png" alt="une icone de docker" />
+                </div>
+              </div>
+            </div>
+            <div class="title">
+              <h2>Langages & Technologies</h2>
+            </div>
+
+            <div class="carousel">
+              <div class="group">
+                <div class="car-card">
+                  <img src="imgs/html.png" alt="une icone de html" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/css.png" alt="une icone de css" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/Js.png" alt="une icone de javascript" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/php.png" alt="une icone de php" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/react.png" alt="une icone de react" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/vite.png" alt="une icone de vite js" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/python.png" alt="une icone de python" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/java.png" alt="une icone de java" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/C.png" alt="une icone de C" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/C-sharp.png" alt="une icone de C#" />
+                </div>
+              </div>
+              <div aria-hidden class="group">
+                <div class="car-card">
+                  <img src="imgs/html.png" alt="une icone de html" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/css.png" alt="une icone de css" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/Js.png" alt="une icone de javascript" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/php.png" alt="une icone de php" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/react.png" alt="une icone de react" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/vite.png" alt="une icone de vite js" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/python.png" alt="une icone de python" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/java.png" alt="une icone de java" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/C.png" alt="une icone de C" />
+                </div>
+                <div class="car-card">
+                  <img src="imgs/C-sharp.png" alt="une icone de C#" />
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </div>
-
-      <button class="slider-arrow slider-arrow--right">></button>
 
       <div class="slider-dots">
         <button class="dot active"></button>

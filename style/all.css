@@ -1,58 +1,60 @@
 :root {
-    /*--------------------COLORS--------------------*/
+  /*--------------------COLORS--------------------*/
 
-    --dark-blue: #09248E;
-    --mid-blue: #476CFF;
-    --secondary-blue: #5577FF; 
-    --light-blue:#6F8AF6;
-    --yellow: #FDBF81;
-    --green: #A9DE8C;
-    --dark-green: #1e842f;
-    --bg-beige: #FFF6E6;
-    --orange: #FF7847;
-    --white: #fff;
+  --dark-blue: #09248e;
+  --mid-blue: #476cff;
+  --secondary-blue: #5577ff;
+  --light-blue: #6f8af6;
+  --yellow: #fdbf81;
+  --green: #a9de8c;
+  --dark-green: #578e39;
+  --bg-beige: #fff6e6;
+  --orange: #ff7847;
+  --white: #fff;
+  --black: #000;
 
-    /*--------------------FONTS SIZE--------------------*/
+  /*--------------------FONTS SIZE--------------------*/
 
-    --vibol-hing-fs: clamp(40px, 8.5vw, 150px);
-    --small-title-fs: clamp(15px, 5vw, 50px);
-    --about-me-fs: clamp(20px, 6.5vw, 100px);
-    --about-me-text-fs: clamp(5px, 2vw, 30px);
-    --school-title-fs: clamp(20px, 5vw, 70px);
-    --school-place-fs: clamp(10px, 2vw, 50px);
-    --skills-title-fs: clamp(35px, 5vw, 70px);
+  --vibol-hing-fs: clamp(40px, 8.5vw, 150px);
+  --small-title-fs: clamp(15px, 5vw, 50px);
+  --about-me-fs: clamp(20px, 6.5vw, 100px);
+  --about-me-text-fs: clamp(5px, 2vw, 30px);
+  --school-title-fs: clamp(20px, 5vw, 70px);
+  --school-place-fs: clamp(10px, 2vw, 50px);
+  --skills-title-fs: clamp(35px, calc(3vw + 1rem), 70px);
+  --card-title-fs: clamp(10px, 1.5vw, 20px);
+  --softwares-title-fs: clamp(15px, 2vw, 30px);
+  --nav-space: clamp(1rem, calc(20vh - 8vw), 12rem);
 }
 
 /*--------------------FONTS IMPORTS--------------------*/
 
+@font-face {
+  font-family: climate-crisis;
+  src: url(../fonts/climate_crisis/ClimateCrisis-Regular-Variable.ttf);
+}
+@font-face {
+  font-family: darker-grotesque-regular;
+  src: url(../fonts/darker_grotesque/DarkerGrotesque-Regular.ttf);
+}
+@font-face {
+  font-family: mochi-pop-one;
+  src: url(../fonts/mochi_pop_one/MochiyPopOne-Regular.ttf);
+}
 
 @font-face {
-    font-family: climate-crisis;
-    src: url(../fonts/climate_crisis/ClimateCrisis-Regular-Variable.ttf);
-}
-@font-face {
-    font-family: darker-grotesque-regular;
-    src: url(../fonts/darker_grotesque/DarkerGrotesque-Regular.ttf);
-}
-@font-face {
-    font-family: mochi-pop-one;
-    src: url(../fonts/mochi_pop_one/MochiyPopOne-Regular.ttf);
-}
-
-@font-face {
-    font-family: dongle;
-    src: url(../fonts/dongle/Dongle-Regular.ttf);
+  font-family: dongle;
+  src: url(../fonts/dongle/Dongle-Regular.ttf);
 }
 
 /*--------------------GENERAL CLASS STYLES--------------------*/
 
-
 body {
-    width: 100%;
-    background-color: var(--bg-beige);
-    position: relative;
+  width: 100%;
+  background-color: var(--bg-beige);
+  position: relative;
 }
 
 .small-title {
-    font-family: darker-grotesque-regular;
+  font-family: darker-grotesque-regular;
 }
