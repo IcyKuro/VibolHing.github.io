@@ -24,7 +24,8 @@
   --skills-title-fs: clamp(35px, calc(3vw + 1rem), 70px);
   --card-title-fs: clamp(10px, 1.5vw, 20px);
   --softwares-title-fs: clamp(15px, 2vw, 30px);
-  --nav-space: clamp(1rem, calc(20vh - 8vw), 12rem);
+  --nav-space: clamp(0rem, calc(20vh - 8vw), 10rem);
+  --sec-top-pad: min(3em, 10vw);
 }
 
 /*--------------------FONTS IMPORTS--------------------*/
