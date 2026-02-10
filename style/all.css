@@ -5,6 +5,8 @@
   --mid-blue: #476cff;
   --secondary-blue: #5577ff;
   --light-blue: #6f8af6;
+  --conduire-blue: #314697;
+  --border-blue: #1F3282;
   --yellow: #fdbf81;
   --green: #a9de8c;
   --dark-green: #578e39;
@@ -12,6 +14,7 @@
   --orange: #ff7847;
   --white: #fff;
   --black: #000;
+  --night-switch: #030836;
 
   /*--------------------FONTS SIZE--------------------*/
 
@@ -21,11 +24,17 @@
   --about-me-text-fs: clamp(5px, 2vw, 30px);
   --school-title-fs: clamp(20px, 5vw, 70px);
   --school-place-fs: clamp(10px, 2vw, 50px);
-  --skills-title-fs: clamp(35px, calc(3vw + 1rem), 70px);
+  --skills-title-fs: clamp(10px, calc(3vw + 1rem), 70px);
   --card-title-fs: clamp(10px, 1.5vw, 20px);
   --softwares-title-fs: clamp(15px, 2vw, 30px);
   --nav-space: clamp(0rem, calc(20vh - 8vw), 10rem);
   --sec-top-pad: min(3em, 10vw);
+
+  --project-title: clamp(2.5rem, 8vw, 7rem);
+  --project-date: clamp(1rem, 3vw, 2.5rem);
+  --project-content-title: clamp(0.8rem, 3vw, 3rem);
+  --project-context-text: clamp(0.4rem, 1.5vw, 2rem);
+  --project-info-text: clamp(0.4rem, 1.5vw, 1.5rem);
 }
 
 /*--------------------FONTS IMPORTS--------------------*/
@@ -42,10 +51,17 @@
   font-family: mochi-pop-one;
   src: url(../fonts/mochi_pop_one/MochiyPopOne-Regular.ttf);
 }
-
 @font-face {
   font-family: dongle;
   src: url(../fonts/dongle/Dongle-Regular.ttf);
+}
+@font-face {
+  font-family: bungee;
+  src: url(../fonts/bungee/Bungee-Regular.ttf);
+}
+@font-face {
+  font-family: fredoka;
+  src: url(../fonts/fredoka/Fredoka-VariableFont.ttf);
 }
 
 /*--------------------GENERAL CLASS STYLES--------------------*/
@@ -59,3 +75,100 @@ body {
 .small-title {
   font-family: darker-grotesque-regular;
 }
+
+
+/*--------------------SCROLLBAR--------------------*/
+
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+/*--------------------CURSOR--------------------*/
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+
+  mix-blend-mode: difference; 
+
+  transform: translate(-50%, -50%);
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  pointer-events: none;
+  
+  mix-blend-mode: difference;
+  
+  transform: translate(-50%, -50%);
+  
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+body.hovering .cursor-outline {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: transparent;
+}
+
+body.hovering .cursor-dot {
+  opacity: 0; 
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-outline {
+    display: none;
+  }
+  body {
+    cursor: auto;
+  }
+}
+
+/*--------------------SMOOTH SCROLL--------------------*/
+
+.lenis {
+  scrollbar-width: none;
+}
+
+.lenis::-webkit-scrollbar {
+  display: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s cubic-bezier(0.5, 0, 0, 1), transform 1.5s cubic-bezier(0.5, 0, 0, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
