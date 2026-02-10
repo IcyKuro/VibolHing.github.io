@@ -123,6 +123,7 @@ section {
 #bot-wave {
   padding: 0;
   width: 120%;
+  margin-left: -4vw;
   margin-top: -0.1em;
   margin-bottom: -0.1em;
   display: block;
