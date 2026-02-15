@@ -14,6 +14,7 @@
   --orange: #ff7847;
   --white: #fff;
   --black: #000;
+  --red: #FF4747;
   --night-switch: #030836;
 
   /*--------------------FONTS SIZE--------------------*/
@@ -21,20 +22,24 @@
   --vibol-hing-fs: clamp(40px, 8.5vw, 150px);
   --small-title-fs: clamp(15px, 5vw, 50px);
   --about-me-fs: clamp(20px, 6.5vw, 100px);
-  --about-me-text-fs: clamp(5px, 2vw, 30px);
+  --about-me-text-fs: clamp(5px, 2vw, 25px);
   --school-title-fs: clamp(20px, 5vw, 70px);
   --school-place-fs: clamp(10px, 2vw, 50px);
+
   --skills-title-fs: clamp(10px, calc(3vw + 1rem), 70px);
-  --card-title-fs: clamp(10px, 1.5vw, 20px);
+  --soft-small-title: clamp(0.8rem, 2vw, 2rem);
+  --card-title-fs: clamp(15px, 2vw, 30px);
   --softwares-title-fs: clamp(15px, 2vw, 30px);
   --nav-space: clamp(0rem, calc(20vh - 8vw), 10rem);
   --sec-top-pad: min(3em, 10vw);
 
-  --project-title: clamp(2.5rem, 8vw, 7rem);
+  --project-title: clamp(1.5rem, 2vw, 2rem);
   --project-date: clamp(1rem, 3vw, 2.5rem);
   --project-content-title: clamp(0.8rem, 3vw, 3rem);
   --project-context-text: clamp(0.4rem, 1.5vw, 2rem);
   --project-info-text: clamp(0.4rem, 1.5vw, 1.5rem);
+
+  --sec5-title: clamp(1.5rem, 4vw, 3rem);
 }
 
 /*--------------------FONTS IMPORTS--------------------*/
@@ -44,8 +49,8 @@
   src: url(../fonts/climate_crisis/ClimateCrisis-Regular-Variable.ttf);
 }
 @font-face {
-  font-family: darker-grotesque-regular;
-  src: url(../fonts/darker_grotesque/DarkerGrotesque-Regular.ttf);
+  font-family: darker-grotesque;
+  src: url(../fonts/darker_grotesque/DarkerGrotesque-VariableFont.ttf);
 }
 @font-face {
   font-family: mochi-pop-one;

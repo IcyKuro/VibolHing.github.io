@@ -1,4 +1,4 @@
-// Init Lenis for smooth scroll
+// Init Lenis
 const lenis = new Lenis({
   duration: 1.5,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -15,6 +15,70 @@ const lineProgress = document.querySelector('.line-progress');
 const timelineWrapper = document.querySelector('.timeline-wrapper');
 const stars = document.querySelectorAll('.star');
 const body = document.body;
+
+const skyContainer = document.querySelector('.night-sky-container');
+let parallaxLayers = [];
+
+function createStarryNight() {
+  if (!skyContainer) return;
+
+  const starCount = 80;
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.classList.add('bg-star');
+    
+
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+
+    const size = Math.random() * 2 + 1;
+
+    const duration = Math.random() * 3 + 2;
+
+    star.style.left = `${x}%`;
+    star.style.top = `${y}%`;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.setProperty('--twinkle-duration', `${duration}s`);
+
+    skyContainer.appendChild(star);
+  }
+
+  const layers = [
+    { count: 15, speed: 0.1, sizeMax: 4 }, 
+    { count: 8, speed: 0.25, sizeMax: 6 } 
+  ];
+
+  layers.forEach((layerConfig, index) => {
+    const layerDiv = document.createElement('div');
+    layerDiv.classList.add('shooting-star-layer');
+    layerDiv.setAttribute('data-speed', layerConfig.speed);
+    
+    for (let i = 0; i < layerConfig.count; i++) {
+      const pStar = document.createElement('div');
+      pStar.classList.add('parallax-star');
+      
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const size = Math.random() * layerConfig.sizeMax + 2;
+
+      pStar.style.left = `${x}%`;
+      pStar.style.top = `${y}%`;
+      pStar.style.width = `${size}px`;
+      pStar.style.height = `${size}px`;
+      pStar.style.opacity = Math.random() * 0.5 + 0.3;
+
+      layerDiv.appendChild(pStar);
+    }
+    
+    skyContainer.appendChild(layerDiv);
+    parallaxLayers.push(layerDiv);
+  });
+}
+
+createStarryNight();
+
+
 function updateTimelineScroll() {
   if (!section3 || !lineProgress || !timelineWrapper) return;
 
@@ -30,7 +94,6 @@ function updateTimelineScroll() {
   stars.forEach(star => {
     const starRect = star.getBoundingClientRect();
     const starPositionInWrapper = starRect.top - rect.top;
-
     if (currentLineHeight >= starPositionInWrapper + (starRect.height / 2)) {
       star.classList.add('active');
     } else {
@@ -38,8 +101,7 @@ function updateTimelineScroll() {
     }
   });
 
-  /* NIGHT MODE SWITCH */
-  const triggerPointStart = windowHeight * 0.2;
+  const triggerPointStart = windowHeight * 0.1; 
   const startNight = sectionRect.top < triggerPointStart;
   const triggerPointEnd = windowHeight * 0.1;
   const endNight = sectionRect.bottom > triggerPointEnd;
@@ -54,6 +116,17 @@ function updateTimelineScroll() {
 function raf(time) {
   lenis.raf(time);
   updateTimelineScroll();
+
+  const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+  const sectionRect = section3.getBoundingClientRect();
+  if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+      parallaxLayers.forEach(layer => {
+        const speed = parseFloat(layer.getAttribute('data-speed'));
+        layer.style.transform = `translateY(${scrollY * speed * -1}px)`;
+      });
+  }
+
   requestAnimationFrame(raf);
 }
 
