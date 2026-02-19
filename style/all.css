@@ -3,7 +3,7 @@
 
   --dark-blue: #09248e;
   --mid-blue: #476cff;
-  --secondary-blue: #5577ff;
+  --secondary-blue: #586BFF;
   --light-blue: #6f8af6;
   --conduire-blue: #314697;
   --border-blue: #1F3282;
@@ -21,7 +21,7 @@
 
   --vibol-hing-fs: clamp(40px, 8.5vw, 150px);
   --small-title-fs: clamp(15px, 5vw, 50px);
-  --about-me-fs: clamp(20px, 6.5vw, 100px);
+  --about-me-fs: clamp(10px, 4vw, 40px);
   --about-me-text-fs: clamp(5px, 2vw, 25px);
   --school-title-fs: clamp(20px, 5vw, 70px);
   --school-place-fs: clamp(10px, 2vw, 50px);
@@ -67,6 +67,10 @@
 @font-face {
   font-family: fredoka;
   src: url(../fonts/fredoka/Fredoka-VariableFont.ttf);
+}
+@font-face {
+  font-family: chillax;
+  src: url(../fonts/chillax/Chillax-Variable.ttf);
 }
 
 /*--------------------GENERAL CLASS STYLES--------------------*/
