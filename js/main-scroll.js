@@ -10,6 +10,35 @@ const lenis = new Lenis({
   touchMultiplier: 2,
 });
 
+// ── Parallaxe hero (mouvement souris) ──────────
+const heroSection  = document.querySelector('#sec1');
+const heroLayers   = document.querySelectorAll('#sec1 .parallax-layer');
+let heroMouseX = 0, heroMouseY = 0;
+let heroCurrentX = 0, heroCurrentY = 0;
+
+if (heroSection) {
+  document.addEventListener('mousemove', (e) => {
+    // Centre normalisé : -0.5 → +0.5
+    heroMouseX = e.clientX / window.innerWidth  - 0.5;
+    heroMouseY = e.clientY / window.innerHeight - 0.5;
+  });
+}
+
+function updateHeroParallax() {
+  if (!heroSection) return;
+
+  heroCurrentX += (heroMouseX - heroCurrentX) * 0.06;
+  heroCurrentY += (heroMouseY - heroCurrentY) * 0.06;
+
+  heroLayers.forEach(layer => {
+    const speed = parseFloat(layer.dataset.speed) || 0.04;
+    const dx = heroCurrentX * window.innerWidth  * speed;
+    const dy = heroCurrentY * window.innerHeight * speed;
+    // Utilise translate3d sans will-change déclaré en CSS
+    layer.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+  });
+}
+
 const section3 = document.querySelector('#sec3');
 const lineProgress = document.querySelector('.line-progress');
 const timelineWrapper = document.querySelector('.timeline-wrapper');
@@ -116,6 +145,7 @@ function updateTimelineScroll() {
 function raf(time) {
   lenis.raf(time);
   updateTimelineScroll();
+  updateHeroParallax()
 
   const scrollY = window.scrollY || document.documentElement.scrollTop;
 

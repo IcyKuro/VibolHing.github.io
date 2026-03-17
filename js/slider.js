@@ -3,7 +3,7 @@ const track = document.querySelector('.slider-track');
 const sections = Array.from(document.querySelectorAll('.slider-section'));
 const navLinks = Array.from(document.querySelectorAll('.nav-link'));
 const dots = Array.from(document.querySelectorAll('.dot'));
-const sec4 = document.getElementById('sec4');
+const sec5 = document.getElementById('sec5');
 
 let currentIndex = 0;
 let isDragging = false;
@@ -15,8 +15,8 @@ function updateUI() {
   navLinks.forEach((link, i) => link.classList.toggle('active', i === currentIndex));
   dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
 
-  sec4.classList.remove('active-0', 'active-1', 'active-2');
-  sec4.classList.add(`active-${currentIndex}`);
+  sec5.classList.remove('active-0', 'active-1', 'active-2');
+  sec5.classList.add(`active-${currentIndex}`);
 }
 
 function goToSection(index) {

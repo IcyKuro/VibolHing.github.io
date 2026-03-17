@@ -11,22 +11,206 @@
     <!--SECTION 1-->
 
     <section id="sec1">
+      <!-- Menu burger -->
       <svg
         id="menu"
         xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
         viewBox="0 0 50 50"
-        style="fill: #1845fa"
+        style="fill: #1a1a2e"
       >
         <path
           d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
-        ></path>
+        />
       </svg>
-      <h1 id="vibol-hing" class="reveal">Vibol HING</h1>
-      <h2 class="small-title reveal delay-1" id="but-student">
-        Etudiant en BUT informatique 2
-      </h2>
+
+      <!-- Couche profonde (lente) -->
+      <div class="parallax-layer" data-speed="0.018" aria-hidden="true">
+        <span class="bg-blob bg-blob--circle"></span>
+        <span class="bg-blob bg-blob--ring"></span>
+      </div>
+
+      <!-- Couche milieu -->
+      <div class="parallax-layer" data-speed="0.045" aria-hidden="true">
+        <span class="p-item p-smiley p-sm1">
+          <svg
+            viewBox="0 0 12 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#a1)">
+              <path
+                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
+                stroke="currentColor"
+                stroke-width="1"
+              />
+              <line
+                x1="5.767"
+                y1="3.049"
+                x2="4.72"
+                y2="6.314"
+                stroke="currentColor"
+              />
+              <line
+                x1="8.386"
+                y1="3.889"
+                x2="7.339"
+                y2="7.154"
+                stroke="currentColor"
+              />
+              <path
+                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
+                stroke="currentColor"
+                stroke-linecap="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="a1">
+                <rect width="12" height="13" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+        <span class="p-item p-smiley p-sm2">
+          <svg
+            viewBox="0 0 12 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#a2)">
+              <path
+                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
+                stroke="currentColor"
+                stroke-width="1"
+              />
+              <line
+                x1="5.767"
+                y1="3.049"
+                x2="4.72"
+                y2="6.314"
+                stroke="currentColor"
+              />
+              <line
+                x1="8.386"
+                y1="3.889"
+                x2="7.339"
+                y2="7.154"
+                stroke="currentColor"
+              />
+              <path
+                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
+                stroke="currentColor"
+                stroke-linecap="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="a2">
+                <rect width="12" height="13" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+        <span class="p-item p-smiley p-sm3">
+          <svg
+            viewBox="0 0 12 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#a3)">
+              <path
+                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
+                stroke="currentColor"
+                stroke-width="1"
+              />
+              <line
+                x1="5.767"
+                y1="3.049"
+                x2="4.72"
+                y2="6.314"
+                stroke="currentColor"
+              />
+              <line
+                x1="8.386"
+                y1="3.889"
+                x2="7.339"
+                y2="7.154"
+                stroke="currentColor"
+              />
+              <path
+                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
+                stroke="currentColor"
+                stroke-linecap="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="a3">
+                <rect width="12" height="13" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+        <span class="p-item p-star p-st1">★</span>
+        <span class="p-item p-star p-st2">✦</span>
+        <span class="p-item p-star p-st3">★</span>
+      </div>
+
+      <!-- Couche avant (rapide) -->
+      <div class="parallax-layer" data-speed="0.09" aria-hidden="true">
+        <span class="p-item p-star p-st4">✦</span>
+        <span class="p-item p-smiley p-sm4">
+          <svg
+            viewBox="0 0 12 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#a4)">
+              <path
+                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
+                stroke="currentColor"
+                stroke-width="1"
+              />
+              <line
+                x1="5.767"
+                y1="3.049"
+                x2="4.72"
+                y2="6.314"
+                stroke="currentColor"
+              />
+              <line
+                x1="8.386"
+                y1="3.889"
+                x2="7.339"
+                y2="7.154"
+                stroke="currentColor"
+              />
+              <path
+                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
+                stroke="currentColor"
+                stroke-linecap="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="a4">
+                <rect width="12" height="13" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Contenu principal -->
+      <div class="hero-content">
+        <p class="hero-role reveal">Étudiant · BUT Informatique 2</p>
+        <h1 id="vibol-hing" class="reveal">Vibol HING</h1>
+        <p class="hero-sub reveal delay-1" id="but-student">
+          Développeur Full Stack en devenir,<br />entre créativité et logique.
+        </p>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">scroll</span>
+      </div>
     </section>
 
     <!--SECTION 2-->
@@ -35,7 +219,16 @@
       <!-- <img class="waves" src="imgs/waves.svg" alt="une image de vague" /> -->
       <div class="center">
         <div class="about-me-text">
-          <h1 id="about-me" class="reveal delay-1">A propos de moi</h1>
+          <h1 id="about-me" class="reveal delay-1">
+            A propos de
+            <strong
+              style="
+                color: var(--light-blue);
+                font-family: mochi-pop-one, sans-serif;
+              "
+              >moi</strong
+            >
+          </h1>
           <p class="reveal delay-2">
             Passionné par la programmation et le développement, j'aspire à
             devenir un <strong>Développeur Full Stack</strong> épanoui, capable
@@ -59,6 +252,11 @@
     <!--SECTION 3-->
 
     <section id="sec3">
+      <div class="sec3-header">
+        <h2 class="sec3-title">Mon <em>parcours</em></h2>
+        <p class="sec3-subtitle">Les étapes qui ont forgé mon profil.</p>
+      </div>
+
       <article class="container">
         <div class="timeline-wrapper">
           <div class="line-bg"></div>
@@ -69,21 +267,37 @@
                 <img src="imgs/star.svg" alt="étoile" />
               </span>
               <div class="timeline-content">
-                <h2 class="school-title">BUT Informatique</h2>
-                <p class="school-place">
-                  IUT Gustave Eiffel - CHAMPS-SUR-MARNE (77420)
-                </p>
+                <div class="tc-header">
+                  <span class="timeline-tag">2023 — Aujourd'hui</span>
+                  <span class="tc-stars-deco" aria-hidden="true">★ ★</span>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-year-ghost" aria-hidden="true">2023</span>
+                  <h2 class="school-title">BUT Informatique</h2>
+                  <p class="school-place">
+                    IUT Gustave Eiffel · Champs-sur-Marne
+                  </p>
+                </div>
               </div>
             </li>
+
             <li class="timeline-element reveal delay-1">
               <span class="star">
                 <img src="imgs/star.svg" alt="étoile" />
               </span>
               <div class="timeline-content timeline-content--flipped">
-                <h2 class="school-title">
-                  Baccalauréat Général : Mention Très bien
-                </h2>
-                <p class="school-place">Lycée Henri Moissan - MEAUX (77100)</p>
+                <div class="tc-header">
+                  <span class="timeline-tag">2023</span>
+                  <span class="tc-stars-deco" aria-hidden="true">★ ★</span>
+                </div>
+                <div class="tc-body">
+                  <span class="tc-year-ghost" aria-hidden="true">2023</span>
+                  <h2 class="school-title">
+                    Baccalauréat Général<br />
+                    <span class="mention">Mention Très Bien</span>
+                  </h2>
+                  <p class="school-place">Lycée Henri Moissan · Meaux</p>
+                </div>
               </div>
             </li>
           </ol>
@@ -91,9 +305,206 @@
       </article>
     </section>
 
-    <!--SECTION 4-->
+    <!-- ================================================
+     SECTION 4 — Compétences BUT Informatique
+     Lier : <link rel="stylesheet" href="css/sec4.css">
+     Remplacer les href="#" par vos URLs de pages annexes
+     ================================================ -->
 
     <section id="sec4">
+      <div class="sec4-header">
+        <h2 class="sec4-title">Mes <em>compétences</em></h2>
+        <p class="sec4-subtitle">
+          Clique sur une compétence pour en savoir plus.
+        </p>
+      </div>
+
+      <div class="sec4-grid">
+        <!-- Réaliser -->
+        <a href="#" class="comp-card" data-comp="realiser">
+          <div class="comp-card__head">
+            <span class="comp-card__star" aria-hidden="true">★</span>
+            <h3 class="comp-card__name">Réaliser</h3>
+          </div>
+          <p class="comp-card__pitch">
+            Concevoir, coder, tester et intégrer des solutions logicielles pour
+            un client.
+          </p>
+          <ul class="comp-card__tags">
+            <li>POO</li>
+            <li>Git & GitHub</li>
+            <li>Tests unitaires</li>
+            <li>SQL / NoSQL</li>
+          </ul>
+          <span class="comp-card__icon" aria-label="Voir la page">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Optimiser -->
+        <a href="#" class="comp-card comp-card--alt" data-comp="optimiser">
+          <div class="comp-card__head">
+            <span class="comp-card__star" aria-hidden="true">★</span>
+            <h3 class="comp-card__name">Optimiser</h3>
+          </div>
+          <p class="comp-card__pitch">
+            Améliorer les performances d'applications selon des critères précis.
+          </p>
+          <ul class="comp-card__tags">
+            <li>Complexité algorithmique</li>
+            <li>Structures de données</li>
+            <li>Graphes</li>
+          </ul>
+          <span class="comp-card__icon" aria-label="Voir la page">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Administrer -->
+        <a href="#" class="comp-card" data-comp="administrer">
+          <div class="comp-card__head">
+            <span class="comp-card__star" aria-hidden="true">★</span>
+            <h3 class="comp-card__name">Administrer</h3>
+          </div>
+          <p class="comp-card__pitch">
+            Déployer et maintenir des infrastructures, services et réseaux.
+          </p>
+          <ul class="comp-card__tags">
+            <li>Linux / Bash</li>
+            <li>Réseaux TCP/IP</li>
+            <li>SSH & sécurité</li>
+          </ul>
+          <span class="comp-card__icon" aria-label="Voir la page">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Gérer -->
+        <a href="#" class="comp-card comp-card--alt" data-comp="gerer">
+          <div class="comp-card__head">
+            <span class="comp-card__star" aria-hidden="true">★</span>
+            <h3 class="comp-card__name">Gérer</h3>
+          </div>
+          <p class="comp-card__pitch">
+            Concevoir et exploiter les données pour le pilotage d'une
+            organisation.
+          </p>
+          <ul class="comp-card__tags">
+            <li>Modélisation UML</li>
+            <li>PostgreSQL</li>
+            <li>RGPD</li>
+          </ul>
+          <span class="comp-card__icon" aria-label="Voir la page">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Conduire -->
+        <a href="#" class="comp-card" data-comp="conduire">
+          <div class="comp-card__head">
+            <span class="comp-card__star" aria-hidden="true">★</span>
+            <h3 class="comp-card__name">Conduire</h3>
+          </div>
+          <p class="comp-card__pitch">
+            Organiser et piloter un projet informatique, méthodes agiles
+            incluses.
+          </p>
+          <ul class="comp-card__tags">
+            <li>Scrum / Kanban</li>
+            <li>Cahier des charges</li>
+            <li>Diagramme de Gantt</li>
+            <li>Jira / Trello</li>
+          </ul>
+          <span class="comp-card__icon" aria-label="Voir la page">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Collaborer -->
+        <a href="#" class="comp-card comp-card--alt" data-comp="collaborer">
+          <div class="comp-card__head">
+            <span class="comp-card__star" aria-hidden="true">★</span>
+            <h3 class="comp-card__name">Collaborer</h3>
+          </div>
+          <p class="comp-card__pitch">
+            Travailler efficacement au sein d'une équipe pluridisciplinaire.
+          </p>
+          <ul class="comp-card__tags">
+            <li>Code review</li>
+            <li>Communication</li>
+            <li>Documentation</li>
+            <li>Droit du numérique</li>
+          </ul>
+          <span class="comp-card__icon" aria-label="Voir la page">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!--SECTION 5-->
+
+    <section id="sec5">
       <div class="slider-nav-wrapper">
         <nav class="slider-nav">
           <button class="nav-link" data-index="0">Hard skills</button>
@@ -420,14 +831,12 @@
       </div>
     </section>
 
-    <!-- SECTION 5 -->
+    <!-- SECTION 6 -->
 
-    <section id="sec5">
-      <div class="sec5-header">
-        <h1 id="sec5-title">Mes projets</h1>
-        <h2>
-          Des solutions créatives qui marquent la différence
-        </h2>
+    <section id="sec6">
+      <div class="sec6-header">
+        <h1 id="sec6-title">Mes projets</h1>
+        <h2>Des solutions créatives qui marquent la différence</h2>
       </div>
       <div class="projects-grid">
         <article class="project-card">

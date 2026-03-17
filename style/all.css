@@ -15,13 +15,13 @@
   --white: #fff;
   --black: #000;
   --red: #FF4747;
-  --night-switch: #030836;
+  --main-dark-blue: #1A1A2E;
 
   /*--------------------FONTS SIZE--------------------*/
 
   --vibol-hing-fs: clamp(40px, 8.5vw, 150px);
   --small-title-fs: clamp(15px, 5vw, 50px);
-  --about-me-fs: clamp(10px, 4vw, 40px);
+  --about-me-fs: clamp(20px, 5vw, 50px);
   --about-me-text-fs: clamp(5px, 2vw, 25px);
   --school-title-fs: clamp(20px, 5vw, 70px);
   --school-place-fs: clamp(10px, 2vw, 50px);

@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibol HING — Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="style/all.css" />
+    <link rel="stylesheet" href="style/style2.css" />
+  </head>
+  <body>
+    <div id="cur"></div>
+    <div id="curO"></div>
+
+    <!-- ── NAV OVERLAY ───────────────────────────────────────── -->
+    <nav class="nav-overlay" id="navOverlay">
+      <ul class="nav-overlay__list">
+        <li><a href="#sec2" onclick="closeNav()">À propos</a></li>
+        <li><a href="#sec3" onclick="closeNav()">Parcours</a></li>
+        <li><a href="#sec4" onclick="closeNav()">Compétences</a></li>
+        <li><a href="#sec5" onclick="closeNav()">Skills</a></li>
+        <li><a href="#sec6" onclick="closeNav()">Projets</a></li>
+      </ul>
+    </nav>
+
+    <!-- ====================================================
+       TOPBAR (définie dans hero.css)
+  ===================================================== -->
+    <header class="topbar" id="topbar">
+      <div class="topbar__left">
+        <div class="topbar__circle" aria-hidden="true"></div>
+      </div>
+
+      <span class="topbar__date">(2025-2026)</span>
+
+      <div class="topbar__right">
+        <button
+          class="topbar__burger"
+          id="menuBtn"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ====================================================
+       SECTION 1 — HERO SECTION
+  ===================================================== -->
+    <section id="sec1">
+      <div class="hero-content">
+        <svg
+          class="hero-sparkle"
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5em"
+          height="1.5em"
+          viewBox="0 0 21 32"
+          fill="none"
+        >
+          <path
+            d="M11.8572 6.50493L11.7909 7.89918C11.6103 11.6981 14.0505 15.128 17.6986 16.203
+           L2.88605 13.4145
+           C6.67714 13.74 10.1993 11.4311 11.413 7.8248L11.8572 6.50493
+           Z
+           M8.73188 23.1132L9.17711 21.7903
+           C10.3902 18.1857 13.9106 15.8779 17.6999 16.203
+           L2.88733 13.4145
+           C6.53726 14.4898 8.97875 17.9214 8.79803 21.7221L8.73188 23.1132Z"
+            fill="#1837E8"
+          />
+        </svg>
+
+        <svg
+          class="hero-sparkle sparkle2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 21 32"
+          fill="none"
+        >
+          <path
+            d="M11.8572 6.50493L11.7909 7.89918C11.6103 11.6981 14.0505 15.128 17.6986 16.203
+           L2.88605 13.4145
+           C6.67714 13.74 10.1993 11.4311 11.413 7.8248L11.8572 6.50493
+           Z
+           M8.73188 23.1132L9.17711 21.7903
+           C10.3902 18.1857 13.9106 15.8779 17.6999 16.203
+           L2.88733 13.4145
+           C6.53726 14.4898 8.97875 17.9214 8.79803 21.7221L8.73188 23.1132Z"
+            fill="#1837E8"
+          />
+        </svg>
+
+        <span aria-hidden="true">
+          <img src="imgs/smiley.svg" id="smiley" alt="une icone de smiley" />
+        </span>
+
+        <h1 class="hero-name">Vibol HING</h1>
+        <p class="hero-subtitle">Etudiant en BUT informatique 2</p>
+      </div>
+    </section>
+
+    <!-- ── MARQUEE ──────────────────────────────────────────── -->
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Full Stack Developer</span><span class="sep"> · </span>
+        <span>BUT Informatique</span><span class="sep"> · </span>
+        <span>React</span><span class="sep"> · </span> <span>Node.js</span
+        ><span class="sep"> · </span> <span>PHP</span
+        ><span class="sep"> · </span> <span>Java</span
+        ><span class="sep"> · </span> <span>Docker</span
+        ><span class="sep"> · </span> <span>Figma</span
+        ><span class="sep"> · </span>
+        <!-- Dupliqué pour la boucle infinie -->
+        <span>Full Stack Developer</span><span class="sep"> · </span>
+        <span>BUT Informatique</span><span class="sep"> · </span>
+        <span>React</span><span class="sep"> · </span> <span>Node.js</span
+        ><span class="sep"> · </span> <span>PHP</span
+        ><span class="sep"> · </span> <span>Java</span
+        ><span class="sep"> · </span> <span>Docker</span
+        ><span class="sep"> · </span> <span>Figma</span
+        ><span class="sep"> · </span>
+      </div>
+    </div>
+
+    <!-- ====================================================
+       SECTION 2 — À PROPOS
+  ===================================================== -->
+    <section id="sec2">
+      <span class="sec2-ghost" aria-hidden="true">About</span>
+      <div class="sec2-inner">
+        <div>
+          <p class="sec2-eyebrow rv">À propos</p>
+          <h2 class="sec2-title rv d1">A propos<br />de moi</h2>
+          <div class="sec2-stats rv d2">
+            <div class="sec2-stat">
+              <span class="sec2-stat__num">3+</span>
+              <span class="sec2-stat__lbl">Ans de code</span>
+            </div>
+            <div class="sec2-stat">
+              <span class="sec2-stat__num">3+</span>
+              <span class="sec2-stat__lbl">Projets</span>
+            </div>
+            <div class="sec2-stat">
+              <span class="sec2-stat__num">6</span>
+              <span class="sec2-stat__lbl">Compétences BUT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec2-card rv d2">
+          <p>
+            Passionné par la programmation et le développement, j'aspire à
+            devenir un <strong>Développeur Full Stack</strong> épanoui, capable
+            de mener à bien tout projet innovant et coopératif.
+          </p>
+          <p>
+            Ce portfolio présente un aperçu de mes réalisations, (projets et
+            expérimentations). Il reflète mon évolution, mon intérêt pour
+            l'informatique et mon envie de contribuer à des projets concrets.
+          </p>
+          <span class="sec2-card__sig">— Vibol HING</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+     SECTION 3 — PARCOURS
+===================================================== -->
+    <section id="sec3">
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">Parcours</p>
+        <h2 class="sec-title rv d1">Mon <em style="font-style:italic">parcours</em></h2>
+        <p class="sec-subtitle rv d2">Les étapes qui ont forgé mon profil.</p>
+      </div>
+
+      <div class="tl-wrapper" id="tlWrapper">
+        <div class="tl-track"    aria-hidden="true"></div>
+        <div class="tl-progress" id="tlProgress" aria-hidden="true"></div>
+
+        <ol class="tl-list">
+
+          <li class="tl-item">
+            <div class="tl-void" aria-hidden="true"></div>
+
+            <div class="tl-node">
+              <div class="tl-star" aria-hidden="true">
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 0C10 0 10.8 6.5 13 9C15.2 11.5 20 10 20 10C20 10 15.2 10.8 13 13C10.8 15.2 10 20 10 20C10 20 9.2 15.2 7 13C4.8 10.8 0 10 0 10C0 10 4.8 9.2 7 9C9.2 8.8 10 0 10 0Z"/>
+                </svg>
+              </div>
+            </div>
+
+            <article class="tl-card">
+              <div class="tl-bw tl-bw-1"><div class="tl-bi tl-brick-head">
+                <p class="tl-period">2023</p>
+                <span class="tl-stars-deco" aria-hidden="true">★ ★</span>
+              </div></div>
+              <div class="tl-bw tl-bw-2"><div class="tl-bi tl-brick-body">
+                <span class="tl-ghost-yr" aria-hidden="true">23</span>
+                <h2 class="tl-school">Baccalauréat Général</h2>
+                <div class="tl-badge-wrap">
+                  <span class="tl-badge">Mention Très Bien</span>
+                </div>
+              </div></div>
+              <div class="tl-bw tl-bw-3"><div class="tl-bi tl-brick-foot">
+                <p class="tl-place">Lycée Henri Moissan · Meaux</p>
+              </div></div>
+            </article>
+          </li>
+
+          <li class="tl-item">
+            <article class="tl-card">
+              <div class="tl-bw tl-bw-1"><div class="tl-bi tl-brick-head">
+                <p class="tl-period">2023 — 2024</p>
+                <span class="tl-stars-deco" aria-hidden="true">★ ★</span>
+              </div></div>
+              <div class="tl-bw tl-bw-2"><div class="tl-bi tl-brick-body">
+                <span class="tl-ghost-yr" aria-hidden="true">23</span>
+                <h2 class="tl-school">BUT Informatique<br>Année 1</h2>
+              </div></div>
+              <div class="tl-bw tl-bw-3"><div class="tl-bi tl-brick-foot">
+                <p class="tl-place">IUT Gustave Eiffel · Champs-sur-Marne</p>
+              </div></div>
+            </article>
+
+            <div class="tl-node">
+              <div class="tl-star" aria-hidden="true">
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 0C10 0 10.8 6.5 13 9C15.2 11.5 20 10 20 10C20 10 15.2 10.8 13 13C10.8 15.2 10 20 10 20C10 20 9.2 15.2 7 13C4.8 10.8 0 10 0 10C0 10 4.8 9.2 7 9C9.2 8.8 10 0 10 0Z"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="tl-void" aria-hidden="true"></div>
+          </li>
+
+          <li class="tl-item">
+            <div class="tl-void" aria-hidden="true"></div>
+
+            <div class="tl-node">
+              <div class="tl-star" aria-hidden="true">
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 0C10 0 10.8 6.5 13 9C15.2 11.5 20 10 20 10C20 10 15.2 10.8 13 13C10.8 15.2 10 20 10 20C10 20 9.2 15.2 7 13C4.8 10.8 0 10 0 10C0 10 4.8 9.2 7 9C9.2 8.8 10 0 10 0Z"/>
+                </svg>
+              </div>
+            </div>
+
+            <article class="tl-card">
+              <div class="tl-bw tl-bw-1"><div class="tl-bi tl-brick-head">
+                <p class="tl-period">2024 — Aujourd'hui</p>
+                <span class="tl-stars-deco" aria-hidden="true">★ ★</span>
+              </div></div>
+              <div class="tl-bw tl-bw-2"><div class="tl-bi tl-brick-body">
+                <span class="tl-ghost-yr" aria-hidden="true">24</span>
+                <h2 class="tl-school">BUT Informatique<br>Année 2</h2>
+              </div></div>
+              <div class="tl-bw tl-bw-3"><div class="tl-bi tl-brick-foot">
+                <p class="tl-place">IUT Gustave Eiffel · Champs-sur-Marne</p>
+              </div></div>
+            </article>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================================================
+       SECTION 4 — COMPÉTENCES BUT
+  ===================================================== -->
+    <section id="sec4">
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">BUT Informatique</p>
+        <h2 class="sec-title rv d1">
+          Mes <em style="font-style: italic">compétences</em>
+        </h2>
+        <p class="sec-subtitle rv d2">
+          Clique sur une compétence pour en savoir plus.
+        </p>
+      </div>
+
+      <div class="comp-grid">
+        <a href="#" class="comp-card rv d1">
+          <div class="cc-num">01</div>
+          <h3 class="cc-name">Réaliser</h3>
+          <p class="cc-pitch">
+            Concevoir, coder, tester et intégrer des solutions logicielles pour
+            un client.
+          </p>
+          <ul class="cc-tags">
+            <li class="cc-tag">POO</li>
+            <li class="cc-tag">Git &amp; GitHub</li>
+            <li class="cc-tag">Tests unitaires</li>
+            <li class="cc-tag">SQL / NoSQL</li>
+          </ul>
+          <span class="cc-arrow"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" /></svg>
+            </span>
+        </a>
+
+        <a href="#" class="comp-card rv d2">
+          <div class="cc-num">02</div>
+          <h3 class="cc-name">Optimiser</h3>
+          <p class="cc-pitch">
+            Améliorer les performances d'applications selon des critères précis.
+          </p>
+          <ul class="cc-tags">
+            <li class="cc-tag">Complexité algorithmique</li>
+            <li class="cc-tag">Structures de données</li>
+            <li class="cc-tag">Graphes</li>
+          </ul>
+          <span class="cc-arrow"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" /></svg>
+            </span>
+        </a>
+
+        <a href="#" class="comp-card rv d3">
+          <div class="cc-num">03</div>
+          <h3 class="cc-name">Administrer</h3>
+          <p class="cc-pitch">
+            Déployer et maintenir des infrastructures, services et réseaux.
+          </p>
+          <ul class="cc-tags">
+            <li class="cc-tag">Linux / Bash</li>
+            <li class="cc-tag">Réseaux TCP/IP</li>
+            <li class="cc-tag">SSH &amp; sécurité</li>
+          </ul>
+          <span class="cc-arrow"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" /></svg>
+            </span>
+        </a>
+
+        <a href="#" class="comp-card rv d1">
+          <div class="cc-num">04</div>
+          <h3 class="cc-name">Gérer</h3>
+          <p class="cc-pitch">
+            Concevoir et exploiter les données pour le pilotage d'une
+            organisation.
+          </p>
+          <ul class="cc-tags">
+            <li class="cc-tag">Modélisation UML</li>
+            <li class="cc-tag">PostgreSQL</li>
+            <li class="cc-tag">RGPD</li>
+          </ul>
+          <span class="cc-arrow"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" /></svg>
+            </span>
+        </a>
+
+        <a href="#" class="comp-card rv d2">
+          <div class="cc-num">05</div>
+          <h3 class="cc-name">Conduire</h3>
+          <p class="cc-pitch">
+            Organiser et piloter un projet informatique, méthodes agiles
+            incluses.
+          </p>
+          <ul class="cc-tags">
+            <li class="cc-tag">Scrum / Kanban</li>
+            <li class="cc-tag">Cahier des charges</li>
+            <li class="cc-tag">Diagramme de Gantt</li>
+            <li class="cc-tag">Jira / Trello</li>
+          </ul>
+          <span class="cc-arrow"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" /></svg>
+            </span>
+        </a>
+
+        <a href="#" class="comp-card rv d3">
+          <div class="cc-num">06</div>
+          <h3 class="cc-name">Collaborer</h3>
+          <p class="cc-pitch">
+            Travailler efficacement au sein d'une équipe pluridisciplinaire.
+          </p>
+          <ul class="cc-tags">
+            <li class="cc-tag">Code review</li>
+            <li class="cc-tag">Communication</li>
+            <li class="cc-tag">Documentation</li>
+            <li class="cc-tag">Droit du numérique</li>
+          </ul>
+          <span class="cc-arrow"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" /></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ====================================================
+       SECTION 5 — SKILLS
+  ===================================================== -->
+    <section id="sec5">
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">Skills</p>
+        <h2 class="sec-title rv d1">Mon environnement</h2>
+      </div>
+
+      <div class="tabs-bar" role="tablist">
+        <button class="tab-btn active" role="tab" data-tab="hard">
+          Hard Skills
+        </button>
+        <button class="tab-btn" role="tab" data-tab="soft">Soft Skills</button>
+        <button class="tab-btn" role="tab" data-tab="sw">Softwares</button>
+      </div>
+
+      <!-- Hard Skills -->
+      <div class="tab-panel active" id="panel-hard">
+        <div class="skill-cloud">
+          <span class="skill-tag xl">HTML</span>
+          <span class="skill-tag xl">CSS</span>
+          <span class="skill-tag xl">JavaScript</span>
+          <span class="skill-tag lg">PHP</span>
+          <span class="skill-tag lg">Java</span>
+          <span class="skill-tag lg">Python</span>
+          <span class="skill-tag lg">C#</span>
+          <span class="skill-tag lg">SQL</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">REST API</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Linux / Bash</span>
+          <span class="skill-tag">UML</span>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="tab-panel" id="panel-soft">
+        <p
+          style="
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: 2rem;
+          "
+        >
+          L'art d'être performant humainement.
+        </p>
+        <div class="soft-grid">
+          <div class="soft-card">
+            <img
+              class="soft-card__img"
+              src="imgs/illustrations/travail_equipe.svg"
+              alt="Travail d'équipe"
+            />
+            <h3 class="soft-card__title">Travail d'équipe</h3>
+          </div>
+          <div class="soft-card">
+            <img
+              class="soft-card__img"
+              src="imgs/illustrations/adaptabilite.svg"
+              alt="Adaptabilité"
+            />
+            <h3 class="soft-card__title">Adaptabilité</h3>
+          </div>
+          <div class="soft-card">
+            <img
+              class="soft-card__img"
+              src="imgs/illustrations/autonomie.svg"
+              alt="Autonomie"
+            />
+            <h3 class="soft-card__title">Autonomie</h3>
+          </div>
+          <div class="soft-card">
+            <img
+              class="soft-card__img"
+              src="imgs/illustrations/gestion_projet.svg"
+              alt="Gestion de projet"
+            />
+            <h3 class="soft-card__title">Gestion de Projet</h3>
+          </div>
+          <div class="soft-card">
+            <img
+              class="soft-card__img"
+              src="imgs/illustrations/communication.svg"
+              alt="Communication"
+            />
+            <h3 class="soft-card__title">Communication</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Softwares -->
+      <div class="tab-panel" id="panel-sw">
+        <p
+          style="
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: 2.4rem;
+          "
+        >
+          Mon environnement technique : là où les projets prennent forme.
+        </p>
+
+        <div class="sw-block">
+          <h3 class="sw-lbl">Outils</h3>
+          <div class="sw-row">
+            <div class="sw-chip">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                style="fill: #fdbf81"
+              >
+                <path
+                  d="M25 2v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 18v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 34v7c0 3.855-3.145 7-7 7s-7-3.145-7-7c0-3.855 3.145-7 7-7H25zM41 9c0 3.855-3.145 7-7 7h-7V2h7C37.855 2 41 5.145 41 9zM34 18A7 7 0 1034 32 7 7 0 1034 18z"
+                /></svg>
+                <span>Figma</span>
+            </div>
+            <div class="sw-chip">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                style="fill: #fdbf81"
+              >
+                <path
+                  d="M46.793 22.09L27.91 3.207C27.11 2.402 26.055 2 25 2s-2.11.402-2.91 1.207l-3.735 3.734 4.622 4.621c1.535-.902 3.535-.707 4.851.609 1.317 1.316 1.508 3.316.607 4.848l4.543 4.543c1.535-.902 3.535-.707 4.851.609 1.562 1.562 1.562 4.093 0 5.656-1.562 1.562-4.094 1.562-5.657 0-1.316-1.317-1.507-3.317-.605-4.848l-4.543-4.544c-.324.192-.664.332-1.019.422v12.285C27.723 31.586 29 33.137 29 35c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.863 1.277-3.414 3-3.86V18.855a3.981 3.981 0 01-2.828-2.028l-4.625-4.472L3.207 22.09C1.598 23.695 1.598 26.305 3.207 27.91l18.882 18.883C22.89 47.597 23.945 48 25 48s2.11-.403 2.91-1.207l18.883-18.883c1.609-1.605 1.609-4.215 0-5.82z"
+                /></svg>
+                <span>Git</span>
+            </div>
+            <div class="sw-chip">
+              <img src="imgs/github.png" alt="Github" /><span>Github</span>
+            </div>
+            <div class="sw-chip">
+              <img src="imgs/docker.png" alt="Docker" /><span>Docker</span>
+            </div>
+            <div class="sw-chip">
+              <img src="imgs/mongodb.png" alt="MongoDB" /><span>MongoDB</span>
+            </div>
+            <div class="sw-chip">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                style="fill: #fdbf81"
+              >
+                <path
+                  d="M41 4H9C6.24 4 4 6.24 4 9v32c0 2.76 2.24 5 5 5h32c2.76 0 5-2.24 5-5V9c0-2.76-2.24-5-5-5zm-20 32c0 1.1-.9 2-2 2h-7c-1.1 0-2-.9-2-2V12c0-1.1.9-2 2-2h7c1.1 0 2 .9 2 2v24zm19-12c0 1.1-.9 2-2 2h-7c-1.1 0-2-.9-2-2V12c0-1.1.9-2 2-2h7c1.1 0 2 .9 2 2v12z"
+                /></svg>
+                <span>Trello</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sw-block">
+          <h3 class="sw-lbl">Langages</h3>
+          <div class="sw-row">
+            <div class="sw-chip">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                style="fill: #fdbf81"
+              >
+                <path
+                  d="M24.5 2C15.8 2 14 6.49 14 9.09V14h10v1H9.09C5.79 15 2 17.6 2 25s3.79 10 7.09 10H15v-6c0-2.2 1.8-4 4-4h12c1.7 0 3-1.3 3-3V9.09C34 5.59 30.7 2 24.5 2zM20 7c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm15 8v7c0 2.2-1.8 4-4 4H19c-1.7 0-3 1.3-3 3v11.91C16 44.41 19.3 48 25.5 48 34.2 48 36 43.51 36 40.91V36H26v-1h14.91C44.21 35 48 32.4 48 25s-3.79-10-7.09-10H35zm-5 24c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"
+                /></svg>
+                <span>Python</span>
+            </div>
+            <div class="sw-chip">
+              <img src="imgs/php.png" alt="PHP" /><span>PHP</span>
+            </div>
+            <div class="sw-chip">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                style="fill: #fdbf81"
+              >
+                <path
+                  d="M45.274 2.325C45.084 2.118 44.817 2 44.536 2H5.464C5.183 2 4.916 2.118 4.726 2.325S4.443 2.81 4.468 3.089l3.52 39.427c.037.412.324.759.722.873l16.01 4.573C24.809 47.987 24.902 48 24.994 48s.185-.013.274-.038l16.024-4.573c.398-.114.685-.461.722-.873l3.518-39.427C45.557 2.81 45.463 2.532 45.274 2.325zM12 29.004l7 1.942V11h4v26l-11-3.051v-4.945zm26.054-7L37 34.25 27 37v-4.601l6.75-1.855.25-3.75L27 28V11h12l-.345 4H31v8l7.054 3z"
+                /></svg>
+                <span>JS</span>
+            </div>
+            <div class="sw-chip">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                style="fill: #fdbf81"
+              >
+                <path
+                  d="M43.84 8.71L40.19 49.08 24.98 53.09 9.81 49.09 6.16 8.71zM35.73 18.14H14.25l.47 5.14h16.08l-.48 5.32-5.35 1.48h-.02l-5.34-1.49-.36-4.12h-5.17l.72 8.16 10.16 2.91.04-.01 10.2-2.91.85-10.47.71-4.01z"
+                /></svg>
+                <span>HTML</span>
+            </div>
+            <div class="sw-chip">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                style="fill: #fdbf81"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M42 6L39 40l-14 4-14-4L8 6zM16.8 28l4 .001.098 2.499L25 31.898l4.102-1.398.297-4.5H20.6l-.203-4H29.6l.298-4H16.1l-.3-4h18.3l-.5 8-.703 11.5L25 36.102l-7.899-2.602z"
+                /></svg>
+                <span>CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sw-block">
+          <h3 class="sw-lbl">Technologies</h3>
+          <div class="sw-row">
+            <div class="sw-chip">
+              <img src="imgs/react.png" alt="React" /><span>React</span>
+            </div>
+            <div class="sw-chip">
+              <img src="imgs/nodeJs.png" alt="NodeJs" /><span>NodeJs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+       SECTION 6 — PROJETS
+  ===================================================== -->
+    <section id="sec6">
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">Portfolio</p>
+        <h2 class="sec-title rv d1">Mes projets</h2>
+        <p class="sec-subtitle rv d2">
+          Des solutions créatives qui marquent la différence.
+        </p>
+      </div>
+
+      <div class="proj-grid">
+        <article class="proj-card rv d1">
+          <div class="proj-card__media">
+            <img src="imgs/projets/mes-projets/Monetix.png" alt="Monetix" />
+          </div>
+          <div class="proj-card__body">
+            <div class="proj-tags">
+              <span class="proj-tag">React</span
+              ><span class="proj-tag">Node.js</span>
+            </div>
+            <div class="proj-foot">
+              <h3 class="proj-title">Monetix</h3>
+              <a href="#" class="proj-arrow" aria-label="Voir Monetix"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" /></svg>
+                </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card rv d2">
+          <div class="proj-card__media">
+            <img src="imgs/projets/mes-projets/unesco.png" alt="SAE UNESCO" />
+          </div>
+          <div class="proj-card__body">
+            <div class="proj-tags">
+              <span class="proj-tag">HTML/CSS</span
+              ><span class="proj-tag">JS</span
+              ><span class="proj-tag">Figma</span>
+            </div>
+            <div class="proj-foot">
+              <h3 class="proj-title">SAE UNESCO</h3>
+              <a
+                href="./pages/projets/unesco.html"
+                target="_blank"
+                class="proj-arrow"
+                aria-label="Voir SAE UNESCO"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" /></svg>
+                </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card rv d3">
+          <div class="proj-card__media">
+            <img src="imgs/projets/mes-projets/bricksy.png" alt="Bricksy" />
+          </div>
+          <div class="proj-card__body">
+            <div class="proj-tags">
+              <span class="proj-tag">React</span
+              ><span class="proj-tag">Node.js</span>
+            </div>
+            <div class="proj-foot">
+              <h3 class="proj-title">Bricksy</h3>
+              <a href="#" class="proj-arrow" aria-label="Voir Bricksy"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" /></svg>
+                </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================
+       FOOTER
+  ===================================================== -->
+    <footer>
+      <div>
+        <h2 class="footer-name">Vibol<br />HING</h2>
+        <p class="footer-meta">© 2025-2026 — BUT Informatique 2</p>
+      </div>
+      <nav aria-label="Navigation rapide">
+        <ul class="footer-nav">
+          <li><a href="#sec2">À propos</a></li>
+          <li><a href="#sec3">Parcours</a></li>
+          <li><a href="#sec4">Compétences</a></li>
+          <li><a href="#sec5">Skills</a></li>
+          <li><a href="#sec6">Projets</a></li>
+        </ul>
+      </nav>
+    </footer>
+    
+  </body>
+  <script>
+    /* ── Curseur ── */
+    const cur = document.getElementById("cur");
+    const curO = document.getElementById("curO");
+    let mx = 0,
+      my = 0,
+      ox = 0,
+      oy = 0;
+    document.addEventListener("mousemove", (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+    });
+    (function tick() {
+      ox += (mx - ox) * 0.12;
+      oy += (my - oy) * 0.12;
+      cur.style.cssText = `left:${mx}px;top:${my}px`;
+      curO.style.cssText = `left:${ox}px;top:${oy}px`;
+      requestAnimationFrame(tick);
+    })();
+
+    /* ── Nav overlay ── */
+    const menuBtn = document.getElementById("menuBtn");
+    const navO = document.getElementById("navOverlay");
+    function closeNav() {
+      menuBtn.classList.remove("open");
+      navO.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+    menuBtn.addEventListener("click", () => {
+      const o = menuBtn.classList.toggle("open");
+      navO.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(o));
+      document.body.style.overflow = o ? "hidden" : "";
+    });
+
+    /* ── Tabs ── */
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-panel")
+          .forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document
+          .getElementById("panel-" + btn.dataset.tab)
+          .classList.add("active");
+      });
+    });
+
+    /* ── Scroll reveal ── */
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("in");
+        });
+      },
+      { threshold: 0.1 },
+    );
+    document.querySelectorAll(".rv").forEach((el) => obs.observe(el));
+  </script>
+  <script>
+    /* ── Timeline scroll-driven ── */
+    (function () {
+      const wrapper = document.getElementById('tlWrapper');
+      const bar     = document.getElementById('tlProgress');
+      const items   = Array.from(document.querySelectorAll('.tl-item'));
+      const nodes   = Array.from(document.querySelectorAll('.tl-node'));
+
+      if (!wrapper || !bar || !items.length) return;
+
+      const TRIGGER = 0.55;
+
+      function tick() {
+        const wRect  = wrapper.getBoundingClientRect();
+        const filled = Math.max(0, Math.min(wRect.height,
+                      window.innerHeight * TRIGGER - wRect.top));
+
+        bar.style.height = filled + 'px';
+
+        nodes.forEach((node, i) => {
+          const nRect   = node.getBoundingClientRect();
+          const nodeMid = (nRect.top + nRect.height / 2) - wRect.top;
+          const active  = filled >= nodeMid;
+
+          if ( active && !items[i].classList.contains('tl-active'))
+            items[i].classList.add('tl-active');
+          if (!active &&  items[i].classList.contains('tl-active'))
+            items[i].classList.remove('tl-active');
+        });
+
+        requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="js/main-scroll.js"></script>
+</html>
