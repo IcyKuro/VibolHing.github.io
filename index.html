@@ -3,938 +3,722 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibol HING — Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="stylesheet" href="style/all.css" />
-    <link rel="stylesheet" href="style/index.css" />
-    <title>Mon portfolio</title>
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <!--SECTION 1-->
+    <div id="cur"></div>
+    <div id="curO"></div>
 
+    <!-- ── NAV OVERLAY ───────────────────────────────────────── -->
+    <nav class="nav-overlay" id="navOverlay">
+      <button class="nav-overlay__close" id="navClose" aria-label="Fermer le menu">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-overlay__list">
+        <li><a href="#sec2" onclick="closeNav()">À propos</a></li>
+        <li><a href="#sec3" onclick="closeNav()">Parcours</a></li>
+        <li><a href="#sec4" onclick="closeNav()">Compétences</a></li>
+        <li><a href="#sec5" onclick="closeNav()">Skills</a></li>
+        <li><a href="#sec6" onclick="closeNav()">Projets</a></li>
+      </ul>
+    </nav>
+
+    <!-- ====================================================
+       TOPBAR (définie dans hero.css)
+  ===================================================== -->
+    <header class="topbar" id="topbar">
+      <div class="topbar__left">
+        <div class="topbar__circle" aria-hidden="true"></div>
+      </div>
+
+      <span class="topbar__date">(2025-2026)</span>
+
+      <div class="topbar__right">
+        <button
+          class="topbar__burger"
+          id="menuBtn"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ====================================================
+       SECTION 1 — HERO SECTION
+  ===================================================== -->
     <section id="sec1">
-      <!-- Menu burger -->
-      <svg
-        id="menu"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 50 50"
-        style="fill: #1a1a2e"
-      >
-        <path
-          d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
-        />
-      </svg>
-
-      <!-- Couche profonde (lente) -->
-      <div class="parallax-layer" data-speed="0.018" aria-hidden="true">
-        <span class="bg-blob bg-blob--circle"></span>
-        <span class="bg-blob bg-blob--ring"></span>
-      </div>
-
-      <!-- Couche milieu -->
-      <div class="parallax-layer" data-speed="0.045" aria-hidden="true">
-        <span class="p-item p-smiley p-sm1">
-          <svg
-            viewBox="0 0 12 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#a1)">
-              <path
-                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
-                stroke="currentColor"
-                stroke-width="1"
-              />
-              <line
-                x1="5.767"
-                y1="3.049"
-                x2="4.72"
-                y2="6.314"
-                stroke="currentColor"
-              />
-              <line
-                x1="8.386"
-                y1="3.889"
-                x2="7.339"
-                y2="7.154"
-                stroke="currentColor"
-              />
-              <path
-                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
-                stroke="currentColor"
-                stroke-linecap="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="a1">
-                <rect width="12" height="13" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-        </span>
-        <span class="p-item p-smiley p-sm2">
-          <svg
-            viewBox="0 0 12 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#a2)">
-              <path
-                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
-                stroke="currentColor"
-                stroke-width="1"
-              />
-              <line
-                x1="5.767"
-                y1="3.049"
-                x2="4.72"
-                y2="6.314"
-                stroke="currentColor"
-              />
-              <line
-                x1="8.386"
-                y1="3.889"
-                x2="7.339"
-                y2="7.154"
-                stroke="currentColor"
-              />
-              <path
-                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
-                stroke="currentColor"
-                stroke-linecap="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="a2">
-                <rect width="12" height="13" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-        </span>
-        <span class="p-item p-smiley p-sm3">
-          <svg
-            viewBox="0 0 12 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#a3)">
-              <path
-                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
-                stroke="currentColor"
-                stroke-width="1"
-              />
-              <line
-                x1="5.767"
-                y1="3.049"
-                x2="4.72"
-                y2="6.314"
-                stroke="currentColor"
-              />
-              <line
-                x1="8.386"
-                y1="3.889"
-                x2="7.339"
-                y2="7.154"
-                stroke="currentColor"
-              />
-              <path
-                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
-                stroke="currentColor"
-                stroke-linecap="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="a3">
-                <rect width="12" height="13" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-        </span>
-        <span class="p-item p-star p-st1">★</span>
-        <span class="p-item p-star p-st2">✦</span>
-        <span class="p-item p-star p-st3">★</span>
-      </div>
-
-      <!-- Couche avant (rapide) -->
-      <div class="parallax-layer" data-speed="0.09" aria-hidden="true">
-        <span class="p-item p-star p-st4">✦</span>
-        <span class="p-item p-smiley p-sm4">
-          <svg
-            viewBox="0 0 12 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#a4)">
-              <path
-                d="M7.582 1.156C10.195 1.994 11.636 4.889 10.751 7.648 9.865 10.408 7.009 11.925 4.397 11.086 1.784 10.248.343 7.353 1.229 4.593 2.114 1.834 4.97.318 7.582 1.156z"
-                stroke="currentColor"
-                stroke-width="1"
-              />
-              <line
-                x1="5.767"
-                y1="3.049"
-                x2="4.72"
-                y2="6.314"
-                stroke="currentColor"
-              />
-              <line
-                x1="8.386"
-                y1="3.889"
-                x2="7.339"
-                y2="7.154"
-                stroke="currentColor"
-              />
-              <path
-                d="M3.982 6.978C3.657 8.998 6.431 9.879 7.387 8.07"
-                stroke="currentColor"
-                stroke-linecap="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="a4">
-                <rect width="12" height="13" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-        </span>
-      </div>
-
-      <!-- Contenu principal -->
       <div class="hero-content">
-        <p class="hero-role reveal">Étudiant · BUT Informatique 2</p>
-        <h1 id="vibol-hing" class="reveal">Vibol HING</h1>
-        <p class="hero-sub reveal delay-1" id="but-student">
-          Développeur Full Stack en devenir,<br />entre créativité et logique.
-        </p>
-      </div>
+        <svg
+          class="hero-sparkle"
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5em"
+          height="1.5em"
+          viewBox="0 0 21 32"
+          fill="none"
+        >
+          <path
+            d="M11.8572 6.50493L11.7909 7.89918C11.6103 11.6981 14.0505 15.128 17.6986 16.203
+           L2.88605 13.4145
+           C6.67714 13.74 10.1993 11.4311 11.413 7.8248L11.8572 6.50493
+           Z
+           M8.73188 23.1132L9.17711 21.7903
+           C10.3902 18.1857 13.9106 15.8779 17.6999 16.203
+           L2.88733 13.4145
+           C6.53726 14.4898 8.97875 17.9214 8.79803 21.7221L8.73188 23.1132Z"
+            fill="#1837E8"
+          />
+        </svg>
 
-      <!-- Scroll hint -->
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span class="scroll-line"></span>
-        <span class="scroll-label">scroll</span>
+        <svg
+          class="hero-sparkle sparkle2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 21 32"
+          fill="none"
+        >
+          <path
+            d="M11.8572 6.50493L11.7909 7.89918C11.6103 11.6981 14.0505 15.128 17.6986 16.203
+           L2.88605 13.4145
+           C6.67714 13.74 10.1993 11.4311 11.413 7.8248L11.8572 6.50493
+           Z
+           M8.73188 23.1132L9.17711 21.7903
+           C10.3902 18.1857 13.9106 15.8779 17.6999 16.203
+           L2.88733 13.4145
+           C6.53726 14.4898 8.97875 17.9214 8.79803 21.7221L8.73188 23.1132Z"
+            fill="#1837E8"
+          />
+        </svg>
+
+        <span aria-hidden="true">
+          <img src="imgs/smiley.svg" id="smiley" alt="une icone de smiley" />
+        </span>
+
+        <h1 class="hero-name">Vibol HING</h1>
+        <p class="hero-subtitle">Etudiant en BUT informatique 2</p>
       </div>
     </section>
 
-    <!--SECTION 2-->
+    <!-- ── MARQUEE ──────────────────────────────────────────── -->
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Full Stack Developer</span><span class="sep"> · </span>
+        <span>BUT Informatique</span><span class="sep"> · </span>
+        <span>React</span><span class="sep"> · </span> <span>Node.js</span
+        ><span class="sep"> · </span> <span>PHP</span
+        ><span class="sep"> · </span> <span>Java</span
+        ><span class="sep"> · </span> <span>Docker</span
+        ><span class="sep"> · </span> <span>Figma</span
+        ><span class="sep"> · </span>
+        <!-- Dupliqué pour la boucle infinie -->
+        <span>Full Stack Developer</span><span class="sep"> · </span>
+        <span>BUT Informatique</span><span class="sep"> · </span>
+        <span>React</span><span class="sep"> · </span> <span>Node.js</span
+        ><span class="sep"> · </span> <span>PHP</span
+        ><span class="sep"> · </span> <span>Java</span
+        ><span class="sep"> · </span> <span>Docker</span
+        ><span class="sep"> · </span> <span>Figma</span
+        ><span class="sep"> · </span>
+      </div>
+    </div>
 
+    <!-- ====================================================
+       SECTION 2 — À PROPOS
+  ===================================================== -->
     <section id="sec2">
-      <!-- <img class="waves" src="imgs/waves.svg" alt="une image de vague" /> -->
-      <div class="center">
-        <div class="about-me-text">
-          <h1 id="about-me" class="reveal delay-1">
-            A propos de
-            <strong
-              style="
-                color: var(--light-blue);
-                font-family: mochi-pop-one, sans-serif;
-              "
-              >moi</strong
-            >
-          </h1>
-          <p class="reveal delay-2">
+      <span class="sec2-ghost" aria-hidden="true">About</span>
+      <div class="sec2-inner">
+        <div>
+          <p class="sec2-eyebrow rv">À propos</p>
+          <h2 class="sec2-title rv d1">A propos<br />de moi</h2>
+          <div class="sec2-stats rv d2">
+            <div class="sec2-stat">
+              <span class="sec2-stat__num">4+</span>
+              <span class="sec2-stat__lbl">Ans de code</span>
+            </div>
+            <div class="sec2-stat">
+              <span class="sec2-stat__num">10+</span>
+              <span class="sec2-stat__lbl">Projets</span>
+            </div>
+            <div class="sec2-stat">
+              <span class="sec2-stat__num">6</span>
+              <span class="sec2-stat__lbl">Compétences BUT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec2-card rv d2">
+          <p>
             Passionné par la programmation et le développement, j'aspire à
             devenir un <strong>Développeur Full Stack</strong> épanoui, capable
             de mener à bien tout projet innovant et coopératif.
           </p>
-          <p class="reveal delay-3">
+          <p>
             Ce portfolio présente un aperçu de mes réalisations, (projets et
             expérimentations). Il reflète mon évolution, mon intérêt pour
             l'informatique et mon envie de contribuer à des projets concrets.
           </p>
+          <span class="sec2-card__sig">Vibol HING</span>
         </div>
       </div>
-      <!-- <img
-        class="waves"
-        id="bot-wave"
-        src="imgs/bottom-waves.svg"
-        alt="une image de bordures bleues"
-      /> -->
     </section>
 
-    <!--SECTION 3-->
-
+    <!-- ====================================================
+     SECTION 3 — PARCOURS
+    ===================================================== -->
     <section id="sec3">
-      <div class="sec3-header">
-        <h2 class="sec3-title">Mon <em>parcours</em></h2>
-        <p class="sec3-subtitle">Les étapes qui ont forgé mon profil.</p>
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">Parcours</p>
+        <h2 class="sec-title rv d1">
+          Mon <em style="font-style: italic">parcours</em>
+        </h2>
+        <p class="sec-subtitle rv d2">Les étapes qui ont forgé mon profil.</p>
       </div>
 
-      <article class="container">
-        <div class="timeline-wrapper">
-          <div class="line-bg"></div>
-          <div class="line-progress"></div>
-          <ol class="timeline">
-            <li class="timeline-element reveal">
-              <span class="star active">
-                <img src="imgs/star.svg" alt="étoile" />
-              </span>
-              <div class="timeline-content">
-                <div class="tc-header">
-                  <span class="timeline-tag">2023 — Aujourd'hui</span>
-                  <span class="tc-stars-deco" aria-hidden="true">★ ★</span>
-                </div>
-                <div class="tc-body">
-                  <span class="tc-year-ghost" aria-hidden="true">2023</span>
-                  <h2 class="school-title">BUT Informatique</h2>
-                  <p class="school-place">
-                    IUT Gustave Eiffel · Champs-sur-Marne
-                  </p>
-                </div>
-              </div>
-            </li>
+      <div class="tl-wrapper" id="tlWrapper">
+        <div class="tl-track" aria-hidden="true"></div>
+        <div class="tl-progress" id="tlProgress" aria-hidden="true"></div>
 
-            <li class="timeline-element reveal delay-1">
-              <span class="star">
-                <img src="imgs/star.svg" alt="étoile" />
-              </span>
-              <div class="timeline-content timeline-content--flipped">
-                <div class="tc-header">
-                  <span class="timeline-tag">2023</span>
-                  <span class="tc-stars-deco" aria-hidden="true">★ ★</span>
-                </div>
-                <div class="tc-body">
-                  <span class="tc-year-ghost" aria-hidden="true">2023</span>
-                  <h2 class="school-title">
-                    Baccalauréat Général<br />
-                    <span class="mention">Mention Très Bien</span>
-                  </h2>
-                  <p class="school-place">Lycée Henri Moissan · Meaux</p>
+        <ol class="tl-list">
+          <li class="tl-item">
+            <div class="tl-void" aria-hidden="true"></div>
+
+            <div class="tl-node">
+              <div class="tl-star" aria-hidden="true">
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 0C10 0 10.8 6.5 13 9C15.2 11.5 20 10 20 10C20 10 15.2 10.8 13 13C10.8 15.2 10 20 10 20C10 20 9.2 15.2 7 13C4.8 10.8 0 10 0 10C0 10 4.8 9.2 7 9C9.2 8.8 10 0 10 0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <article class="tl-card">
+              <div class="tl-bw tl-bw-1">
+                <div class="tl-bi tl-brick-head">
+                  <p class="tl-period">Avril 2026 - Juin 2026</p>
+                  <span class="tl-stars-deco" aria-hidden="true">★ ★</span>
                 </div>
               </div>
-            </li>
-          </ol>
-        </div>
-      </article>
+              <div class="tl-bw tl-bw-2">
+                <div class="tl-bi tl-brick-body">
+                  <span class="tl-ghost-yr" aria-hidden="true">3</span>
+                  <h2 class="tl-school">Stage en Développement web PHP/SQL</h2>
+                  <div class="tl-badge-wrap">
+                    <span class="tl-badge">API REST</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tl-bw tl-bw-3">
+                <div class="tl-bi tl-brick-foot">
+                  <p class="tl-place">Au Comité National du Kyudo</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="tl-item">
+            <div class="tl-void" aria-hidden="true"></div>
+
+            <div class="tl-node">
+              <div class="tl-star" aria-hidden="true">
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 0C10 0 10.8 6.5 13 9C15.2 11.5 20 10 20 10C20 10 15.2 10.8 13 13C10.8 15.2 10 20 10 20C10 20 9.2 15.2 7 13C4.8 10.8 0 10 0 10C0 10 4.8 9.2 7 9C9.2 8.8 10 0 10 0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <article class="tl-card">
+              <div class="tl-bw tl-bw-1">
+                <div class="tl-bi tl-brick-head">
+                  <p class="tl-period">2024 - Aujourd'hui</p>
+                  <span class="tl-stars-deco" aria-hidden="true">★ ★</span>
+                </div>
+              </div>
+              <div class="tl-bw tl-bw-2">
+                <div class="tl-bi tl-brick-body">
+                  <span class="tl-ghost-yr" aria-hidden="true">2</span>
+                  <h2 class="tl-school">BUT Informatique</h2>
+                  <div class="tl-badge-wrap">
+                    <span class="tl-badge">Développement d'application</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tl-bw tl-bw-3">
+                <div class="tl-bi tl-brick-foot">
+                  <p class="tl-place">IUT Champs-Sur-Marne</p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="tl-item">
+            <div class="tl-void" aria-hidden="true"></div>
+
+            <div class="tl-node">
+              <div class="tl-star" aria-hidden="true">
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 0C10 0 10.8 6.5 13 9C15.2 11.5 20 10 20 10C20 10 15.2 10.8 13 13C10.8 15.2 10 20 10 20C10 20 9.2 15.2 7 13C4.8 10.8 0 10 0 10C0 10 4.8 9.2 7 9C9.2 8.8 10 0 10 0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <article class="tl-card">
+              <div class="tl-bw tl-bw-1">
+                <div class="tl-bi tl-brick-head">
+                  <p class="tl-period">2021-2024</p>
+                  <span class="tl-stars-deco" aria-hidden="true">★ ★</span>
+                </div>
+              </div>
+              <div class="tl-bw tl-bw-2">
+                <div class="tl-bi tl-brick-body">
+                  <span class="tl-ghost-yr" aria-hidden="true">1</span>
+                  <h2 class="tl-school">Baccalauréat Général</h2>
+                  <div class="tl-badge-wrap">
+                    <span class="tl-badge">Mention Très Bien</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tl-bw tl-bw-3">
+                <div class="tl-bi tl-brick-foot">
+                  <p class="tl-place">Lycée Henri Moissan · Meaux</p>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <!-- ================================================
-     SECTION 4 — Compétences BUT Informatique
-     Lier : <link rel="stylesheet" href="css/sec4.css">
-     Remplacer les href="#" par vos URLs de pages annexes
-     ================================================ -->
-
+    <!-- ====================================================
+       SECTION 4 — COMPÉTENCES BUT
+  ===================================================== -->
     <section id="sec4">
-      <div class="sec4-header">
-        <h2 class="sec4-title">Mes <em>compétences</em></h2>
-        <p class="sec4-subtitle">
-          Clique sur une compétence pour en savoir plus.
-        </p>
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">BUT Informatique</p>
+        <h2 class="sec-title rv d1">Mes <em style="font-style:italic">compétences</em></h2>
+        <p class="sec-subtitle rv d2">Clique sur une compétence pour en savoir plus.</p>
       </div>
 
-      <div class="sec4-grid">
-        <!-- Réaliser -->
-        <a href="#" class="comp-card" data-comp="realiser">
+      <div class="comp-grid">
+
+        <a href="pages/competences/realiser.html" class="comp-card" data-comp="realiser">
+          <span class="comp-card__num-ghost" aria-hidden="true">01</span>
           <div class="comp-card__head">
             <span class="comp-card__star" aria-hidden="true">★</span>
             <h3 class="comp-card__name">Réaliser</h3>
           </div>
-          <p class="comp-card__pitch">
-            Concevoir, coder, tester et intégrer des solutions logicielles pour
-            un client.
-          </p>
+          <p class="comp-card__pitch">Concevoir, coder, tester et intégrer des solutions logicielles pour un client.</p>
           <ul class="comp-card__tags">
-            <li>POO</li>
-            <li>Git & GitHub</li>
-            <li>Tests unitaires</li>
-            <li>SQL / NoSQL</li>
+            <li>POO</li><li>Git &amp; GitHub</li><li>Tests unitaires</li><li>SQL / NoSQL</li>
           </ul>
           <span class="comp-card__icon" aria-label="Voir la page">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </span>
         </a>
 
-        <!-- Optimiser -->
-        <a href="#" class="comp-card comp-card--alt" data-comp="optimiser">
+        <a href="pages/competences/optimiser.html" class="comp-card" data-comp="optimiser">
+          <span class="comp-card__num-ghost" aria-hidden="true">02</span>
           <div class="comp-card__head">
             <span class="comp-card__star" aria-hidden="true">★</span>
             <h3 class="comp-card__name">Optimiser</h3>
           </div>
-          <p class="comp-card__pitch">
-            Améliorer les performances d'applications selon des critères précis.
-          </p>
+          <p class="comp-card__pitch">Améliorer les performances d'applications selon des critères précis.</p>
           <ul class="comp-card__tags">
-            <li>Complexité algorithmique</li>
-            <li>Structures de données</li>
-            <li>Graphes</li>
+            <li>Complexité algorithmique</li><li>Structures de données</li><li>Graphes</li>
           </ul>
           <span class="comp-card__icon" aria-label="Voir la page">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </span>
         </a>
 
-        <!-- Administrer -->
-        <a href="#" class="comp-card" data-comp="administrer">
+        <a href="pages/competences/administrer.html" class="comp-card" data-comp="administrer">
+          <span class="comp-card__num-ghost" aria-hidden="true">03</span>
           <div class="comp-card__head">
             <span class="comp-card__star" aria-hidden="true">★</span>
             <h3 class="comp-card__name">Administrer</h3>
           </div>
-          <p class="comp-card__pitch">
-            Déployer et maintenir des infrastructures, services et réseaux.
-          </p>
+          <p class="comp-card__pitch">Déployer et maintenir des infrastructures, services et réseaux.</p>
           <ul class="comp-card__tags">
-            <li>Linux / Bash</li>
-            <li>Réseaux TCP/IP</li>
-            <li>SSH & sécurité</li>
+            <li>Linux / Bash</li><li>Réseaux TCP/IP</li><li>SSH &amp; sécurité</li>
           </ul>
           <span class="comp-card__icon" aria-label="Voir la page">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </span>
         </a>
 
-        <!-- Gérer -->
-        <a href="#" class="comp-card comp-card--alt" data-comp="gerer">
+        <a href="pages/competences/gerer.html" class="comp-card" data-comp="gerer">
+          <span class="comp-card__num-ghost" aria-hidden="true">04</span>
           <div class="comp-card__head">
             <span class="comp-card__star" aria-hidden="true">★</span>
             <h3 class="comp-card__name">Gérer</h3>
           </div>
-          <p class="comp-card__pitch">
-            Concevoir et exploiter les données pour le pilotage d'une
-            organisation.
-          </p>
+          <p class="comp-card__pitch">Concevoir et exploiter les données pour le pilotage d'une organisation.</p>
           <ul class="comp-card__tags">
-            <li>Modélisation UML</li>
-            <li>PostgreSQL</li>
-            <li>RGPD</li>
+            <li>Modélisation UML</li><li>PostgreSQL</li><li>RGPD</li>
           </ul>
           <span class="comp-card__icon" aria-label="Voir la page">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </span>
         </a>
 
-        <!-- Conduire -->
-        <a href="#" class="comp-card" data-comp="conduire">
+        <a href="pages/competences/conduire.html" class="comp-card" data-comp="conduire">
+          <span class="comp-card__num-ghost" aria-hidden="true">05</span>
           <div class="comp-card__head">
             <span class="comp-card__star" aria-hidden="true">★</span>
             <h3 class="comp-card__name">Conduire</h3>
           </div>
-          <p class="comp-card__pitch">
-            Organiser et piloter un projet informatique, méthodes agiles
-            incluses.
-          </p>
+          <p class="comp-card__pitch">Organiser et piloter un projet informatique, méthodes agiles incluses.</p>
           <ul class="comp-card__tags">
-            <li>Scrum / Kanban</li>
-            <li>Cahier des charges</li>
-            <li>Diagramme de Gantt</li>
-            <li>Jira / Trello</li>
+            <li>Scrum / Kanban</li><li>Cahier des charges</li><li>Diagramme de Gantt</li><li>Jira / Trello</li>
           </ul>
           <span class="comp-card__icon" aria-label="Voir la page">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </span>
         </a>
 
-        <!-- Collaborer -->
-        <a href="#" class="comp-card comp-card--alt" data-comp="collaborer">
+        <a href="pages/competences/collaborer.html" class="comp-card" data-comp="collaborer">
+          <span class="comp-card__num-ghost" aria-hidden="true">06</span>
           <div class="comp-card__head">
             <span class="comp-card__star" aria-hidden="true">★</span>
             <h3 class="comp-card__name">Collaborer</h3>
           </div>
-          <p class="comp-card__pitch">
-            Travailler efficacement au sein d'une équipe pluridisciplinaire.
-          </p>
+          <p class="comp-card__pitch">Travailler efficacement au sein d'une équipe pluridisciplinaire.</p>
           <ul class="comp-card__tags">
-            <li>Code review</li>
-            <li>Communication</li>
-            <li>Documentation</li>
-            <li>Droit du numérique</li>
+            <li>Code review</li><li>Communication</li><li>Documentation</li><li>Droit du numérique</li>
           </ul>
           <span class="comp-card__icon" aria-label="Voir la page">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </span>
         </a>
+
       </div>
     </section>
 
-    <!--SECTION 5-->
-
+    <!-- ====================================================
+       SECTION 5 — SKILLS
+  ===================================================== -->
     <section id="sec5">
-      <div class="slider-nav-wrapper">
-        <nav class="slider-nav">
-          <button class="nav-link" data-index="0">Hard skills</button>
-          <button class="nav-link" data-index="1">Soft skills</button>
-          <button class="nav-link" data-index="2">Softwares</button>
-        </nav>
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">Skills</p>
+        <h2 class="sec-title rv d1">Mon environnement</h2>
       </div>
-      <div class="slider-viewport">
-        <div class="slider-track">
-          <section class="slider-section hard-skills">
-            <h2 class="reveal">Hard Skills</h2>
-            <p class="reveal delay-1">HTML, CSS, JavaScript, PHP, SQL…</p>
-          </section>
 
-          <!-- SOFT SKILLS -->
+      <div class="tabs-bar" role="tablist">
+        <button class="tab-btn active" role="tab" data-tab="hard">
+          Hard Skills
+        </button>
+        <button class="tab-btn" role="tab" data-tab="soft">Soft Skills</button>
+        <button class="tab-btn" role="tab" data-tab="sw">Softwares</button>
+      </div>
 
-          <section class="slider-section soft-skills">
-            <div class="soft-text">
-              <h1 class="slider-title reveal" id="soft-title">Soft Skills</h1>
-              <h2 class="slider-title reveal" id="soft-small-title">
-                L'art d'être performant humainement.
-              </h2>
+      <!-- Hard Skills -->
+      <div class="tab-panel active" id="panel-hard">
+        <p class="skill-net-hint">La technique au service de chaque projet.</p>
+        <canvas id="skillNet"></canvas>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="tab-panel" id="panel-soft">
+        <p class="soft-tagline">L'art d'être performant humainement.</p>
+
+        <ol class="soft-list">
+
+          <li class="soft-item">
+            <span class="si-num" aria-hidden="true">01</span>
+            <div class="si-illo">
+              <img src="imgs/illustrations/travail_equipe.svg" alt="" />
             </div>
-
-            <div class="cards-container">
-              <div class="card reveal delay-1">
-                <h2 class="card-title">Travail d'équipe</h2>
-                <div class="card-img">
-                  <img
-                    src="imgs/illustrations/travail_equipe.svg"
-                    alt="une illustration de travail d'équipe"
-                  />
-                </div>
-              </div>
-              <div class="card reveal delay-2">
-                <h2 class="card-title">Adaptabilité</h2>
-                <div class="card-img">
-                  <img
-                    src="imgs/illustrations/adaptabilite.svg"
-                    alt="une illustration d'adaptabilité"
-                  />
-                </div>
-              </div>
-              <div class="card reveal delay-3">
-                <h2 class="card-title">Autonomie</h2>
-                <div class="card-img">
-                  <img
-                    src="imgs/illustrations/autonomie.svg"
-                    alt="une illustration d'autonomie"
-                  />
-                </div>
-              </div>
-              <div class="card reveal delay-4">
-                <h2 class="card-title">Gestion de Projet</h2>
-                <div class="card-img">
-                  <img
-                    src="imgs/illustrations/gestion_projet.svg"
-                    alt="une illustration de gestion de projet"
-                  />
-                </div>
-              </div>
-              <div class="card reveal delay-5">
-                <h2 class="card-title">Communication</h2>
-                <div class="card-img">
-                  <img
-                    src="imgs/illustrations/communication.svg"
-                    alt="une illustration de communication"
-                  />
-                </div>
-              </div>
+            <div class="si-text">
+              <h3 class="si-title">Travail d'équipe</h3>
+              <p class="si-desc">Coordonner, écouter et s'adapter au groupe pour avancer vers un objectif commun.</p>
             </div>
-          </section>
+            <span class="si-star" aria-hidden="true">★</span>
+          </li>
 
-          <!-- SOFTWARES -->
-
-          <section class="slider-section softwares">
-            <div class="header-softwares">
-              <h1 class="slider-title reveal" id="soft-title">Softwares</h1>
-              <h2 class="slider-title reveal" id="soft-small-title">
-                Mon environnement technique : là où les projets prennent forme.
-              </h2>
+          <li class="soft-item">
+            <span class="si-num" aria-hidden="true">02</span>
+            <div class="si-illo">
+              <img src="imgs/illustrations/adaptabilite.svg" alt="" />
             </div>
-
-            <div class="tech-container reveal delay-1">
-              <div class="tech-category">
-                <h3 class="category-title">Outils</h3>
-                <div class="tech-grid">
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M25 2v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 18v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 34v7c0 3.855-3.145 7-7 7s-7-3.145-7-7c0-3.855 3.145-7 7-7H25zM41 9c0 3.855-3.145 7-7 7h-7V2h7C37.855 2 41 5.145 41 9zM34 18A7 7 0 1034 32 7 7 0 1034 18z"
-                      ></path>
-                    </svg>
-                    <span>Figma</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M 46.792969 22.089844 L 27.910156 3.207031 C 27.109375 2.402344 26.054688 2 25 2 C 23.945313 2 22.890625 2.402344 22.089844 3.207031 L 18.355469 6.941406 L 22.976563 11.5625 C 24.511719 10.660156 26.511719 10.855469 27.828125 12.171875 C 29.144531 13.488281 29.335938 15.488281 28.433594 17.019531 L 32.976563 21.5625 C 34.511719 20.660156 36.511719 20.855469 37.828125 22.171875 C 39.390625 23.734375 39.390625 26.265625 37.828125 27.828125 C 36.265625 29.390625 33.734375 29.390625 32.171875 27.828125 C 30.855469 26.511719 30.660156 24.511719 31.5625 22.976563 L 27.019531 18.433594 C 26.695313 18.625 26.355469 18.765625 26 18.855469 L 26 31.140625 C 27.722656 31.585938 29 33.136719 29 35 C 29 37.210938 27.210938 39 25 39 C 22.789063 39 21 37.210938 21 35 C 21 33.136719 22.277344 31.585938 24 31.140625 L 24 18.855469 C 23.332031 18.683594 22.695313 18.351563 22.171875 17.828125 C 20.855469 16.511719 20.664063 14.511719 21.566406 12.980469 L 16.941406 8.355469 L 3.207031 22.089844 C 1.597656 23.695313 1.597656 26.304688 3.207031 27.910156 L 22.089844 46.792969 C 22.890625 47.597656 23.945313 48 25 48 C 26.054688 48 27.109375 47.597656 27.910156 46.792969 L 46.792969 27.910156 C 48.402344 26.304688 48.402344 23.695313 46.792969 22.089844 Z"
-                      ></path>
-                    </svg>
-                    <span>Git</span>
-                  </div>
-                  <div class="tech-card">
-                    <img src="imgs/github.png" alt="Github" />
-                    <span>Github</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 44.169 45.988"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M 21.955078 0 A 1.029 1.029 0 0 0 21.292969 0.28125 A 11.988 11.988 0 0 0 18 7.9882812 A 11.982 11.982 0 0 0 21.292969 15.699219 L 22.169922 16.578125 L 23.5 17.900391 L 28.585938 22.986328 L 23.5 28.074219 L 24.292969 28.867188 A 13.886 13.886 0 0 1 28.171875 37.988281 A 11.481 11.481 0 0 1 27.880859 40.521484 L 43.292969 25.109375 A 3 3 0 0 0 43.292969 20.867188 L 22.705078 0.28125 A 1.029 1.029 0 0 0 21.955078 0 z M 16.289062 5.4550781 L 0.87695312 20.867188 A 3 3 0 0 0 0.87695312 25.109375 L 21.462891 45.699219 A 1 1 0 0 0 22.876953 45.699219 A 11.982 11.982 0 0 0 26.169922 37.992188 A 11.988 11.988 0 0 0 22.876953 30.285156 L 15.583984 22.988281 L 20.669922 17.900391 L 19.876953 17.107422 A 13.877 13.877 0 0 1 16 7.9882812 A 11.478 11.478 0 0 1 16.289062 5.4550781 z"
-                      ></path>
-                    </svg>
-                    <span>Jira</span>
-                  </div>
-                  <div class="tech-card">
-                    <img src="imgs/docker.png" alt="Docker" />
-                    <span>Docker</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M 21 4 C 19.79 4 18.700469 4.7296094 18.230469 5.8496094 L 16.099609 11 L 38 11 C 38.55 11 39 11.45 39 12 L 39 35.570312 L 44.189453 32.179688 C 45.319453 31.449688 46 30.180078 46 28.830078 L 46 7 C 46 5.34 44.66 4 43 4 L 21 4 z M 6 8 C 4.9 8 4 8.9 4 10 L 4 20 L 5.6796875 30.939453 L 11 18.089844 L 11 12 C 11 11.45 11.45 11 12 11 L 13.929688 11 L 15.169922 8.0097656 C 15.119922 7.9997656 15.06 8 15 8 L 6 8 z M 13 13 L 13 13.25 L 13 37 L 37 37 L 37 13 L 13.099609 13 L 13 13 z M 15 15 L 21 15 L 21 17 L 19 17 L 19 23 L 21 23 L 21 25 L 15 25 L 15 23 L 17 23 L 17 17 L 15 17 L 15 15 z M 25 15 L 27 15 L 27 22 C 27 23.657 25.657 25 24 25 L 22 25 L 22 23 L 24 23 C 24.552 23 25 22.552 25 22 L 25 15 z M 11 23.330078 L 6.2695312 34.759766 L 7.609375 43.460938 C 7.829375 44.920938 9.0903125 46 10.570312 46 L 21.810547 46 C 22.590547 46 23.35 45.769609 24 45.349609 L 33.730469 39 L 12 39 C 11.45 39 11 38.55 11 38 L 11 23.330078 z M 15 33 L 26 33 L 26 35 L 15 35 L 15 33 z M 43 35.339844 L 39 37.949219 L 39 38 C 39 38.55 38.55 39 38 39 L 37.400391 39 L 31.410156 42.910156 C 31.600156 42.970156 31.8 43 32 43 L 41 43 C 42.1 43 43 42.1 43 41 L 43 35.339844 z"
-                      ></path>
-                    </svg>
-                    <span>IntelliJ</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M21,36c0,1.1-0.9,2-2,2h-7 c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7c1.1,0,2,0.9,2,2V36z M40,24c0,1.1-0.9,2-2,2h-7c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7 c1.1,0,2,0.9,2,2V24z"
-                      ></path>
-                    </svg>
-                    <span>Trello</span>
-                  </div>
-                  <div class="tech-card">
-                    <img src="imgs/mongodb.png" alt="MongoDB" />
-                    <span>MongoDB</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tech-category">
-                <h3 class="category-title">Langages</h3>
-                <div class="tech-grid">
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M 24.5 2 C 15.800781 2 14 6.492188 14 9.09375 L 14 14 L 24 14 L 24 15 L 9.09375 15 C 5.792969 15 2 17.601563 2 25 C 2 32.398438 5.792969 35 9.09375 35 L 15 35 L 15 29 C 15 26.800781 16.800781 25 19 25 L 31 25 C 32.699219 25 34 23.699219 34 22 L 34 9.09375 C 34 5.59375 30.699219 2 24.5 2 Z M 20 7 C 21.101563 7 22 7.898438 22 9 C 22 10.101563 21.101563 11 20 11 C 18.898438 11 18 10.101563 18 9 C 18 7.898438 18.898438 7 20 7 Z M 35 15 L 35 22 C 35 24.199219 33.199219 26 31 26 L 19 26 C 17.300781 26 16 27.300781 16 29 L 16 40.90625 C 16 44.40625 19.300781 48 25.5 48 C 34.199219 48 36 43.507813 36 40.90625 L 36 36 L 26 36 L 26 35 L 40.90625 35 C 44.207031 35 48 32.398438 48 25 C 48 17.601563 44.207031 15 40.90625 15 Z M 30 39 C 31.101563 39 32 39.898438 32 41 C 32 42.101563 31.101563 43 30 43 C 28.898438 43 28 42.101563 28 41 C 28 39.898438 28.898438 39 30 39 Z"
-                      ></path>
-                    </svg>
-                    <span>Python</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M 28.1875 -0.00390625 C 30.9375 6.359375 18.320313 10.289063 17.152344 15.59375 C 16.074219 20.460938 24.640625 26.121094 24.644531 26.121094 C 23.34375 24.105469 22.402344 22.441406 21.097656 19.304688 C 18.890625 14 34.53125 9.203125 28.1875 -0.00390625 Z M 36.550781 8.8125 C 36.550781 8.8125 25.503906 9.511719 24.941406 16.582031 C 24.691406 19.730469 27.84375 21.410156 27.9375 23.703125 C 28.007813 25.570313 26.050781 27.128906 26.050781 27.128906 C 26.050781 27.128906 29.601563 26.460938 30.714844 23.605469 C 31.945313 20.4375 28.328125 18.273438 28.691406 15.738281 C 29.042969 13.3125 36.550781 8.8125 36.550781 8.8125 Z M 39.230469 25.144531 C 38.074219 25.09375 36.789063 25.476563 35.625 26.3125 C 37.90625 25.824219 39.835938 27.21875 39.835938 28.828125 C 39.835938 32.453125 34.597656 35.878906 34.597656 35.878906 C 34.597656 35.878906 42.707031 34.953125 42.707031 29 C 42.707031 26.539063 41.152344 25.234375 39.230469 25.144531 Z M 19.183594 25.152344 C 19.183594 25.152344 9.0625 25.015625 9.0625 27.878906 C 9.0625 30.871094 22.316406 31.082031 31.78125 29.238281 C 31.78125 29.238281 34.308594 27.507813 34.980469 26.863281 C 28.777344 28.128906 14.621094 28.296875 14.621094 27.203125 C 14.621094 26.191406 19.183594 25.152344 19.183594 25.152344 Z M 16.738281 30.722656 C 15.1875 30.722656 12.871094 31.921875 12.871094 33.078125 C 12.871094 35.402344 24.5625 37.195313 33.21875 33.796875 L 30.222656 31.960938 C 24.355469 33.839844 13.539063 33.238281 16.738281 30.722656 Z M 18.179688 35.921875 C 16.050781 35.921875 14.671875 37.234375 14.671875 38.203125 C 14.671875 41.1875 27.378906 41.488281 32.414063 38.453125 L 29.214844 36.417969 C 25.453125 38.007813 16.007813 38.222656 18.179688 35.921875 Z M 11.089844 38.625 C 7.621094 38.554688 5.367188 40.113281 5.367188 41.40625 C 5.363281 48.28125 40.890625 47.949219 40.890625 40.921875 C 40.890625 39.757813 39.515625 39.203125 39.019531 38.9375 C 41.921875 45.65625 9.96875 45.136719 9.96875 41.171875 C 9.96875 40.269531 12.3125 39.382813 14.492188 39.808594 L 12.644531 38.757813 C 12.101563 38.675781 11.582031 38.632813 11.089844 38.625 Z M 44.636719 43.25 C 39.234375 48.367188 25.546875 50.234375 11.78125 47.074219 C 25.542969 52.703125 44.566406 49.535156 44.636719 43.25 Z"
-                      ></path>
-                    </svg>
-                    <span>Java</span>
-                  </div>
-
-                  <div class="tech-card">
-                    <img src="imgs/php.png" alt="Php" />
-                    <span>Php</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M 45.273438 2.324219 C 45.085938 2.117188 44.816406 2 44.535156 2 L 5.464844 2 C 5.183594 2 4.914063 2.117188 4.726563 2.324219 C 4.535156 2.53125 4.441406 2.808594 4.46875 3.089844 L 7.988281 42.515625 C 8.023438 42.929688 8.3125 43.273438 8.710938 43.390625 L 24.722656 47.960938 C 24.808594 47.988281 24.902344 48 24.996094 48 C 25.089844 48 25.179688 47.988281 25.269531 47.960938 L 41.292969 43.390625 C 41.691406 43.273438 41.976563 42.929688 42.015625 42.515625 L 45.53125 3.089844 C 45.558594 2.808594 45.464844 2.53125 45.273438 2.324219 Z M 36.847656 15.917969 L 18.035156 15.917969 L 18.484375 21.007813 L 36.394531 21.007813 L 35.050781 36.050781 L 24.992188 39.089844 L 24.894531 39.058594 L 14.953125 36.046875 L 14.410156 29.917969 L 19.28125 29.917969 L 19.492188 32.296875 L 25.050781 33.460938 L 30.507813 32.296875 L 31.089844 25.859375 L 14.046875 25.859375 L 12.722656 11.054688 L 37.28125 11.054688 Z"
-                      ></path>
-                    </svg>
-                    <span>Html</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M 42 6 L 39 40 L 25 44 L 11 40 L 8 6 Z M 16.800781 28 L 20.800781 28 L 20.898438 30.5 L 25 31.898438 L 29.101563 30.5 L 29.398438 26 L 20.601563 26 L 20.398438 22 L 29.601563 22 L 29.898438 18 L 16.101563 18 L 15.800781 14 L 34.101563 14 L 33.601563 22 L 32.898438 33.5 L 25 36.101563 L 17.101563 33.5 Z"
-                      ></path>
-                    </svg>
-                    <span>CSS</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M45.274,2.325C45.084,2.118,44.817,2,44.536,2H5.464C5.183,2,4.916,2.118,4.726,2.325S4.443,2.81,4.468,3.089l3.52,39.427 c0.037,0.412,0.324,0.759,0.722,0.873l16.01,4.573C24.809,47.987,24.902,48,24.994,48s0.185-0.013,0.274-0.038l16.024-4.573 c0.398-0.114,0.685-0.461,0.722-0.873l3.518-39.427C45.557,2.81,45.463,2.532,45.274,2.325z M12,29.004l7,1.942V11h4v26l-11-3.051 V29.004z M38.054,22L37,34.25L27,37v-4.601l6.75-1.855l0.25-3.75L27,28V11h12l-0.345,4H31v8L38.054,22z"
-                      ></path>
-                    </svg>
-                    <span>JS</span>
-                  </div>
-                  <div class="tech-card">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 50 50"
-                      style="fill: #fdbf81"
-                      class="softwares-svg"
-                      width="60%"
-                      height="auto"
-                    >
-                      <path
-                        d="M 25 2 C 24.285156 2 23.570313 2.179688 22.933594 2.539063 L 6.089844 12.003906 C 4.800781 12.726563 4 14.082031 4 15.535156 L 4 34.464844 C 4 35.917969 4.800781 37.273438 6.089844 37.996094 L 22.933594 47.460938 C 23.570313 47.820313 24.285156 48 25 48 C 25.714844 48 26.429688 47.820313 27.066406 47.460938 L 43.910156 38 C 45.199219 37.273438 46 35.917969 46 34.464844 L 46 15.535156 C 46 14.082031 45.199219 12.726563 43.910156 12.003906 L 27.066406 2.539063 C 26.429688 2.179688 25.714844 2 25 2 Z M 25 13 C 28.78125 13 32.277344 14.753906 34.542969 17.738281 L 30.160156 20.277344 C 28.84375 18.835938 26.972656 18 25 18 C 21.140625 18 18 21.140625 18 25 C 18 28.859375 21.140625 32 25 32 C 26.972656 32 28.84375 31.164063 30.160156 29.722656 L 34.542969 32.261719 C 32.277344 35.246094 28.78125 37 25 37 C 18.382813 37 13 31.617188 13 25 C 13 18.382813 18.382813 13 25 13 Z M 35 20 L 37 20 L 37 22 L 39 22 L 39 20 L 41 20 L 41 22 L 43 22 L 43 24 L 41 24 L 41 26 L 43 26 L 43 28 L 41 28 L 41 30 L 39 30 L 39 28 L 37 28 L 37 30 L 35 30 L 35 28 L 33 28 L 33 26 L 35 26 L 35 24 L 33 24 L 33 22 L 35 22 Z M 37 24 L 37 26 L 39 26 L 39 24 Z"
-                      ></path>
-                    </svg>
-                    <span>C#</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tech-category">
-                <h3 class="category-title">Technologies</h3>
-                <div class="tech-grid">
-                  <div class="tech-card">
-                    <img src="imgs/react.png" alt="React" />
-                    <span>React</span>
-                  </div>
-                  <div class="tech-card">
-                    <img src="imgs/nodeJs.png" alt="ViteJs" />
-                    <span>NodeJs</span>
-                  </div>
-                </div>
-              </div>
+            <div class="si-text">
+              <h3 class="si-title">Adaptabilité</h3>
+              <p class="si-desc">Pivoter vite, apprendre en continu, rester opérationnel dans l'incertitude.</p>
             </div>
-          </section>
+            <span class="si-star" aria-hidden="true">★</span>
+          </li>
+
+          <li class="soft-item">
+            <span class="si-num" aria-hidden="true">03</span>
+            <div class="si-illo">
+              <img src="imgs/illustrations/autonomie.svg" alt="" />
+            </div>
+            <div class="si-text">
+              <h3 class="si-title">Autonomie</h3>
+              <p class="si-desc">Prendre des décisions seul, s'organiser et livrer sans attendre qu'on te tende la main.</p>
+            </div>
+            <span class="si-star" aria-hidden="true">★</span>
+          </li>
+
+          <li class="soft-item">
+            <span class="si-num" aria-hidden="true">04</span>
+            <div class="si-illo">
+              <img src="imgs/illustrations/gestion_projet.svg" alt="" />
+            </div>
+            <div class="si-text">
+              <h3 class="si-title">Gestion de projet</h3>
+              <p class="si-desc">Planifier, prioriser et arbitrer pour livrer dans les délais sans sacrifier la qualité.</p>
+            </div>
+            <span class="si-star" aria-hidden="true">★</span>
+          </li>
+
+          <li class="soft-item">
+            <span class="si-num" aria-hidden="true">05</span>
+            <div class="si-illo">
+              <img src="imgs/illustrations/communication.svg" alt="" />
+            </div>
+            <div class="si-text">
+              <h3 class="si-title">Communication</h3>
+              <p class="si-desc">Transmettre clairement à toutes les parties — tech, client, équipe — à l'écrit comme à l'oral.</p>
+            </div>
+            <span class="si-star" aria-hidden="true">★</span>
+          </li>
+
+        </ol>
+      </div>
+
+      <!-- Softwares -->
+      <div class="tab-panel" id="panel-sw">
+        <p class="sw-tagline">Mon environnement technique : là où les projets prennent forme.</p>
+
+        <div class="sw-sections">
+
+          <div class="sw-group">
+            <h3 class="sw-group-label">Outils</h3>
+            <div class="sw-track">
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M25 2v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 18v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 34v7c0 3.855-3.145 7-7 7s-7-3.145-7-7c0-3.855 3.145-7 7-7H25zM41 9c0 3.855-3.145 7-7 7h-7V2h7C37.855 2 41 5.145 41 9zM34 18A7 7 0 1034 32 7 7 0 1034 18z"/></svg>
+                </div>
+                <span>Figma</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M46.793 22.09L27.91 3.207C27.11 2.402 26.055 2 25 2s-2.11.402-2.91 1.207l-3.735 3.734 4.622 4.621c1.535-.902 3.535-.707 4.851.609 1.317 1.316 1.508 3.316.607 4.848l4.543 4.543c1.535-.902 3.535-.707 4.851.609 1.562 1.562 1.562 4.093 0 5.656-1.562 1.562-4.094 1.562-5.657 0-1.316-1.317-1.507-3.317-.605-4.848l-4.543-4.544c-.324.192-.664.332-1.019.422v12.285C27.723 31.586 29 33.137 29 35c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.863 1.277-3.414 3-3.86V18.855a3.981 3.981 0 01-2.828-2.028l-4.625-4.472L3.207 22.09C1.598 23.695 1.598 26.305 3.207 27.91l18.882 18.883C22.89 47.597 23.945 48 25 48s2.11-.403 2.91-1.207l18.883-18.883c1.609-1.605 1.609-4.215 0-5.82z"/></svg>
+                </div>
+                <span>Git</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <img src="imgs/github.png" alt="Github" />
+                </div>
+                <span>Github</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <img src="imgs/docker.png" alt="Docker" />
+                </div>
+                <span>Docker</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <img src="imgs/mongodb.png" alt="MongoDB" />
+                </div>
+                <span>MongoDB</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M41 4H9C6.24 4 4 6.24 4 9v32c0 2.76 2.24 5 5 5h32c2.76 0 5-2.24 5-5V9c0-2.76-2.24-5-5-5zm-20 32c0 1.1-.9 2-2 2h-7c-1.1 0-2-.9-2-2V12c0-1.1.9-2 2-2h7c1.1 0 2 .9 2 2v24zm19-12c0 1.1-.9 2-2 2h-7c-1.1 0-2-.9-2-2V12c0-1.1.9-2 2-2h7c1.1 0 2 .9 2 2v12z"/></svg>
+                </div>
+                <span>Trello</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="sw-group">
+            <h3 class="sw-group-label">Langages</h3>
+            <div class="sw-track">
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M24.5 2C15.8 2 14 6.49 14 9.09V14h10v1H9.09C5.79 15 2 17.6 2 25s3.79 10 7.09 10H15v-6c0-2.2 1.8-4 4-4h12c1.7 0 3-1.3 3-3V9.09C34 5.59 30.7 2 24.5 2zM20 7c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm15 8v7c0 2.2-1.8 4-4 4H19c-1.7 0-3 1.3-3 3v11.91C16 44.41 19.3 48 25.5 48 34.2 48 36 43.51 36 40.91V36H26v-1h14.91C44.21 35 48 32.4 48 25s-3.79-10-7.09-10H35zm-5 24c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>
+                </div>
+                <span>Python</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <img src="imgs/php.png" alt="PHP" />
+                </div>
+                <span>PHP</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M45.274 2.325C45.084 2.118 44.817 2 44.536 2H5.464C5.183 2 4.916 2.118 4.726 2.325S4.443 2.81 4.468 3.089l3.52 39.427c.037.412.324.759.722.873l16.01 4.573C24.809 47.987 24.902 48 24.994 48s.185-.013.274-.038l16.024-4.573c.398-.114.685-.461.722-.873l3.518-39.427C45.557 2.81 45.463 2.532 45.274 2.325zM12 29.004l7 1.942V11h4v26l-11-3.051v-4.945zm26.054-7L37 34.25 27 37v-4.601l6.75-1.855.25-3.75L27 28V11h12l-.345 4H31v8l7.054 3z"/></svg>
+                </div>
+                <span>JavaScript</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M43.84 8.71L40.19 49.08 24.98 53.09 9.81 49.09 6.16 8.71zM35.73 18.14H14.25l.47 5.14h16.08l-.48 5.32-5.35 1.48h-.02l-5.34-1.49-.36-4.12h-5.17l.72 8.16 10.16 2.91.04-.01 10.2-2.91.85-10.47.71-4.01z"/></svg>
+                </div>
+                <span>HTML</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path fill-rule="evenodd" d="M42 6L39 40l-14 4-14-4L8 6zM16.8 28l4 .001.098 2.499L25 31.898l4.102-1.398.297-4.5H20.6l-.203-4H29.6l.298-4H16.1l-.3-4h18.3l-.5 8-.703 11.5L25 36.102l-7.899-2.602z"/></svg>
+                </div>
+                <span>CSS</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="sw-group">
+            <h3 class="sw-group-label">Technologies</h3>
+            <div class="sw-track">
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <img src="imgs/react.png" alt="React" />
+                </div>
+                <span>React</span>
+              </div>
+
+              <div class="sw-pill">
+                <div class="sw-pill__icon">
+                  <img src="imgs/nodeJs.png" alt="NodeJs" />
+                </div>
+                <span>Node.js</span>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <div class="slider-dots">
-        <button class="dot active"></button>
-        <button class="dot"></button>
-        <button class="dot"></button>
-      </div>
     </section>
 
-    <!-- SECTION 6 -->
-
+    <!-- ====================================================
+       SECTION 6 — PROJETS
+  ===================================================== -->
     <section id="sec6">
-      <div class="sec6-header">
-        <h1 id="sec6-title">Mes projets</h1>
-        <h2>Des solutions créatives qui marquent la différence</h2>
+      <div class="sec-header">
+        <p class="sec-eyebrow rv">Portfolio</p>
+        <h2 class="sec-title rv d1">Mes projets</h2>
+        <p class="sec-subtitle rv d2">
+          Des solutions créatives qui marquent la différence.
+        </p>
       </div>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="card-image">
-            <img
-              src="imgs/projets/mes-projets/Monetix.png"
-              alt="Image du projet"
-            />
+
+      <div class="proj-grid">
+        <article class="proj-card rv d1">
+          <div class="proj-card__media">
+            <img src="imgs/projets/mes-projets/Monetix.png" alt="Monetix" />
           </div>
-          <div class="card-content">
-            <div class="card-tags">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
+          <div class="proj-card__body">
+            <div class="proj-tags">
+              <span class="proj-tag">React</span
+              ><span class="proj-tag">Node.js</span>
             </div>
-            <div class="card-footer">
-              <h3 class="project-title">Monetix</h3>
-              <a href="#" class="card-link">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+            <div class="proj-foot">
+              <h3 class="proj-title">Monetix</h3>
+              <a href="#" class="proj-arrow" aria-label="Voir Monetix"
+                ><svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
                 </svg>
               </a>
             </div>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="card-image">
-            <img
-              src="imgs/projets/mes-projets/unesco.png"
-              alt="Image du projet"
-            />
+        <article class="proj-card rv d2">
+          <div class="proj-card__media">
+            <img src="imgs/projets/mes-projets/unesco.png" alt="SAE UNESCO" />
           </div>
-          <div class="card-content">
-            <div class="card-tags">
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">JS</span>
-              <span class="tag">Figma</span>
+          <div class="proj-card__body">
+            <div class="proj-tags">
+              <span class="proj-tag">HTML/CSS</span
+              ><span class="proj-tag">JS</span
+              ><span class="proj-tag">Figma</span>
             </div>
-            <div class="card-footer">
-              <h3 class="project-title">SAE UNESCO</h3>
+            <div class="proj-foot">
+              <h3 class="proj-title">SAE UNESCO</h3>
               <a
                 href="./pages/projets/unesco.html"
                 target="_blank"
-                class="card-link"
-                aria-label="Voir le projet"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                class="proj-arrow"
+                aria-label="Voir SAE UNESCO"
+                ><svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
                 </svg>
               </a>
             </div>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="card-image">
-            <img
-              src="imgs/projets/mes-projets/bricksy.png"
-              alt="Image du projet"
-            />
+        <article class="proj-card rv d3">
+          <div class="proj-card__media">
+            <img src="imgs/projets/mes-projets/bricksy.png" alt="Bricksy" />
           </div>
-          <div class="card-content">
-            <div class="card-tags">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
+          <div class="proj-card__body">
+            <div class="proj-tags">
+              <span class="proj-tag">React</span
+              ><span class="proj-tag">Node.js</span>
             </div>
-            <div class="card-footer">
-              <h3 class="project-title">Bricksy</h3>
-              <a href="#" class="card-link">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+            <div class="proj-foot">
+              <h3 class="proj-title">Bricksy</h3>
+              <a href="#" class="proj-arrow" aria-label="Voir Bricksy"
+                ><svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
                 </svg>
               </a>
             </div>
@@ -942,11 +726,34 @@
         </article>
       </div>
     </section>
-    <div class="cursor-outline"></div>
+
+    <!-- ====================================================
+       FOOTER
+  ===================================================== -->
+    <footer>
+      <div>
+        <h2 class="footer-name">Vibol<br />HING</h2>
+        <p class="footer-meta">2025-2026 - BUT Informatique 2</p>
+      </div>
+      <nav aria-label="Navigation rapide">
+        <ul class="footer-nav">
+          <li><a href="#sec2">À propos</a></li>
+          <li><a href="#sec3">Parcours</a></li>
+          <li><a href="#sec4">Compétences</a></li>
+          <li><a href="#sec5">Skills</a></li>
+          <li><a href="#sec6">Projets</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
-  <script src="js/slider.js"></script>
-  <script src="js/fade-in.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/topbar-swap.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/hard-skills.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <script src="js/main-scroll.js"></script>
-  <script src="js/cursor.js"></script>
+  <script src="js/hardskills.js"></script>
 </html>
