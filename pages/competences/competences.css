@@ -1,0 +1,394 @@
+/* ============================================================
+   competences.css — Styles communs à toutes les pages
+   de compétences BUT Informatique
+   Dépend de : Mochiy Pop One + Darker Grotesque (Google Fonts)
+============================================================ */
+
+:root {
+  --blue:   #1837E8;
+  --cream:  #F5EEE0;
+  --dark:   #0D0D0D;
+  --muted:  #7A7A7A;
+  --radius: 1.4rem;
+  --pill:   100px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; font-size: 16px; }
+body  { font-family: 'Darker Grotesque', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; cursor: none; }
+img   { display: block; max-width: 100%; }
+a     { color: inherit; text-decoration: none; }
+
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 9px; }
+
+/* ── Curseur custom ── */
+#cur {
+  position: fixed; top: 0; left: 0;
+  width: 9px; height: 9px;
+  background: var(--blue); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+#curO {
+  position: fixed; top: 0; left: 0;
+  width: 32px; height: 32px;
+  border: 1.5px solid var(--blue); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: .45;
+}
+
+/* ── Topbar ── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem clamp(1.4rem, 5vw, 4rem);
+  transition: background .35s, backdrop-filter .35s;
+}
+.topbar.scrolled {
+  background: rgba(245,238,224,.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.topbar__back {
+  display: flex; align-items: center; gap: .55rem;
+  font-size: .78rem; font-weight: 900; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--blue);
+  border: 1.5px solid var(--blue); border-radius: var(--pill);
+  padding: .35rem 1rem; cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.topbar__back:hover { background: var(--blue); color: var(--cream); }
+.topbar__back svg   { width: 14px; height: 14px; }
+.topbar__num {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: .9rem; color: rgba(24,55,232,.4);
+}
+
+/* ── Hero ── */
+.hero {
+  min-height: 75vh;
+  background: var(--blue);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 8rem clamp(1.4rem, 7vw, 7rem) clamp(3rem, 5vw, 5rem);
+  position: relative; overflow: hidden;
+}
+.hero__ghost {
+  position: absolute; bottom: -.15em; right: -.03em;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: clamp(7rem, 22vw, 20rem);
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(245,238,224,.07);
+  pointer-events: none; line-height: 1; user-select: none;
+}
+.hero__eyebrow {
+  font-size: .72rem; font-weight: 900; letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(245,238,224,.45); margin-bottom: .9rem;
+}
+.hero__title {
+  font-family: climate-crisis, sans-serif;
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  color: var(--cream); line-height: .95; position: relative;
+}
+.hero__sub {
+  font-family: darker-grotesque, sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.3rem); font-weight: 500;
+  color: rgba(245,238,224,.62);
+  margin-top: 1.3rem; max-width: 55ch; line-height: 1.65;
+  position: relative;
+}
+.hero__star {
+  position: absolute; color: rgba(245,238,224,.22);
+  font-size: clamp(.8rem, 2vw, 1.4rem);
+}
+
+/* ── Layout principal ── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 7rem) clamp(1.4rem, 5vw, 4rem);
+}
+
+/* ── Section label ── */
+.section-label {
+  font-size: .68rem; font-weight: 900; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.section-label::before {
+  content: ''; display: block; width: 24px; height: 1.5px; background: var(--blue);
+}
+
+/* ── Bloc définition ── */
+.def-block {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: start;
+  margin-bottom: clamp(4rem, 8vw, 8rem);
+}
+@media (max-width: 750px) { .def-block { grid-template-columns: 1fr; } }
+
+.def-title {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  color: var(--blue); line-height: 1; margin-bottom: 1.5rem;
+}
+.def-body p {
+  font-size: clamp(.95rem, 1.5vw, 1.12rem); font-weight: 500;
+  color: var(--muted); line-height: 1.75; margin-bottom: 1rem;
+}
+
+.comp-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  border: 1.5px solid var(--blue); border-radius: var(--pill);
+  padding: .4rem 1.1rem;
+  font-size: .8rem; font-weight: 900; color: var(--blue); letter-spacing: .04em;
+  margin-top: 1.2rem;
+}
+.comp-badge span { opacity: .5; }
+
+/* ── Barres de progression ── */
+.skill-bar-wrap  { margin-top: 1.8rem; }
+.skill-bar-wrap + .skill-bar-wrap { margin-top: 1rem; }
+
+.skill-bar-label { display: flex; justify-content: space-between; margin-bottom: .4rem; }
+.skill-bar-label span {
+  font-size: .72rem; font-weight: 900; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--blue);
+}
+.skill-bar-track {
+  height: 5px; background: rgba(24,55,232,.12); border-radius: 9px; overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%; background: var(--blue); border-radius: 9px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+.skill-bar-fill.animated { width: var(--target); }
+
+/* ── Progression niveaux ── */
+.prog-section { margin-bottom: clamp(4rem, 8vw, 8rem); }
+
+.prog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+@media (max-width: 640px) { .prog-grid { grid-template-columns: 1fr; } }
+
+.prog-card {
+  border: 1.5px solid var(--blue);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.prog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(24,55,232,.13);
+}
+
+.prog-card__head {
+  background: var(--blue);
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+.prog-card__niv {
+  font-size: .6rem;
+  font-weight: 900;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(245,238,224,.45);
+}
+.prog-card__level {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--cream);
+  line-height: 1.1;
+}
+.prog-card__badge {
+  font-size: .62rem; font-weight: 900; letter-spacing: .1em;
+  text-transform: uppercase; color: rgba(245,238,224,.5);
+  border: 1px solid rgba(245,238,224,.22); border-radius: var(--pill);
+  padding: .15rem .6rem;
+}
+.prog-card__intro-head {
+  font-size: .82rem;
+  font-weight: 600;
+  color: rgba(245,238,224,.6);
+  line-height: 1.5;
+  margin-top: .2rem;
+}
+.prog-card__body  { padding: 1.3rem 1.6rem; background: var(--cream); }
+.prog-card__intro {
+  font-size: .88rem; font-weight: 600; color: var(--muted);
+  margin-bottom: 1rem; line-height: 1.5;
+}
+
+.ac-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+.ac-list li {
+  display: flex;
+  gap: .8rem;
+  align-items: flex-start;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.5;
+}
+.ac-num {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: .62rem;
+  color: var(--blue);
+  background: rgba(24,55,232,.08);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: .12rem;
+}
+
+/* ── SAÉs / Acquisitions ── */
+.acq-section { margin-bottom: clamp(4rem, 8vw, 8rem); }
+
+.acq-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+@media (max-width: 860px) { .acq-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .acq-grid { grid-template-columns: 1fr; } }
+
+.acq-card {
+  background: var(--cream); border: 1.5px solid var(--blue);
+  border-radius: var(--radius); padding: 1.4rem 1.3rem;
+  transition: background .28s ease;
+}
+.acq-card:hover { background: var(--blue); }
+
+.acq-card__yr {
+  font-size: .62rem; font-weight: 900; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: .6rem;
+  transition: color .28s;
+}
+.acq-card:hover .acq-card__yr { color: rgba(245,238,224,.5); }
+
+.acq-card__name {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: clamp(.95rem, 1.6vw, 1.2rem); color: var(--dark);
+  line-height: 1.15; margin-bottom: .65rem;
+  transition: color .28s;
+}
+.acq-card:hover .acq-card__name { color: var(--cream); }
+
+.acq-card__desc {
+  font-size: .83rem; font-weight: 500; color: var(--muted);
+  line-height: 1.55;
+  transition: color .28s;
+}
+.acq-card:hover .acq-card__desc { color: rgba(245,238,224,.65); }
+
+.acq-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .9rem; }
+.acq-tag {
+  font-size: .62rem; font-weight: 900; letter-spacing: .04em;
+  padding: .12rem .5rem; border-radius: var(--pill);
+  background: rgba(24,55,232,.08); color: var(--blue);
+  transition: background .28s, color .28s;
+}
+.acq-card:hover .acq-tag { background: rgba(245,238,224,.15); color: var(--cream); }
+
+/* ── Projet phare ── */
+.project-section { margin-bottom: clamp(4rem, 8vw, 8rem); }
+
+.project-card {
+  background: var(--blue); border-radius: var(--radius);
+  overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 720px) { .project-card { grid-template-columns: 1fr; } }
+
+.project-card__media {
+  min-height: 280px; background: rgba(245,238,224,.08);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.project-card__media img { width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+
+.project-card__media-placeholder {
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+  color: rgba(245,238,224,.25); font-size: .75rem; font-weight: 900;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.project-card__media-placeholder svg { width: 48px; height: 48px; opacity: .3; }
+
+.project-card__body { padding: clamp(2rem, 4vw, 3rem); }
+
+.project-card__eyebrow {
+  font-size: .62rem; font-weight: 900; letter-spacing: .16em;
+  text-transform: uppercase; color: rgba(245,238,224,.4); margin-bottom: .9rem;
+}
+.project-card__title {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  color: var(--cream); line-height: 1; margin-bottom: 1.3rem;
+}
+.project-card__desc {
+  font-size: clamp(.88rem, 1.4vw, 1rem); font-weight: 500;
+  color: rgba(245,238,224,.68); line-height: 1.7; margin-bottom: 1.6rem;
+}
+
+.project-skills { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 2rem; }
+.project-skill {
+  font-size: .68rem; font-weight: 900; letter-spacing: .05em;
+  padding: .2rem .7rem; border-radius: var(--pill);
+  border: 1px solid rgba(245,238,224,.25); color: rgba(245,238,224,.65);
+}
+
+.contrib-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-top: 1.4rem; }
+.contrib-list li {
+  display: flex; gap: .7rem; align-items: flex-start;
+  font-size: .85rem; font-weight: 600;
+  color: rgba(245,238,224,.7); line-height: 1.5;
+}
+.contrib-list li::before { content: '→'; color: rgba(245,238,224,.35); flex-shrink: 0; }
+
+.project-link {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .8rem; font-weight: 900; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--cream);
+  border: 1.5px solid rgba(245,238,224,.4); border-radius: var(--pill);
+  padding: .5rem 1.3rem; margin-top: 1.8rem;
+  transition: background .2s, border-color .2s;
+}
+.project-link:hover { background: rgba(245,238,224,.12); border-color: var(--cream); }
+.project-link svg { width: 13px; }
+
+/* ── Footer ── */
+.page-footer {
+  background: var(--blue); color: var(--cream);
+  padding: 3rem clamp(1.4rem, 5vw, 4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1.5rem;
+}
+.page-footer__name { font-family: 'Mochiy Pop One', sans-serif; font-size: 1.4rem; }
+.page-footer__nav  { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.page-footer__nav a { font-size: .8rem; font-weight: 700; color: rgba(245,238,224,.45); transition: color .2s; }
+.page-footer__nav a:hover { color: var(--cream); }
+
+/* ── Reveal scroll ── */
+.rv { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.rv.in { opacity: 1; transform: none; }
+.rv.d1 { transition-delay: .08s; }
+.rv.d2 { transition-delay: .16s; }
+.rv.d3 { transition-delay: .24s; }

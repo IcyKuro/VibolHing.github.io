@@ -1,41 +1,38 @@
-const cursorDot = document.querySelector('.cursor-dot');
-const cursorOutline = document.querySelector('.cursor-outline');
+/* Curseur custom + détection fond bleu */
+(function () {
+  const cur  = document.getElementById('cur');
+  const curO = document.getElementById('curO');
+  if (!cur || !curO) return;
 
-let mouseX = 0;
-let mouseY = 0;
+  let mx = 0, my = 0, ox = 0, oy = 0;
 
-let outlineX = 0;
-let outlineY = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
 
-window.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  
-  cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-  
-  cursorDot.style.opacity = '1';
-  cursorOutline.style.opacity = '1';
-});
+  function isOverBlue() {
+    cur.style.pointerEvents  = 'none';
+    curO.style.pointerEvents = 'none';
+    const el = document.elementFromPoint(mx, my);
+    cur.style.pointerEvents  = '';
+    curO.style.pointerEvents = '';
+    if (!el) return false;
+    let node = el;
+    while (node && node !== document.body) {
+      if (getComputedStyle(node).backgroundColor === 'rgb(24, 55, 232)') return true;
+      node = node.parentElement;
+    }
+    return false;
+  }
 
-function animateCursor() {
-
-  outlineX += (mouseX - outlineX) * 0.10;
-  outlineY += (mouseY - outlineY) * 0.10;
-
-  cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
-
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-const interactiveElements = document.querySelectorAll('a, button, .nav-link, .card, input, textarea');
-
-interactiveElements.forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    document.body.classList.add('hovering');
-  });
-  
-  el.addEventListener('mouseleave', () => {
-    document.body.classList.remove('hovering');
-  });
-});
+  (function tick() {
+    ox += (mx - ox) * .12;
+    oy += (my - oy) * .12;
+    cur.style.left  = mx + 'px';
+    cur.style.top   = my + 'px';
+    curO.style.left = ox + 'px';
+    curO.style.top  = oy + 'px';
+    const color = isOverBlue() ? 'var(--cream)' : 'var(--main-blue)';
+    cur.style.background   = color;
+    curO.style.borderColor = color;
+    requestAnimationFrame(tick);
+  })();
+})();
