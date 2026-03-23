@@ -6,7 +6,7 @@
   --radius: 1.4rem;
   --radius-sm: 0.8rem;
   --radius-pill: 100px;
-  --sp: clamp(5rem, 10vw, 9rem) clamp(1.4rem, 4.5vw, 3.5rem);
+  --sp: clamp(5rem, 10vw, 9rem) clamp(1.4rem, 5vw, 5rem);
 }
 
 *,
@@ -451,6 +451,8 @@ a {
   padding: var(--sp);
   position: relative;
   overflow: hidden;
+  min-height: 50vh;
+  margin-top: clamp(1rem, 3vw, 2rem);
 }
 
 .sec2-ghost {

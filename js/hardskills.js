@@ -25,24 +25,32 @@
   const CREAM = '#F5EEE0';
 
   const SKILL_DEFS = [
-    { label: 'POO',                   size: 'xl' },
-    { label: 'Développement Web',     size: 'xl' },
-    { label: 'Algorithmique',         size: 'xl' },
-    { label: 'Conception BDD',        size: 'lg' },
-    { label: 'Modélisation UML',      size: 'lg' },
-    { label: 'Optimisation algo.',    size: 'lg' },
-    { label: 'Admin. réseau',         size: 'lg' },
-    { label: 'Structures données',    size: 'md' },
-    { label: 'Linux / Bash',          size: 'md' },
-    { label: 'Sécurité info.',        size: 'md' },
-    { label: 'APIs REST',             size: 'md' },
-    { label: 'Versioning Git',        size: 'md' },
-    { label: 'Tests & Qualité',       size: 'md' },
-    { label: 'Gestion Agile',         size: 'md' },
-    { label: 'Archi. logicielle',     size: 'md' },
-    { label: 'Dév. Mobile',           size: 'sm' },
-    { label: 'Virtualisation',        size: 'sm' },
-    { label: 'Cryptographie',         size: 'sm' },
+    { label: 'POO',                 size: 'xl' },
+    { label: 'Développement Web',   size: 'xl' },
+    { label: 'Algorithmique',       size: 'xl' },
+    { label: 'Conception BDD',      size: 'lg' },
+    { label: 'Modélisation UML',    size: 'lg' },
+    { label: 'Optimisation algo.',  size: 'lg' },
+    { label: 'Admin. réseau',       size: 'lg' },
+    { label: 'Dév. Full-Stack',     size: 'lg' },
+    { label: 'Structures données',  size: 'md' },
+    { label: 'Linux / Bash',        size: 'md' },
+    { label: 'Sécurité info.',      size: 'md' },
+    { label: 'APIs REST',           size: 'md' },
+    { label: 'Versioning Git',      size: 'md' },
+    { label: 'Tests & Qualité',     size: 'md' },
+    { label: 'Agile Scrum',         size: 'md' },
+    { label: 'Archi. logicielle',   size: 'md' },
+    { label: 'SQL avancé',          size: 'md' },
+    { label: 'Prog. système',       size: 'md' },
+    { label: 'Archi. réseaux',      size: 'md' },
+    { label: 'Dév. Mobile',         size: 'sm' },
+    { label: 'Virtualisation',      size: 'sm' },
+    { label: 'Cryptographie',       size: 'sm' },
+    { label: 'NoSQL',               size: 'sm' },
+    { label: 'Automates & langages',size: 'sm' },
+    { label: 'Graphes',             size: 'sm' },
+    { label: 'Prog. fonctionnelle', size: 'sm' },
   ];
 
   /* Tailles des blocs */
@@ -55,10 +63,10 @@
 
   /* Physique */
   const GRAVITY     = 0.22;
-  const RESTITUTION = 0.04;
-  const FRICTION    = 0.72;
+  const RESTITUTION = 0.28;   
+  const FRICTION    = 0.78;   
   const MAX_VEL     = 18;
-  const SLEEP_VEL   = 0.12;
+  const SLEEP_VEL   = 0.18;
   const SOLVER_ITER = 32;
   const MARGIN      = 5;
 
@@ -226,12 +234,12 @@
 
         if (ox < oy) {
           const sign = b.x >= a.x ? 1 : -1;
-          if (!a._drag) { a.x -= sign * ox * ra; a.vx -= sign * ox * 0.07 * ra; }
-          if (!b._drag) { b.x += sign * ox * rb; b.vx += sign * ox * 0.07 * rb; }
+          if (!a._drag) { a.x -= sign * ox * ra; a.vx -= sign * ox * 0.2 * ra; }
+          if (!b._drag) { b.x += sign * ox * rb; b.vx += sign * ox * 0.2 * rb; }
         } else {
           const sign = b.y >= a.y ? 1 : -1;
-          if (!a._drag) { a.y -= sign * oy * ra; a.vy -= sign * oy * 0.07 * ra; }
-          if (!b._drag) { b.y += sign * oy * rb; b.vy += sign * oy * 0.07 * rb; }
+          if (!a._drag) { a.y -= sign * oy * ra; a.vy -= sign * oy * 0.2 * ra; }
+          if (!b._drag) { b.y += sign * oy * rb; b.vy += sign * oy * 0.2 * rb; }
         }
       }
     }
