@@ -11,6 +11,9 @@
   --green: #a9de8c;
   --dark-green: #578e39;
   --bg-beige: #fff6e6;
+  --cream: var(--bg-beige);
+  --dark: var(--black);
+  --main-blue: var(--dark-blue);
   --orange: #ff7847;
   --white: #fff;
   --black: #000;

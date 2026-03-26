@@ -3,119 +3,332 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAE UNESCO</title>
+    <title>Bricksy - Vibol HING</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="../../style/all.css" />
     <link rel="stylesheet" href="../../style/project.css" />
   </head>
   <body>
-    <section class="project-main">
-      <h1 class="project-title reveal">BRICKSY</h1>
-      <h2 class="project-date reveal delay-1">SEP 2025 - AVRIL 2026</h2>
-    </section>
-    <section class="project-content">
-      <h1 class="project-content-title reveal">Contexte</h1>
-      <div class="context-text reveal delay-1">
-        <p>
-          <strong>Bricksy</strong> est un projet développé par
-          <strong>Haven Stack</strong>, une startup créée dans le cadre d'un
-          projet universitaire. Il s'agit d'une plateforme de
-          <strong>e-commerce</strong> permettant aux utilisateurs de transformer
-          une image en <strong>tableaux LEGO personnalisés</strong>, puis de les
-          acheter directement en ligne. Le site intègre l'ensemble d'un parcours
-          marchand complet, incluant la gestion d'un panier, des commandes, des
-          paiements et de la livraison, ainsi qu'une logique de gestion des
-          stocks et de réapprovisionnement, pensée en lien avec une usine de
-          fabrication de pièces LEGO.
-        </p>
-        <p>
-          Sur le plan technique, Bricksy s'appuie sur une architecture
-          <strong>multi-langages</strong> intégrant une interface web structuré
-          par <strong>composants</strong> (grâce à l'utilisation de la librairie
-          <strong>REACT</strong>). Développé dans un cadre agile et sur une
-          durée limitée, le projet illustre une approche structurée et
-          professionnelle du développement logiciel orienté
-          <strong>B2B</strong> et e-commerce.
-        </p>
-        <p>
-          <strong id="blue-strong">Membres du projet</strong> : Adam NACHNOUCHI
-          - Enzo MILIC - Helder ESTEVES - Nolann MAUNIER - Vibol HING
-        </p>
-      </div>
-      <h1 class="project-content-title reveal delay-2">Outils utilisés</h1>
-      <div class="project-elements">
-        <img
-          src="../../imgs/vscode.png"
-          alt="une icone de VsCode"
-          class="reveal delay-3"
-        />
-        <img
-          src="../../imgs/figma.svg"
-          alt="une icone de figma"
-          class="reveal delay-4"
-        />
-      </div>
-      <h1 class="project-content-title reveal delay-1">Langages utilisés</h1>
-      <div class="project-elements">
-        <img
-          src="../../imgs/html.png"
-          alt="une icone html"
-          class="reveal delay-2"
-        />
-        <img
-          src="../../imgs/css.png"
-          alt="une icone css"
-          class="reveal delay-3"
-        />
-      </div>
-      <h1 class="project-content-title reveal delay-1">Compétences Acquises</h1>
-      <div class="project-elements">
-        <p class="conduire reveal delay-2">Conduire</p>
-      </div>
-      <h1 class="project-content-title reveal delay-3">Lien du projet</h1>
-      <a class="project-button reveal delay-4">Voir le projet</a>
-    </section>
-    <section class="project-info">
-      <div class="project-info-line">
-        <div class="project-info-img">
-          <img class="reveal delay-1" />
-        </div>
-        <div class="project-info-text">
-          <p class="reveal delay-2">
-            Les images proposées au client sont crées en plusieurs étapes :
-          </p>
-          <p class="reveal delay-3">
-            - Abaissement de la résolution grâce à des
-            <strong>méthodes d'interpolation</strong> en
-            <strong>java</strong> (utilisation d'un exécutable .jar)
-          </p>
-          <p class="reveal delay-4">
-            - Calcul des <strong>pavages Légo</strong> grâce à des algorithmes
-            en <strong>C</strong> prenant en compte différents
-            <strong>paramètres</strong> (prix minimal, marge d'erreur
-            minimale...Etc)
-          </p>
+    <div id="cur"></div>
+    <div id="curO"></div>
+
+    <!-- Topbar -->
+    <header class="topbar" id="topbar">
+      <a href="../../index.html" class="topbar__back">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 12H5" />
+          <path d="M12 19l-7-7 7-7" />
+        </svg>
+        Portfolio
+      </a>
+      <span class="topbar__tag">Projet - Haven Stack</span>
+    </header>
+
+    <!-- Hero -->
+    <section class="proj-hero">
+      <span class="proj-hero__star" style="top: 14%; left: 5%">✦</span>
+      <span
+        class="proj-hero__star"
+        style="top: 28%; right: 9%; font-size: 1.8rem"
+        >★</span
+      >
+      <span
+        class="proj-hero__star"
+        style="bottom: 30%; left: 18%; font-size: 0.9rem"
+        >✦</span
+      >
+      <span class="proj-hero__ghost" aria-hidden="true">B</span>
+
+      <p class="proj-hero__eyebrow">
+        SAÉ 3.Real.01 &amp; 4.Real.01 · Parcours A
+      </p>
+      <h1 class="proj-hero__title">Bricksy</h1>
+
+      <div class="proj-hero__meta">
+        <span class="proj-hero__date">Sep. 2024 - Avr. 2025</span>
+        <div class="proj-hero__pills">
+          <span class="proj-hero__pill">PHP</span>
+          <span class="proj-hero__pill">Java</span>
+          <span class="proj-hero__pill">C</span>
+          <span class="proj-hero__pill">React</span>
+          <span class="proj-hero__pill">MariaDB</span>
+          <span class="proj-hero__pill">Docker</span>
+          <span class="proj-hero__pill">Figma</span>
         </div>
       </div>
-      <div class="project-info-line">
-        <div class="project-info-img">
-          <img class="reveal delay-1" />
-        </div>
-        <div class="project-info-text">
-          <p class="reveal delay-2">
-          </p>
-        </div>
-      </div>
-      <div class="my-projects">
-        <a id="my-projects" class="project-button reveal delay-1">
-          Mes Projets
-        </a>
+
+      <div class="proj-hero__scroll">
+        <span>Scroll</span>
+        <div class="proj-hero__scroll-line"></div>
       </div>
     </section>
-    <div class="cursor-outline"></div>
+
+    <main>
+      <!-- Contexte -->
+      <section class="proj-context rv">
+        <div>
+          <div class="section-label">Contexte</div>
+          <h2 class="proj-context__title">
+            E-commerce<br />de mosaïques<br />LEGO
+          </h2>
+          <div class="proj-context__badge">
+            <span>★</span> Haven Stack · Startup
+          </div>
+        </div>
+        <div class="proj-context__body">
+          <p>
+            <strong>Bricksy</strong> est une plateforme e-commerce développée
+            par <strong>Haven Stack</strong>, une startup née dans le cadre
+            universitaire et poursuivie au-delà. Elle permet aux utilisateurs de
+            transformer une image en
+            <strong>tableaux LEGO personnalisés</strong>, de les configurer et
+            de les acheter directement en ligne.
+          </p>
+          <p>
+            Le site intègre un parcours marchand complet - gestion de panier,
+            commandes, paiement, livraison - ainsi qu'une logique de stock
+            pensée en lien avec une usine de fabrication de pièces LEGO.
+            L'architecture repose sur un
+            <strong>pipeline multi-langages</strong> PHP → Java → C pour le
+            traitement automatisé des images.
+          </p>
+          <p>
+            Dans la continuité du projet, Haven Stack développe une
+            <strong>plateforme de mini-jeux</strong> permettant d'obtenir des
+            coupons de réduction, ainsi qu'une
+            <strong>application mobile</strong> interconnectée au e-commerce.
+          </p>
+          <div class="proj-team">
+            <span class="proj-team__label">Équipe</span>
+            <span class="proj-team__member">Adam N.</span>
+            <span class="proj-team__member">Enzo M.</span>
+            <span class="proj-team__member">Helder E.</span>
+            <span class="proj-team__member">Nolann M.</span>
+            <span class="proj-team__member">Vibol H.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stack technique -->
+      <section class="rv d1">
+        <div class="proj-stack">
+          <div class="section-label">Stack technique</div>
+          <div class="proj-stack__grid">
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Back-end</span>
+              <span class="proj-stack__item-name">PHP 8</span>
+            </div>
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Traitement image</span>
+              <span class="proj-stack__item-name">Java (JAR)</span>
+            </div>
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Algorithmes pavage</span>
+              <span class="proj-stack__item-name">C (binaire)</span>
+            </div>
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Front-end</span>
+              <span class="proj-stack__item-name">React</span>
+            </div>
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Base de données</span>
+              <span class="proj-stack__item-name">MariaDB</span>
+            </div>
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Containerisation</span>
+              <span class="proj-stack__item-name">Docker Compose</span>
+            </div>
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Design</span>
+              <span class="proj-stack__item-name">Figma</span>
+            </div>
+            <div class="proj-stack__item">
+              <span class="proj-stack__item-cat">Versioning</span>
+              <span class="proj-stack__item-name">Git / GitHub</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pipeline technique -->
+      <section class="rv d1">
+        <div class="section-label">Pipeline de génération</div>
+        <h2 class="pipeline-title">De l'image<br />au tableau LEGO</h2>
+        <div class="pipeline-steps" style="margin-top: 1.8rem">
+          <div class="pipeline-step">
+            <div class="pipeline-step__num">01</div>
+            <div class="pipeline-step__lang">Web / PHP</div>
+            <div class="pipeline-step__name">Upload &amp; sélection</div>
+            <div class="pipeline-step__desc">
+              L'utilisateur uploade son image et choisit ses dimensions de
+              redimensionnement.
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step__num">02</div>
+            <div class="pipeline-step__lang">Java - JAR</div>
+            <div class="pipeline-step__name">Abaissement de résolution</div>
+            <div class="pipeline-step__desc">
+              PHP appelle le composant Java via ProcessBuilder. Le JAR applique
+              des méthodes d'interpolation pour réduire la résolution.
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step__num">03</div>
+            <div class="pipeline-step__lang">C - Binaire</div>
+            <div class="pipeline-step__name">Calcul des 4 pavages</div>
+            <div class="pipeline-step__desc">
+              Le composant Java appelle le binaire C qui calcule 4 mosaïques
+              selon différents critères (prix min, marge d'erreur…).
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step__num">04</div>
+            <div class="pipeline-step__lang">PHP / MariaDB</div>
+            <div class="pipeline-step__name">Sélection &amp; panier</div>
+            <div class="pipeline-step__desc">
+              Les 4 pavages sont présentés avec leurs prix. L'utilisateur
+              sélectionne, ajoute au panier et passe commande.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mes contributions -->
+      <section class="rv d1">
+        <div class="section-label">Mes contributions</div>
+        <div class="proj-contrib">
+          <div class="contrib-card">
+            <div class="contrib-card__head">
+              <span class="contrib-card__icon">⚙</span>
+              <span class="contrib-card__label">Système de commande</span>
+            </div>
+            <div class="contrib-card__body">
+              <p>
+                Conception et implémentation du module panier, paiement et
+                historique de commandes de A à Z - specs fonctionnelles,
+                modélisation BDD et développement PHP/SQL complet.
+              </p>
+            </div>
+          </div>
+          <div class="contrib-card">
+            <div class="contrib-card__head">
+              <span class="contrib-card__icon">🔧</span>
+              <span class="contrib-card__label">Débogage stack</span>
+            </div>
+            <div class="contrib-card__body">
+              <p>
+                Résolution des bugs critiques : flux d'authentification 2FA
+                contournable, failles de session, problèmes de traduction i18n
+                et erreurs de sensibilité à la casse Linux.
+              </p>
+            </div>
+          </div>
+          <div class="contrib-card">
+            <div class="contrib-card__head">
+              <span class="contrib-card__icon">🎨</span>
+              <span class="contrib-card__label">Refonte homepage</span>
+            </div>
+            <div class="contrib-card__body">
+              <p>
+                Refonte complète de l'interface utilisateur avec nouveau design,
+                fusion de deux concepts en une mise en page trois colonnes avec
+                la couleur de marque #A26547.
+              </p>
+            </div>
+          </div>
+          <div class="contrib-card">
+            <div class="contrib-card__head">
+              <span class="contrib-card__icon">💾</span>
+              <span class="contrib-card__label">Correction SQL</span>
+            </div>
+            <div class="contrib-card__body">
+              <p>
+                Correction de la fonction <code>calculate_brick_price</code> -
+                restructuration des coefficients de calcul dans
+                <code>getTilingStats()</code> de <code>cnx.php</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Compétences ciblées -->
+      <section class="rv d1">
+        <div class="section-label">Compétences BUT ciblées</div>
+        <div class="comp-pills">
+          <span class="comp-pill"
+            ><span class="comp-pill__star">✦</span> Réaliser</span
+          >
+          <span class="comp-pill"
+            ><span class="comp-pill__star">✦</span> Optimiser</span
+          >
+          <span class="comp-pill"
+            ><span class="comp-pill__star">✦</span> Administrer</span
+          >
+          <span class="comp-pill"
+            ><span class="comp-pill__star">✦</span> Gérer</span
+          >
+          <span class="comp-pill"
+            ><span class="comp-pill__star">✦</span> Conduire</span
+          >
+          <span class="comp-pill"
+            ><span class="comp-pill__star">✦</span> Collaborer</span
+          >
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="rv d1">
+        <div class="proj-cta">
+          <div class="proj-cta__text">
+            <h2>Voir le projet</h2>
+            <p>Dépôt GitHub et démo disponibles sur demande.</p>
+          </div>
+          <a href="#" class="proj-cta__link proj-cta__link--disabled">
+            Bientôt disponible
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span class="page-footer__name">Vibol HING</span>
+      <a href="../../index.html#sec6" class="page-footer__back">
+        ← Tous les projets
+      </a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="../../js/smooth-scroll.js"></script>
+    <script src="../../js/reveal.js"></script>
+    <script>
+      const tb = document.getElementById("topbar");
+      window.addEventListener(
+        "scroll",
+        () => tb.classList.toggle("scrolled", scrollY > 40),
+        { passive: true },
+      );
+    </script>
+    <script src="../../js/cursor.js"></script>
   </body>
-  <script src="../../js/slider.js"></script>
-  <script src="../../js/fade-in.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-  <!-- <script src="../../js/main-scroll.js"></script> -->
-  <script src="../../js/cursor.js"></script>
 </html>
