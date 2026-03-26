@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Réaliser — Vibol HING</title>
+    <title>Réaliser - Vibol HING</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="competences.css" />
@@ -43,6 +43,7 @@
     </section>
 
     <main>
+      <!-- Définition -->
       <section class="def-block rv">
         <div>
           <div class="section-label">Définition</div>
@@ -51,236 +52,267 @@
         </div>
         <div class="def-body">
           <p>
-            La compétence <strong>Réaliser</strong> couvre l'ensemble du cycle
-            de développement logiciel : de la compréhension du besoin client
-            jusqu'à la livraison d'une application fonctionnelle, testée et
-            documentée.
+            <strong>Réaliser</strong> c'est aller du besoin client jusqu'à une
+            application fonctionnelle, testée, documentée et déployée. En BUT 2,
+            cette compétence monte d'un cran : on ne part plus d'une
+            spécification claire, mais d'exigences floues qu'il faut clarifier,
+            formaliser et traduire en code de qualité.
           </p>
           <p>
-            Elle mobilise des savoir-faire techniques (langages, frameworks,
-            outils) mais aussi une posture professionnelle : rigueur, itération,
-            communication avec le client et sens de la qualité.
+            C'est une compétence qui a été très solicitée au cours des nombreux
+            projets de la formation, notamment pour la SAE TableauLEGO.
           </p>
         </div>
       </section>
 
+      <!-- Montée en compétence BUT 2 -->
       <section class="prog-section rv d1">
-        <div class="section-label">Apprentissages critiques officiels</div>
-        <div class="prog-grid">
-          <div class="prog-card">
-            <div class="prog-card__head">
-              <span class="prog-card__niv">BUT 1 - S1 & S2</span>
-              <h3 class="prog-card__level">
-                Développer des applications informatiques simples
+        <div class="section-label">Montée en compétence - BUT 2</div>
+
+        <div class="ac-legend">
+          <span class="ac-legend__item">
+            <span class="ac-legend__dot ac-legend__dot--acquis"></span>Acquis
+          </span>
+          <span class="ac-legend__item">
+            <span class="ac-legend__dot ac-legend__dot--progress"></span>En
+            cours d'acquisition
+          </span>
+          <span class="ac-legend__item">
+            <span class="ac-legend__dot ac-legend__dot--non"></span>Non acquis
+          </span>
+        </div>
+
+        <div class="ac-status-grid">
+          <!-- AC21.01 -->
+          <div class="ac-block">
+            <div class="ac-block__head">
+              <span class="ac-block__code">AC21.01</span>
+              <h3 class="ac-block__title">
+                Élaborer et implémenter les spécifications fonctionnelles et non
+                fonctionnelles à partir des exigences
               </h3>
-              <p class="prog-card__intro-head">
-                Implémentation, conception et tests de solutions simples à
-                partir de spécifications.
-              </p>
+              <span class="ac-badge ac-badge--acquis">✓ Acquis</span>
             </div>
-            <div class="prog-card__body">
-              <ul class="ac-list">
-                <li>
-                  <span class="ac-num">✦</span>Implémenter des conceptions
-                  simples
-                </li>
-                <li>
-                  <span class="ac-num">✦</span>Élaborer des conceptions simples
-                </li>
-                <li>
-                  <span class="ac-num">✦</span>Faire des essais et évaluer leurs
-                  résultats en regard des spécifications
-                </li>
-                <li>
-                  <span class="ac-num">✦</span>Développer des interfaces
-                  utilisateurs
-                </li>
-              </ul>
+            <div class="ac-block__body">
+              <div class="ac-block__why">
+                <h4>Pourquoi c'est acquis</h4>
+                <p>
+                  Dans le cadre de la SAÉ 3.Real.01, l'architecture
+                  multi-composants (PHP → Java → C) rendait la phase de
+                  spécification essentielle. Sans des règles d'échange
+                  clairement définies entre les différents composants et cela en
+                  amont, le moindre écart sur les formats de données pouvait
+                  entraîner des bugs silencieux, particulièrement difficiles à
+                  identifier. J'ai donc pris l'habitude de formaliser à la fois
+                  les exigences fonctionnelles et les contraintes techniques
+                  avant de commencer le développement.
+                </p>
+              </div>
+              <div class="ac-block__proof">
+                <h4>Preuves concrètes</h4>
+                <ul class="proof-list">
+                  <li>
+                    SAE TableauLEGO : Spécification du pipeline image: flux PHP
+                    → JAR Java → binaire C, formats d'échange définis (chemin de
+                    fichier, paramètres de résolution, formats des pavages de
+                    retour)
+                  </li>
+                  <li>
+                    R3.04 Qualité de développement : Projet Monetix, nécessité
+                    le suivi d'un Product Backlog bien précis pour répondre aux
+                    besoins clients
+                  </li>
+                  <li>
+                    Contraintes non fonctionnelles gérées : limite de taille
+                    d'image acceptée, formats supportés (img2brick notamment)
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="prog-card">
-            <div class="prog-card__head">
-              <span class="prog-card__niv">BUT 2 - S3 & S4</span>
-              <h3 class="prog-card__level">
-                Partir des exigences et aller jusqu'à une application complète
+          <!-- AC21.02 -->
+          <div class="ac-block">
+            <div class="ac-block__head">
+              <span class="ac-block__code">AC21.02</span>
+              <h3 class="ac-block__title">
+                Appliquer des principes d'accessibilité et d'ergonomie
               </h3>
-              <p class="prog-card__intro-head">
-                Spécifications, bonnes pratiques et validation par les tests.
-              </p>
+              <span class="ac-badge ac-badge--progress">⟳ En cours</span>
             </div>
-            <div class="prog-card__body">
-              <ul class="ac-list">
-                <li>
-                  <span class="ac-num">✦</span>Élaborer et implémenter les
-                  spécifications fonctionnelles et non fonctionnelles à partir
-                  des exigences
-                </li>
-                <li>
-                  <span class="ac-num">✦</span>Appliquer des principes
-                  d'accessibilité et d'ergonomie
-                </li>
-                <li>
-                  <span class="ac-num">✦</span>Adopter de bonnes pratiques de
-                  conception et de programmation
-                </li>
-                <li>
-                  <span class="ac-num">✦</span>Vérifier et valider la qualité de
-                  l'application par les tests
-                </li>
-              </ul>
+            <div class="ac-block__body">
+              <div class="ac-block__why">
+                <h4>Où j'en suis</h4>
+                <p>
+                  Sur la SAÉ 3, le parcours utilisateur était long et exigeant:
+                  upload d'image, choix de résolution, attente du calcul,
+                  comparaison des pavages, commande... ce qui m'a poussé à
+                  travailler sérieusement l'ergonomie à chaque étape.
+                  L'accessibilité normée reste un axe de progression : je l'ai
+                  abordée en théorie mais pas encore appliquée de bout en bout
+                  sur un projet.
+                </p>
+              </div>
+              <div class="ac-block__proof">
+                <h4>Preuves &amp; limites</h4>
+                <ul class="proof-list">
+                  <li>
+                    Maquettes Figma du parcours upload → sélection résolution →
+                    comparaison des 4 pavages → panier
+                  </li>
+                  <li>
+                    SAE TableauLEGO : Indicateurs de progression pendant le
+                    traitement du pipeline (spinner, message d'état)
+                  </li>
+                  <li>
+                    Limite : WCAG (Web content accessibility guidelines) non
+                    abordé dans un projet concret.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- AC21.03 -->
+          <div class="ac-block">
+            <div class="ac-block__head">
+              <span class="ac-block__code">AC21.03</span>
+              <h3 class="ac-block__title">
+                Adopter de bonnes pratiques de conception et de programmation
+              </h3>
+              <span class="ac-badge ac-badge--acquis">✓ Acquis</span>
+            </div>
+            <div class="ac-block__body">
+              <div class="ac-block__why">
+                <h4>Pourquoi c'est acquis</h4>
+                <p>
+                  Dans le cadre de la reprise du code du S3 pour la poursuite du
+                  projet, j'ai compris que les bonnes pratiques ne sont pas une
+                  option quand on travaille en équipe sur la durée. Commenter le
+                  code existant avant d'y toucher et organiser le dépôt GitHub
+                  avec des branches dédiées à chaque axe du projet ont été les
+                  deux leviers qui nous ont permis de collaborer efficacement
+                  sans tout bloquer.
+                </p>
+              </div>
+              <div class="ac-block__proof">
+                <h4>Preuves concrètes</h4>
+                <ul class="proof-list">
+                  <li>
+                    Commenter du code critique de manière claire et
+                    compréhensible pour autrui dans le cadre d'un projet en
+                    équipe (tel que la SAE TableauLEGO)
+                  </li>
+                  <li>
+                    Gestion cohérente et adéquate d'un outil de collaboration
+                    tel que Github
+                  </li>
+                  <li>
+                    R4.02 Qualité de développement : Tester chaque
+                    fonctionnalité (+ rédaction d'un cahier des tests complet)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- AC21.04 -->
+          <div class="ac-block">
+            <div class="ac-block__head">
+              <span class="ac-block__code">AC21.04</span>
+              <h3 class="ac-block__title">
+                Vérifier et valider la qualité de l'application par les tests
+              </h3>
+              <span class="ac-badge ac-badge--progress">⟳ En cours</span>
+            </div>
+            <div class="ac-block__body">
+              <div class="ac-block__why">
+                <h4>Où j'en suis</h4>
+                <p>
+                  Sur le projet Monetix, un portail web de gestion de paiements
+                  par carte bancaire, les tests n'étaient pas négociables : nous
+                  ne pouvions pas nous permettre de faire des approximations
+                  quand on manipule des transactions financières et des données
+                  de compte. Cela m'a appris à tester méthodiquement la
+                  cohérence des données et les flux entre les différents rôles
+                  utilisateurs. Sur Bricksy, j'ai appliqué le même réflexe après
+                  chaque correctif pour éviter de casser l'existant.
+                  L'automatisation de ces tests reste mon principal axe de
+                  progression.
+                </p>
+              </div>
+              <div class="ac-block__proof">
+                <h4>Preuves concrètes</h4>
+                <ul class="proof-list">
+                  <ul class="proof-list">
+                    <li>
+                      Monetix : jeux d'essais sur les transactions, cas limites
+                      (données de carte invalides, répercussions des remises sur
+                      le solde actuel)
+                    </li>
+                    <li>
+                      Monetix : vérification des actions possibles par
+                      l'administrateur (ajout/suppresion de compte, gestion des
+                      infos de compte..)
+                    </li>
+                    <li>
+                      R4.02 Qualité de développement : rédaction des cas de
+                      tests et tableau d'itération
+                    </li>
+                  </ul>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="acq-section rv d1">
-        <div class="section-label">Montée en compétence</div>
-        <div class="acq-grid">
-          <div class="acq-card">
-            <p class="acq-card__yr">SAÉ 1.01 · S1</p>
-            <h3 class="acq-card__name">Implémentation d'un besoin client</h3>
-            <p class="acq-card__desc">
-              Réaliser une application simple répondant à un besoin client :
-              analyse, conception, code et jeux d'essais. Première mise en
-              pratique du cycle de développement complet.
-            </p>
-            <div class="acq-tags">
-              <span class="acq-tag">AC11.01 — Implémenter</span>
-              <span class="acq-tag">AC11.02 — Élaborer</span>
-              <span class="acq-tag">AC11.03 — Essais &amp; specs</span>
-            </div>
-          </div>
-
-          <div class="acq-card">
-            <p class="acq-card__yr">SAÉ 2.01 · S2</p>
-            <h3 class="acq-card__name">Développement d'une application</h3>
-            <p class="acq-card__desc">
-              Formaliser les besoins, proposer une conception, implémenter et
-              tester une application avec interface graphique répondant à un
-              contexte précis.
-            </p>
-            <div class="acq-tags">
-              <span class="acq-tag">AC11.01 — Implémenter</span>
-              <span class="acq-tag">AC11.02 — Élaborer</span>
-              <span class="acq-tag">AC11.03 — Essais &amp; specs</span>
-              <span class="acq-tag">AC11.04 — Interfaces</span>
-            </div>
-          </div>
-
-          <div class="acq-card">
-            <p class="acq-card__yr">R1.01 · R2.01 · S1-S2</p>
-            <h3 class="acq-card__name">
-              Ressources : Initiation &amp; développement orienté objets
-            </h3>
-            <p class="acq-card__desc">
-              Algorithmes fondamentaux, structures de données, types abstraits
-              (R1.01) puis concepts fondamentaux de la POO, collections,
-              diagrammes de classes (R2.01).
-            </p>
-            <div class="acq-tags">
-              <span class="acq-tag">Algorithmique</span>
-              <span class="acq-tag">POO</span>
-              <span class="acq-tag">R1.01 · R2.01</span>
-            </div>
-          </div>
-
-          <div class="acq-card">
-            <p class="acq-card__yr">R2.02 · R2.03 · S2</p>
-            <h3 class="acq-card__name">
-              Ressources : IHM &amp; qualité de développement
-            </h3>
-            <p class="acq-card__desc">
-              Programmation événementielle, séparation Vue/Modèle (R2.02) et
-              qualité : tests unitaires, gestion de version, débogage (R2.03).
-            </p>
-            <div class="acq-tags">
-              <span class="acq-tag">IHM</span>
-              <span class="acq-tag">Tests unitaires</span>
-              <span class="acq-tag">R2.02 · R2.03</span>
-            </div>
-          </div>
-
-          <div class="acq-card">
-            <p class="acq-card__yr">SAÉ 3.Real.01 · S3</p>
-            <h3 class="acq-card__name">Développement d'une application</h3>
-            <p class="acq-card__desc">
-              Clarifier un besoin imprécis, formaliser les exigences puis
-              développer une application communicante s'appuyant sur une base de
-              données et un serveur, en respectant ergonomie et qualité
-              logicielle.
-            </p>
-            <div class="acq-tags">
-              <span class="acq-tag">AC21.01 — Spécifications</span>
-              <span class="acq-tag">AC21.02 — Accessibilité</span>
-              <span class="acq-tag">AC21.03 — Bonnes pratiques</span>
-            </div>
-          </div>
-
-          <div class="acq-card">
-            <p class="acq-card__yr">SAÉ 4.Real.01 · S4</p>
-            <h3 class="acq-card__name">
-              Développement d'une application complexe
-            </h3>
-            <p class="acq-card__desc">
-              Reprendre une application existante, évaluer ses performances et
-              sa qualité logicielle, détecter les failles de sécurité, puis
-              améliorer l'ensemble avec focus sur accessibilité et impact
-              environnemental.
-            </p>
-            <div class="acq-tags">
-              <span class="acq-tag">AC21.04 — Tests &amp; validation</span>
-              <span class="acq-tag">Qualité logicielle</span>
-              <span class="acq-tag">Sécurité</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <!-- Projet phare -->
       <section class="project-section rv d2">
         <div class="section-label">Projet phare</div>
         <div class="project-card">
           <div class="project-card__media">
             <img
               src="../../imgs/projets/mes-projets/bricksy.png"
-              alt="une image de mon projet Bricksy"
+              alt="Capture du projet Bricksy"
             />
           </div>
           <div class="project-card__body">
-            <p class="project-card__eyebrow">SAÉ 4.01 - S4 2024-2025</p>
-            <h2 class="project-card__title">Bricksy</h2>
+            <p class="project-card__eyebrow">S3-S4 (En cours)</p>
+            <h2 class="project-card__title">SAÉ TableauLEGO</h2>
             <p class="project-card__desc">
-              Plateforme e-commerce de mosaïques LEGO développée en équipe de 5.
-              Architecture MVC en PHP pur, base de données MariaDB,
-              containerisation Docker et interface d'administration complète.
+              Site de génération automatiquement de tableaux LEGO personnalisés
+              à partir d'une image fournie par l'utilisateur. Après l'import de
+              l'image et le choix des dimensions, le site propose après tout un
+              processus inter-langages des pavages LEGO différents qu'il pourra
+              alors commander. Dans la continuité, le projet évolue vers une
+              startup intégrant un système de coupons obtenus via des mini-jeux,
+              également accessibles depuis une application mobile connectée à la
+              plateforme e-commerce.
             </p>
             <div class="project-skills">
               <span class="project-skill">PHP</span>
-              <span class="project-skill">SQL</span>
-              <span class="project-skill">MariaDB</span>
-              <span class="project-skill">HTML/CSS</span
-              ><span class="project-skill">Git/Github</span
-              ><span class="project-skill">Figma</span>
+              <span class="project-skill">Java</span>
+              <span class="project-skill">C</span>
+              <span class="project-skill">Traitement image</span>
+              <span class="project-skill">Ergonomie</span>
+              <span class="project-skill">React</span>
+              <span class="project-skill">Git</span>
             </div>
             <ul class="contrib-list">
               <li>
-                Conception et implémentation du système de commande (panier,
-                paiement, historique)
+                Implémentation rigoureuse et propre (code commenté, et partagé
+                sur github) - AC21.03
               </li>
               <li>
-                Débogage de la stack PHP/Docker : sessions, authentification
-                2FA, i18n
+                Interface ergonomique et propice à un site de e-commerce - AC21.02
               </li>
               <li>
-                Refonte complète de l'interface homepage avec nouveau design
-                system
-              </li>
-              <li>
-                Correction de la fonction SQL de calcul de prix des mosaïques
+                Tests de commandes, création de compte... - AC21.04
               </li>
             </ul>
-            <a href="#" class="project-link"
-              >Voir le projet
+            <a href="#" class="project-link">
+              Voir le projet
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -290,8 +322,9 @@
                 stroke-linejoin="round"
               >
                 <path d="M7 17L17 7" />
-                <path d="M7 7h10v10" /></svg
-            ></a>
+                <path d="M7 7h10v10" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -308,58 +341,17 @@
       </nav>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="../../js/smooth-scroll.js"></script>
+    <script src="../../js/reveal.js"></script>
+    <script src="../../js/cursor.js"></script>
     <script>
-      const cur = document.getElementById("cur"),
-        curO = document.getElementById("curO");
-      let mx = 0,
-        my = 0,
-        ox = 0,
-        oy = 0;
-      document.addEventListener("mousemove", (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-      });
-      (function tick() {
-        ox += (mx - ox) * 0.12;
-        oy += (my - oy) * 0.12;
-        cur.style.cssText = `left:${mx}px;top:${my}px`;
-        curO.style.cssText = `left:${ox}px;top:${oy}px`;
-        requestAnimationFrame(tick);
-      })();
       const tb = document.getElementById("topbar");
       window.addEventListener(
         "scroll",
         () => tb.classList.toggle("scrolled", scrollY > 40),
         { passive: true },
       );
-      const io = new IntersectionObserver(
-        (es) =>
-          es.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add("in");
-          }),
-        { threshold: 0.1 },
-      );
-      document.querySelectorAll(".rv").forEach((el) => io.observe(el));
-      const barObs = new IntersectionObserver(
-        (es) => {
-          es.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target
-                .querySelectorAll(".skill-bar-fill")
-                .forEach((b) => b.classList.add("animated"));
-              barObs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.3 },
-      );
-      document
-        .querySelectorAll(".def-block")
-        .forEach((el) => barObs.observe(el));
     </script>
   </body>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-  <script src="../../js/smooth-scroll.js"></script>
-  <script src="../../js/reveal.js"></script>
-  <script src="../../js/cursor.js"></script>
 </html>
