@@ -1,12 +1,11 @@
-/* Smooth scroll minimal — pages compétences */
+/* Smooth scroll — pages compétences */
 (function () {
   if (typeof Lenis === 'undefined') return;
 
   const lenis = new Lenis({
-    duration: 1.5,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true,
+    lerp: 0.1,
     smoothTouch: false,
+    syncTouch: false,
   });
 
   function raf(time) {
@@ -17,8 +16,10 @@
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(this.getAttribute('href'));
+      lenis.scrollTo(target);
     });
   });
 })();
