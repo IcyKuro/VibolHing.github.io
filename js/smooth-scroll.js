@@ -1,18 +1,24 @@
-/* Smooth scroll — pages compétences */
 (function () {
   if (typeof Lenis === 'undefined') return;
 
-  const lenis = new Lenis({
-    lerp: 0.1,
-    smoothTouch: false,
-    syncTouch: false,
-  });
+  // Réutilise l'instance globale si elle existe déjà (chargée par main-scroll.js)
+  // Sinon, crée une instance locale (pages sans main-scroll.js)
+  const lenis = window._lenis || (() => {
+    const instance = new Lenis({
+      lerp: 0.1,
+      smoothTouch: false,
+      syncTouch: false,
+    });
+    window._lenis = instance;
 
-  function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+      instance.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+
+    return instance;
+  })();
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

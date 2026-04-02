@@ -1,9 +1,12 @@
-// Init Lenis
+// Init Lenis — instance unique exposée globalement
+// Les autres scripts (smooth-scroll.js, etc.) doivent réutiliser window._lenis
+// au lieu de créer leur propre instance, sinon Chrome déraille.
 const lenis = new Lenis({
   lerp: 0.1,
   smoothTouch: false,
   syncTouch: false,
 });
+window._lenis = lenis; // exposition globale pour éviter le double-instance
 
 // ── Parallaxe hero (mouvement souris) ──────────
 const heroSection  = document.querySelector('#sec1');
@@ -29,7 +32,6 @@ function updateHeroParallax() {
     const speed = parseFloat(layer.dataset.speed) || 0.04;
     const dx = heroCurrentX * window.innerWidth  * speed;
     const dy = heroCurrentY * window.innerHeight * speed;
-    // Utilise translate3d sans will-change déclaré en CSS
     layer.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
   });
 }
@@ -50,13 +52,10 @@ function createStarryNight() {
   for (let i = 0; i < starCount; i++) {
     const star = document.createElement('div');
     star.classList.add('bg-star');
-    
 
     const x = Math.random() * 100;
     const y = Math.random() * 100;
-
     const size = Math.random() * 2 + 1;
-
     const duration = Math.random() * 3 + 2;
 
     star.style.left = `${x}%`;
@@ -69,19 +68,19 @@ function createStarryNight() {
   }
 
   const layers = [
-    { count: 15, speed: 0.1, sizeMax: 4 }, 
-    { count: 8, speed: 0.25, sizeMax: 6 } 
+    { count: 15, speed: 0.1, sizeMax: 4 },
+    { count: 8, speed: 0.25, sizeMax: 6 }
   ];
 
-  layers.forEach((layerConfig, index) => {
+  layers.forEach((layerConfig) => {
     const layerDiv = document.createElement('div');
     layerDiv.classList.add('shooting-star-layer');
     layerDiv.setAttribute('data-speed', layerConfig.speed);
-    
+
     for (let i = 0; i < layerConfig.count; i++) {
       const pStar = document.createElement('div');
       pStar.classList.add('parallax-star');
-      
+
       const x = Math.random() * 100;
       const y = Math.random() * 100;
       const size = Math.random() * layerConfig.sizeMax + 2;
@@ -94,7 +93,7 @@ function createStarryNight() {
 
       layerDiv.appendChild(pStar);
     }
-    
+
     skyContainer.appendChild(layerDiv);
     parallaxLayers.push(layerDiv);
   });
@@ -125,7 +124,7 @@ function updateTimelineScroll() {
     }
   });
 
-  const triggerPointStart = windowHeight * 0.1; 
+  const triggerPointStart = windowHeight * 0.1;
   const startNight = sectionRect.top < triggerPointStart;
   const triggerPointEnd = windowHeight * 0.1;
   const endNight = sectionRect.bottom > triggerPointEnd;
@@ -140,16 +139,20 @@ function updateTimelineScroll() {
 function raf(time) {
   lenis.raf(time);
   updateTimelineScroll();
-  updateHeroParallax()
+  updateHeroParallax();
 
-  const scrollY = window.scrollY || document.documentElement.scrollTop;
+  // FIX : utiliser lenis.scroll au lieu de window.scrollY
+  // window.scrollY peut être désynchronisé d'un frame par rapport à Lenis sur Chrome
+  const scrollY = lenis.scroll;
 
-  const sectionRect = section3.getBoundingClientRect();
-  if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+  if (section3) {
+    const sectionRect = section3.getBoundingClientRect();
+    if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
       parallaxLayers.forEach(layer => {
         const speed = parseFloat(layer.getAttribute('data-speed'));
         layer.style.transform = `translateY(${scrollY * speed * -1}px)`;
       });
+    }
   }
 
   requestAnimationFrame(raf);
