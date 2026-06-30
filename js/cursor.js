@@ -1,12 +1,17 @@
-/* Curseur custom + détection fond bleu */
+/* Curseur custom + détection fond bleu (Optimisé) */
 (function () {
   const cur  = document.getElementById('cur');
   const curO = document.getElementById('curO');
   if (!cur || !curO) return;
 
   let mx = 0, my = 0, ox = 0, oy = 0;
+  let lastHoveredElement = null;
+  let isBlueCached = false;
 
   document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+  // Réinitialiser le cache au scroll pour forcer la revérification
+  document.addEventListener('scroll', () => { lastHoveredElement = null; }, { passive: true });
 
   function isOverBlue() {
     cur.style.pointerEvents  = 'none';
@@ -14,12 +19,26 @@
     const el = document.elementFromPoint(mx, my);
     cur.style.pointerEvents  = '';
     curO.style.pointerEvents = '';
+    
     if (!el) return false;
+
+    // Si on survole exactement le même élément, on renvoie le résultat en cache
+    if (el === lastHoveredElement) {
+      return isBlueCached;
+    }
+
+    lastHoveredElement = el;
     let node = el;
+    
     while (node && node !== document.body) {
-      if (getComputedStyle(node).backgroundColor === 'rgb(24, 55, 232)') return true;
+      if (getComputedStyle(node).backgroundColor === 'rgb(24, 55, 232)') {
+        isBlueCached = true;
+        return true;
+      }
       node = node.parentElement;
     }
+    
+    isBlueCached = false;
     return false;
   }
 
@@ -30,7 +49,10 @@
     cur.style.top   = my + 'px';
     curO.style.left = ox + 'px';
     curO.style.top  = oy + 'px';
-    const color = isOverBlue() ? 'var(--cream)' : 'var(--main-blue)';
+    
+    // Correction de la variable CSS ici !
+    const color = isOverBlue() ? 'var(--cream)' : 'var(--blue)';
+    
     cur.style.background   = color;
     curO.style.borderColor = color;
     requestAnimationFrame(tick);
