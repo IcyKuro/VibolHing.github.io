@@ -1207,6 +1207,31 @@ a {
   }
 }
 
+/* ── Carousel horizontal (mobile) ──
+   Sous 640px, les 3 panneaux sont posés côte à côte et on navigue
+   entre eux au doigt (scroll-snap) plutôt qu'en tapant les petits
+   boutons d'onglet. Les boutons restent utilisables : ils font défiler
+   le carousel jusqu'au panneau ciblé (voir tabs.js). */
+@media (max-width: 640px) {
+  .tab-panels {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-panels::-webkit-scrollbar { display: none; }
+
+  .tab-panel,
+  .tab-panel.active {
+    display: block;
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: start;
+    animation: none;
+  }
+}
+
 /* Hard skills nuage */
 .skill-cloud {
   display: flex;
