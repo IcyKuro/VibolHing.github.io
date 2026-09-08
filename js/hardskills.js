@@ -67,8 +67,10 @@
   const FRICTION    = 0.78;   
   const MAX_VEL     = 18;
   const SLEEP_VEL   = 0.18;
-  const SOLVER_ITER = 32;
+  const SOLVER_ITER_DESKTOP = 32;
+  const SOLVER_ITER_MOBILE  = 12; /* mobile : moins d'itérations, sinon le thread principal sature et bloque le scroll */
   const MARGIN      = 5;
+  const MOBILE_BREAKPOINT = 600;
 
   let W = 0, H = 0, dpr = 1;
   let nodes     = [];
@@ -111,7 +113,9 @@
     : W < 760 ? Math.min(560, W * 1.10)
     :           Math.min(700, Math.max(480, W * 0.87))
     );
-    dpr = window.devicePixelRatio || 1;
+    /* Cap le DPR : au-delà de 2, le gain visuel est nul mais le coût de rendu
+       explose (beaucoup de téléphones sont en devicePixelRatio 3) */
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width        = W * dpr;
     canvas.height       = H * dpr;
     canvas.style.width  = W + 'px';
@@ -189,7 +193,8 @@
     });
 
     /* Résolution collisions — re-clamp sol après chaque itération */
-    for (let k = 0; k < SOLVER_ITER; k++) {
+    const solverIter = W < MOBILE_BREAKPOINT ? SOLVER_ITER_MOBILE : SOLVER_ITER_DESKTOP;
+    for (let k = 0; k < solverIter; k++) {
       resolveCollisions();
 
       /* Re-clamp sol après chaque passe : un élément écrasé
@@ -259,15 +264,21 @@
         ctx.fill();
       }
 
+    /* shadowBlur est très coûteux sur les moteurs canvas mobiles :
+       désactivé sous MOBILE_BREAKPOINT pour éviter la saturation du thread principal */
+    const shadowsEnabled = W >= MOBILE_BREAKPOINT;
+
     nodes.forEach((n, i) => {
       if (n.y + n.h / 2 < 0) return; /* encore hors canvas */
       const active = i === drag?.idx || i === hovered;
       const bx = n.x - n.w / 2, by = n.y - n.h / 2;
 
       ctx.save();
-      ctx.shadowColor   = active ? 'rgba(24,55,232,.32)' : 'rgba(24,55,232,.14)';
-      ctx.shadowBlur    = active ? 18 : 8;
-      ctx.shadowOffsetY = active ? 6  : 3;
+      if (shadowsEnabled) {
+        ctx.shadowColor   = active ? 'rgba(24,55,232,.32)' : 'rgba(24,55,232,.14)';
+        ctx.shadowBlur    = active ? 18 : 8;
+        ctx.shadowOffsetY = active ? 6  : 3;
+      }
 
       ctx.beginPath();
       ctx.roundRect(bx, by, n.w, n.h, n.r);
@@ -371,14 +382,15 @@
   });
   window.addEventListener('mouseup', () => { releaseNode(); canvas.style.cursor = hovered >= 0 ? 'grab' : 'default'; });
   canvas.addEventListener('touchstart', e => {
-    e.preventDefault();
     const { x, y } = coords(e);
     const i = hitTest(x, y);
-    if (i >= 0) grabNode(i, x, y);
+    /* preventDefault uniquement si on saisit un bloc : sinon le scroll
+       de la page doit rester libre au toucher du canvas */
+    if (i >= 0) { e.preventDefault(); grabNode(i, x, y); }
   }, { passive: false });
   canvas.addEventListener('touchmove', e => {
-    e.preventDefault();
     if (!drag) return;
+    e.preventDefault();
     const { x, y } = coords(e);
     nodes[drag.idx].x = x + drag.offX;
     nodes[drag.idx].y = y + drag.offY;
