@@ -7,6 +7,30 @@
   --radius-sm: 0.8rem;
   --radius-pill: 100px;
   --sp: clamp(5rem, 10vw, 9rem) clamp(1.4rem, 5vw, 5rem);
+
+  /* Thème clair/sombre : --bg = fond de page, --ink = texte/décor par
+     défaut. --main-blue et --cream restent des couleurs de marque FIXES
+     (boutons, bandeaux, états actifs/hover) : seuls bg/ink changent. */
+  --bg-rgb: 255, 246, 230;
+  --ink-rgb: 24, 55, 232;
+  --bg: rgb(var(--bg-rgb));
+  --ink: rgb(var(--ink-rgb));
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --bg-rgb: 16, 19, 34;
+  --ink-rgb: 255, 246, 230;
+  --dark: rgb(var(--ink-rgb));
+  color-scheme: dark;
+}
+
+/* Transition douce lors du changement de thème. Les composants qui ont
+   déjà leur propre transition (hover, etc.) gardent la priorité grâce à
+   leur sélecteur plus spécifique — ceci ne sert que de filet pour les
+   éléments qui n'en définissent pas. */
+body, body * {
+  transition: background-color .7s ease, color .7s ease, border-color .7s ease;
 }
 
 *,
@@ -23,8 +47,8 @@ html {
 body {
   overflow-x: clip;
   font-family: "Darker Grotesque", sans-serif;
-  background: var(--cream);
-  color: var(--dark);
+  background: var(--bg);
+  color: var(--ink);
   cursor: none;
 }
 img {
@@ -38,7 +62,7 @@ a {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--cream);
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--main-blue);
@@ -60,7 +84,7 @@ a {
 .topbar__circle {
   width: 26px;
   height: 26px;
-  border: 2px solid var(--main-blue);
+  border: 2px solid var(--ink);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -70,15 +94,48 @@ a {
   font-size: clamp(.5em, 1vw, 1em);
   font-weight: 700;
   letter-spacing: 0.03em;
-  color: var(--main-blue);
+  color: var(--ink);
   text-align: center;
   user-select: none;
 }
 
 .topbar__right {
   display: flex;
+  align-items: center;
+  gap: 1rem;
   justify-content: flex-end;
 }
+
+/* ── Bouton clair/sombre ── */
+.theme-toggle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: border-color .7s ease, color .7s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.theme-toggle:hover { transform: scale(1.08); }
+.theme-toggle:active { transform: scale(.92); }
+
+.theme-toggle__icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  transition: opacity .5s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.theme-toggle__icon--sun { opacity: 1; transform: rotate(0deg) scale(1); }
+.theme-toggle__icon--moon { opacity: 0; transform: rotate(-90deg) scale(.5); }
+
+html[data-theme="dark"] .theme-toggle__icon--sun { opacity: 0; transform: rotate(90deg) scale(.5); }
+html[data-theme="dark"] .theme-toggle__icon--moon { opacity: 1; transform: rotate(0deg) scale(1); }
 
 .topbar__burger {
   background: none;
@@ -95,7 +152,7 @@ a {
   display: block;
   width: 26px;
   height: 2px;
-  background: var(--main-blue);
+  background: var(--ink);
   border-radius: 1px;
   transition:
     transform 0.32s cubic-bezier(0.76, 0, 0.24, 1),
@@ -117,6 +174,7 @@ a {
 .topbar--light .topbar__date  { color: var(--cream); }
 .topbar--light .topbar__circle { border-color: var(--cream); }
 .topbar--light .topbar__burger span { background: var(--cream); }
+.topbar--light .theme-toggle { border-color: var(--cream); color: var(--cream); }
 
 
 /* ============================================================
@@ -125,7 +183,7 @@ a {
 #sec1 {
   min-height: 100svh;
   min-height: 100vh; /* fallback */
-  background-color: var(--cream);
+  background-color: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,7 +210,7 @@ a {
   left: -1em;
 
   font-size: clamp(1.1rem, 2.6vw, 1.9rem);
-  color: var(--main-blue);
+  color: var(--ink);
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -173,7 +231,7 @@ a {
   font-weight: 400;
   font-size: clamp(2.5rem, 9vw, 11rem);
   line-height: 0.95;
-  color: var(--main-blue);
+  color: var(--ink);
   letter-spacing: -0.01em;
   text-align: center;
   width: fit-content;
@@ -194,7 +252,7 @@ a {
   font-family: darker-grotesque;
   font-size: clamp(1rem, 2vw, 1.35rem);
   font-weight: 500;
-  color: var(--main-blue);
+  color: var(--ink);
   text-align: center;
   letter-spacing: 0.01em;
 
@@ -255,7 +313,7 @@ a {
   left: 0;
   width: 9px;
   height: 9px;
-  background: var(--main-blue);
+  background: var(--ink);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -267,7 +325,7 @@ a {
   left: 0;
   width: 32px;
   height: 32px;
-  border: 1.5px solid var(--main-blue);
+  border: 1.5px solid var(--ink);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -400,13 +458,13 @@ a {
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--main-blue);
+  color: var(--ink);
   margin-bottom: 0.75rem;
 }
 .sec-title {
   font-family: "Mochiy Pop One", sans-serif;
   font-size: clamp(2.2rem, 5.5vw, 4.5rem);
-  color: var(--main-blue);
+  color: var(--ink);
   line-height: 1;
 }
 .sec-subtitle {
@@ -470,7 +528,7 @@ a {
   font-family: "Mochiy Pop One", sans-serif;
   font-size: clamp(5rem, 18vw, 16rem);
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(24, 55, 232, 0.07);
+  -webkit-text-stroke: 1.5px rgba(var(--ink-rgb), 0.07);
   pointer-events: none;
   white-space: nowrap;
   line-height: 1;
@@ -496,13 +554,13 @@ a {
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--main-blue);
+  color: var(--ink);
   margin-bottom: 1.1rem;
 }
 .sec2-title {
   font-family: "Mochiy Pop One", sans-serif;
   font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-  color: var(--main-blue);
+  color: var(--ink);
   line-height: 1;
   margin-bottom: 2.2rem;
 }
@@ -514,7 +572,7 @@ a {
 .sec2-stat__num {
   font-family: "Mochiy Pop One", sans-serif;
   font-size: clamp(2rem, 4.5vw, 3.2rem);
-  color: var(--main-blue);
+  color: var(--ink);
   line-height: 1;
 }
 .sec2-stat__lbl {
@@ -528,10 +586,10 @@ a {
 
 .sec2-card {
   /* background: var(--main-blue); */
-  border: .15em dashed var(--main-blue);
+  border: .15em dashed var(--ink);
   border-radius: var(--radius);
   padding: clamp(1.8rem, 3.5vw, 2.8rem);
-  color: var(--main-blue);
+  color: var(--ink);
   position: relative;
   overflow: hidden;
 }
@@ -582,7 +640,7 @@ a {
   position: absolute;
   left: 50%; top: 0; bottom: 0;
   width: 1.5px;
-  background: rgba(24,55,232,.12);
+  background: rgba(var(--ink-rgb),.12);
   transform: translateX(-50%);
   border-radius: 2px;
 }
@@ -651,8 +709,8 @@ a {
   justify-content: center;
   width: 38px; height: 38px;
   border-radius: 50%;
-  background: var(--cream);
-  border: 1.5px solid rgba(24,55,232,.22);
+  background: var(--bg);
+  border: 1.5px solid rgba(var(--ink-rgb),.22);
   transition:
     background   .5s cubic-bezier(.34,1.56,.64,1),
     border-color .5s cubic-bezier(.34,1.56,.64,1),
@@ -662,7 +720,7 @@ a {
 
 .tl-star svg {
   width: 15px; height: 15px;
-  fill: rgba(24,55,232,.22);
+  fill: rgba(var(--ink-rgb),.22);
   transition:
     fill      .5s cubic-bezier(.34,1.56,.64,1),
     transform .6s cubic-bezier(.34,1.56,.64,1);
@@ -776,7 +834,7 @@ a {
 
 /* ── Brique 2 : CORPS CRÈME ── */
 .tl-brick-body {
-  background: var(--cream);
+  background: var(--bg);
   padding: 1.2rem 1.4rem 1rem;
   position: relative;
   overflow: hidden;    /* pour le ghost year */
@@ -791,7 +849,7 @@ a {
   font-family: 'Mochiy Pop One', sans-serif;
   font-size: 5.8rem;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(24,55,232,.09);
+  -webkit-text-stroke: 1.5px rgba(var(--ink-rgb),.09);
   pointer-events: none;
   line-height: 1;
   user-select: none;
@@ -804,7 +862,7 @@ a {
 .tl-school {
   font-family: 'Mochiy Pop One', sans-serif;
   font-size: clamp(1rem, 2.2vw, 1.5rem);
-  color: var(--dark);
+  color: var(--ink);
   line-height: 1.1;
   position: relative;
   transition: color .28s ease;
@@ -819,10 +877,10 @@ a {
 .tl-badge {
   padding: .13rem .6rem;
   border-radius: var(--radius-pill);
-  background: rgba(24,55,232,.09);
+  background: rgba(var(--ink-rgb),.09);
   font-size: .7rem;
   font-weight: 900;
-  color: var(--main-blue);
+  color: var(--ink);
   transition: background .28s, color .28s;
 }
 .tl-card:hover .tl-badge {
@@ -832,8 +890,8 @@ a {
 
 /* ── Brique 3 : FOOTER ── */
 .tl-brick-foot {
-  background: var(--cream);
-  border-top: 1px solid rgba(24,55,232,.1);
+  background: var(--bg);
+  border-top: 1px solid rgba(var(--ink-rgb),.1);
   padding: .65rem 1.3rem .8rem;
   transition: background .28s ease, border-color .28s ease;
 }
@@ -1129,7 +1187,7 @@ a {
   display: flex;
   gap: 0;
   margin-bottom: 2.8rem;
-  border-bottom: 1.5px solid rgba(24,55,232,.15);
+  border-bottom: 1.5px solid rgba(var(--ink-rgb),.15);
   width: fit-content;
   max-width: 100%;
   background: none;
@@ -1153,7 +1211,7 @@ a {
   border: none;
   background: none;
   cursor: pointer;
-  color: rgba(24,55,232,.35);
+  color: rgba(var(--ink-rgb),.35);
   white-space: nowrap;
   position: relative;
   border-radius: 0;
@@ -1174,10 +1232,10 @@ a {
   transition: width .28s cubic-bezier(.22,1,.36,1);
 }
 
-.tab-btn:hover { color: rgba(24,55,232,.7); }
+.tab-btn:hover { color: rgba(var(--ink-rgb),.7); }
 
 .tab-btn.active {
-  color: var(--main-blue);
+  color: var(--ink);
   background: none;
   box-shadow: none;
 }
@@ -1267,7 +1325,7 @@ a {
   font-weight: 900;
   letter-spacing: .13em;
   text-transform: uppercase;
-  color: rgba(24,55,232,.3);
+  color: rgba(var(--ink-rgb),.3);
   margin-bottom: 1rem;
 }
 
@@ -1277,7 +1335,7 @@ a {
   border-radius: var(--radius-sm);
   touch-action: none;
   cursor: grab;
-  box-shadow: inset 0 0 0 1.5px rgba(24,55,232,.1);
+  box-shadow: inset 0 0 0 1.5px rgba(var(--ink-rgb),.1);
 }
 #skillNet:active { cursor: grabbing; }
 
@@ -1299,14 +1357,14 @@ a {
 
   .skill-card {
     padding: 1rem .9rem;
-    background: var(--cream);
-    border: 1.5px solid rgba(24,55,232,.65);
+    background: var(--bg);
+    border: 1.5px solid rgba(var(--ink-rgb),.65);
     border-radius: var(--radius-sm);
     font-family: darker-grotesque, sans-serif;
     font-weight: 900;
     font-size: 1.15rem;
     line-height: 1.15;
-    color: rgba(24,55,232,.88);
+    color: rgba(var(--ink-rgb),.88);
     text-align: center;
     opacity: 0;
     transform: translateY(14px);
@@ -1333,13 +1391,13 @@ a {
   font-weight: 900;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: rgba(24,55,232,.32);
+  color: rgba(var(--ink-rgb),.32);
   margin-bottom: 1.8rem;
 }
 
 .soft-list {
   list-style: none;
-  border-top: 1.5px solid var(--main-blue);
+  border-top: 1.5px solid var(--ink);
 }
 
 /* ── Item ── */
@@ -1374,7 +1432,7 @@ a {
 .si-num {
   font-family: darker-grotesque, sans-serif;
   font-size: 1em;
-  color: rgba(24, 55, 232, 0.753);
+  color: rgba(var(--ink-rgb), 0.753);
   letter-spacing: .06em;
   transition: color .5s;
   user-select: none;
@@ -1406,7 +1464,7 @@ a {
 .si-title {
   font-family: darker-grotesque, sans-serif;
   font-size: clamp(1rem, 2vw, 1.4rem);
-  color: var(--main-blue);
+  color: var(--ink);
   line-height: 1.1;
   margin-bottom: .3rem;
   transition: color .5s;
@@ -1416,7 +1474,7 @@ a {
 .si-desc {
   font-size: clamp(.78rem, 1.2vw, .9rem);
   font-weight: 600;
-  color: rgba(24,55,232,.5);
+  color: rgba(var(--ink-rgb),.5);
   line-height: 1.55;
   transition: color .32s;
   /* Cache la description par défaut, la révèle au hover */
@@ -1437,7 +1495,7 @@ a {
 /* ── Étoile déco droite ── */
 .si-star {
   font-size: 1.1rem;
-  color: rgba(24,55,232,.2);
+  color: rgba(var(--ink-rgb),.2);
   flex-shrink: 0;
   transition: color .32s, transform .45s cubic-bezier(.34,1.56,.64,1);
   user-select: none;
@@ -1474,7 +1532,7 @@ a {
   font-weight: 900;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: rgba(24,55,232,.32);
+  color: rgba(var(--ink-rgb),.32);
   margin-bottom: 2.4rem;
 }
 
@@ -1482,7 +1540,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-top: 1.5px solid var(--main-blue);
+  border-top: 1.5px solid var(--ink);
 }
 
 /* ── Groupe catégorie ── */
@@ -1492,7 +1550,7 @@ a {
   align-items: start;
   gap: 0 clamp(1.5rem, 4vw, 3rem);
   padding: clamp(1.4rem, 3vw, 2rem) 0;
-  border-bottom: 1.5px solid var(--main-blue);
+  border-bottom: 1.5px solid var(--ink);
 }
 
 .sw-group-label {
@@ -1500,7 +1558,7 @@ a {
   font-weight: 900;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: rgba(24,55,232,.38);
+  color: rgba(var(--ink-rgb),.38);
   padding-top: .5rem;
   position: sticky;
   top: 5rem;
@@ -1519,10 +1577,10 @@ a {
   align-items: center;
   gap: .65rem;
   padding: .55rem 1rem .55rem .7rem;
-  border: 1.5px solid rgba(24,55,232,.2);
+  border: 1.5px solid rgba(var(--ink-rgb),.2);
   border-radius: var(--radius-pill);
   cursor: default;
-  background: var(--cream);
+  background: var(--bg);
   transition:
     border-color .22s ease,
     background   .22s ease,
@@ -1548,7 +1606,7 @@ a {
 .sw-pill__icon svg {
   width: 22px;
   height: 22px;
-  fill: var(--main-blue);
+  fill: var(--ink);
   transition: fill .22s ease;
 }
 
@@ -1571,7 +1629,7 @@ a {
 .sw-pill span {
   font-size: .82rem;
   font-weight: 900;
-  color: var(--main-blue);
+  color: var(--ink);
   letter-spacing: .03em;
   white-space: nowrap;
   transition: color .22s ease;
@@ -1614,7 +1672,7 @@ a {
 }
 
 .proj-card {
-  border: 1.5px solid var(--main-blue);
+  border: 1.5px solid var(--ink);
   border-radius: var(--radius);
   overflow: hidden;
   text-decoration: none;
@@ -1628,7 +1686,7 @@ a {
 .proj-card__media {
   aspect-ratio: 16/9;
   overflow: hidden;
-  background: rgba(24, 55, 232, 0.05);
+  background: rgba(var(--ink-rgb), 0.05);
 }
 .proj-card__media img {
   width: 100%;
@@ -1657,8 +1715,8 @@ a {
   letter-spacing: 0.05em;
   padding: 0.12rem 0.48rem;
   border-radius: var(--radius-pill);
-  background: rgba(24, 55, 232, 0.08);
-  color: var(--main-blue);
+  background: rgba(var(--ink-rgb), 0.08);
+  color: var(--ink);
 }
 .proj-foot {
   display: flex;
@@ -1669,18 +1727,18 @@ a {
 .proj-title {
   font-family: "Mochiy Pop One", sans-serif;
   font-size: 1.25rem;
-  color: var(--main-blue);
+  color: var(--ink);
   text-transform: uppercase;
 }
 .proj-arrow {
   width: 32px;
   height: 32px;
-  border: 1.5px solid var(--main-blue);
+  border: 1.5px solid var(--ink);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--main-blue);
+  color: var(--ink);
   flex-shrink: 0;
   transition:
     background 0.2s,

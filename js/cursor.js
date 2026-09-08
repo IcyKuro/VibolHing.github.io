@@ -51,7 +51,7 @@
     curO.style.top  = oy + 'px';
     
     // Correction de la variable CSS ici !
-    const color = isOverBlue() ? 'var(--cream)' : 'var(--blue)';
+    const color = isOverBlue() ? 'var(--cream)' : 'var(--ink)';
     
     cur.style.background   = color;
     curO.style.borderColor = color;

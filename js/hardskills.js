@@ -21,8 +21,14 @@
     };
   }
 
-  const BLUE  = '#1837E8';
-  const CREAM = '#F5EEE0';
+  const BLUE = '#1837E8'; /* accent actif : fixe, ne change pas avec le thème */
+  const CREAM = '#F5EEE0'; /* texte sur nœud actif : fixe */
+
+  /* Surface/texte des nœuds INACTIFS : suivent le thème clair/sombre,
+     comme le reste de la page (voir --bg / --ink dans style.css) */
+  function isDark() { return document.documentElement.dataset.theme === 'dark'; }
+  function inkRgb()  { return isDark() ? '255,246,230' : '24,55,232'; }
+  function bgColor()  { return isDark() ? 'rgb(16,19,34)' : CREAM; }
 
   const SKILL_DEFS = [
     { label: 'POO',                 size: 'xl' },
@@ -272,8 +278,9 @@
       const active = i === drag?.idx || i === hovered;
       const bx = n.x - n.w / 2, by = n.y - n.h / 2;
 
+      const ink = inkRgb();
       ctx.save();
-      ctx.shadowColor   = active ? 'rgba(24,55,232,.32)' : 'rgba(24,55,232,.14)';
+      ctx.shadowColor   = active ? 'rgba(24,55,232,.32)' : `rgba(${ink},.14)`;
       ctx.shadowBlur    = active ? 18 : 8;
       ctx.shadowOffsetY = active ? 6  : 3;
 
@@ -284,8 +291,8 @@
         ctx.fillStyle = BLUE;
         ctx.fill();
       } else {
-        ctx.fillStyle   = CREAM;
-        ctx.strokeStyle = 'rgba(24,55,232,.65)';
+        ctx.fillStyle   = bgColor();
+        ctx.strokeStyle = `rgba(${ink},.65)`;
         ctx.lineWidth   = 1.5;
         ctx.fill();
         ctx.stroke();
@@ -295,7 +302,7 @@
       ctx.font         = `900 ${n.fs}px 'Darker Grotesque', sans-serif`;
       ctx.textAlign    = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillStyle    = active ? CREAM : 'rgba(24,55,232,.88)';
+      ctx.fillStyle    = active ? CREAM : `rgba(${ink},.88)`;
       ctx.fillText(n.label, n.x, n.y);
     });
   }
