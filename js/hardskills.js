@@ -28,7 +28,7 @@
      comme le reste de la page (voir --bg / --ink dans style.css) */
   function isDark() { return document.documentElement.dataset.theme === 'dark'; }
   function inkRgb()  { return isDark() ? '255,246,230' : '24,55,232'; }
-  function bgColor()  { return isDark() ? 'rgb(16,19,34)' : CREAM; }
+  function bgColor()  { return isDark() ? 'rgb(10,17,48)' : CREAM; }
 
   const SKILL_DEFS = [
     { label: 'POO',                 size: 'xl' },
