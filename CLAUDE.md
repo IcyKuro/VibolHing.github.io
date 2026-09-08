@@ -1,0 +1,4 @@
+- Ce projet est mon portfolio profesionnel, il me présente, mes compétences, mes skills...etc
+- The file index_old.html is an old version of my portfolio, so don't touch it, no need to change anything in it.
+- After every modification tests should be executed to see if the website is still responsive on mobile and other devices to make sure nothing collapse after a modification.
+- Don't modify any text content unless i tell you to do so.

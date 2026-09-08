@@ -67,10 +67,14 @@
   const FRICTION    = 0.78;   
   const MAX_VEL     = 18;
   const SLEEP_VEL   = 0.18;
-  const SOLVER_ITER_DESKTOP = 32;
-  const SOLVER_ITER_MOBILE  = 12; /* mobile : moins d'itérations, sinon le thread principal sature et bloque le scroll */
+  const SOLVER_ITER = 32;
   const MARGIN      = 5;
-  const MOBILE_BREAKPOINT = 600;
+
+  /* Sous ce seuil, le canvas physique est désactivé (voir triggerDrop) :
+     trop lourd pour le thread principal sur téléphone, remplacé par les
+     cartes statiques .skill-cards définies dans le HTML */
+  const MOBILE_BREAKPOINT = 640;
+  function isMobile() { return window.innerWidth <= MOBILE_BREAKPOINT; }
 
   let W = 0, H = 0, dpr = 1;
   let nodes     = [];
@@ -193,8 +197,7 @@
     });
 
     /* Résolution collisions — re-clamp sol après chaque itération */
-    const solverIter = W < MOBILE_BREAKPOINT ? SOLVER_ITER_MOBILE : SOLVER_ITER_DESKTOP;
-    for (let k = 0; k < solverIter; k++) {
+    for (let k = 0; k < SOLVER_ITER; k++) {
       resolveCollisions();
 
       /* Re-clamp sol après chaque passe : un élément écrasé
@@ -264,21 +267,15 @@
         ctx.fill();
       }
 
-    /* shadowBlur est très coûteux sur les moteurs canvas mobiles :
-       désactivé sous MOBILE_BREAKPOINT pour éviter la saturation du thread principal */
-    const shadowsEnabled = W >= MOBILE_BREAKPOINT;
-
     nodes.forEach((n, i) => {
       if (n.y + n.h / 2 < 0) return; /* encore hors canvas */
       const active = i === drag?.idx || i === hovered;
       const bx = n.x - n.w / 2, by = n.y - n.h / 2;
 
       ctx.save();
-      if (shadowsEnabled) {
-        ctx.shadowColor   = active ? 'rgba(24,55,232,.32)' : 'rgba(24,55,232,.14)';
-        ctx.shadowBlur    = active ? 18 : 8;
-        ctx.shadowOffsetY = active ? 6  : 3;
-      }
+      ctx.shadowColor   = active ? 'rgba(24,55,232,.32)' : 'rgba(24,55,232,.14)';
+      ctx.shadowBlur    = active ? 18 : 8;
+      ctx.shadowOffsetY = active ? 6  : 3;
 
       ctx.beginPath();
       ctx.roundRect(bx, by, n.w, n.h, n.r);
@@ -312,6 +309,9 @@
   function triggerDrop() {
     if (!ready) return;
     stopLoop();
+    /* Mobile : canvas masqué en CSS, cartes statiques affichées à la place —
+       inutile (et coûteux pour le thread principal) de faire tourner la physique */
+    if (isMobile()) return;
     setupCanvas();
     spawnNodes();
     startLoop();
